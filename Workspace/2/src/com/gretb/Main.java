@@ -45,9 +45,17 @@ public class Main {
 		int num4=19;
 		double doub=10;
 		
-		System.out.println(num4/doub);
+		System.out.println(num4/doub); //int devided by a double, will provide answer in double, as its the larger volume.
+		
+		int comp1=23;
+		int comp2=23;
+		
+		//testing for equivalence:
+		System.out.println(comp1 == comp2); 
+		System.out.println(comp1 != comp2); 
 		
 		
+	
 	}
 
 }
