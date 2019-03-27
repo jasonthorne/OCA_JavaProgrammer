@@ -13,7 +13,12 @@ public class Main {
 		//defining an int called age:
 		int age=21;
 		
-		System.out.println(age>18);
+		System.out.println(age>18); //true
+		System.out.println(age>18); //false
+		
+		if (age<18) System.out.println("No admittance");
+		else System.out.println("Admittence");
+
 
 	}
 
