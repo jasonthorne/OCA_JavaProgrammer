@@ -18,6 +18,12 @@ public class Main {
 		
 		if (age<18) System.out.println("No admittance");
 		else System.out.println("Admittence");
+		
+		
+		String name = "Bob";
+		//'name' is a reference (an address in memory), 'Bob' is the value //+++++++++++++++++++++++++++
+		
+		System.out.println(name);
 
 
 	}

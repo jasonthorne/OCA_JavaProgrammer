@@ -148,12 +148,11 @@ public class Main {
 		System.out.println("our boolean is "+myBool);
 		
 		
-	
 		
 	//	num=3.45;
 		//num=12000000000;
 		
-/*		double wages=234.56;
+		/*		double wages=234.56;
 		
 		System.out.println("ronaldis wages are "+wages);
 		double wages2=678.90;
