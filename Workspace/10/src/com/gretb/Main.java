@@ -8,6 +8,13 @@ public class Main {
 		System.out.println("Boop");
 		
 		
+		//for loops
+		
+		//varibale i is a local variable
+		
+		
+		
+		
 
 	}
 
