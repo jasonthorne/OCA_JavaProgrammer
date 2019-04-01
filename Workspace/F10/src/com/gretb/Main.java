@@ -20,6 +20,8 @@ public class Main {
 		for(int i=0;i<5;i++) {
 			/*
 			 * the variable i is a LOCAL VARIABLE that is only available
+			 * 
+			 * 
 			 * within the loop
 			 */
 			System.out.println("inside for loop i is "+i);

@@ -15,6 +15,8 @@ public class Main {
 		 * always start with a data type - in this 'int'
 		 * always have square brackets after the data type []
 		 * has to be given a name after the square brackets - the 
+		 * 
+		 * 
 		 * name of this arry is 'myArray', you can call it anything you
 		 * want
 		 * there are two primary ways of giving values and size to an 
@@ -24,7 +26,7 @@ public class Main {
 		 * once you give a size to an array, you cannot change the size
 		 * it
 		 */
-		int[]myArray=new int[4];
+		int[]myArray=new int[4]; ////////+++++++++++++++++++Exam questions sometimes have numbers on left! (Size should ALWAYS be on the right!) Or different data types on both sides!
 		/*
 		 * this is created an array, called dArray, that is of size 4, 
 		 * and it was given a size by putting 4 floating numbers into the
@@ -37,7 +39,7 @@ public class Main {
 		 * size of that array
 		 */
 		myArray[0]=34;//first number on our list
-		myArray[1]=100;//seconld element on our list
+		myArray[1]=100;//second element on our list
 		myArray[2]=234;//third element on our list
 		myArray[3]=1000;//fourth element on our list
 		
@@ -58,9 +60,78 @@ public class Main {
 		System.out.println(myArray[3]);
 		
 		for(int i=0;i<4;i++) {
-			System.out.println("array number is "+dArray[i]);
+			System.out.println("in for loop array, number is "+dArray[i]);
 		}
 		
+		
+		int size=57;
+		double[] weights = new double[size]; //an array of weights
+		int i = 0; //counter to populate weights array
+		
+		
+		//giving values to each position of the array.
+		//i starts at 0, so weights [i] = i+10 is actually weights[0]=0+10, next one is weights[1]=1+10
+		//Goes up to 56 which will be weights[56]=56+10;
+		
+		while(i<size) { //loop 57 times
+			System.out.println("i is: " + i);
+			weights[i] = i+10;
+			i++;
+		}
+		
+		
+		//printing out the values of an arrray:
+		for (int j=0; j<weights.length; j++) {
+			System.out.println("Weight is: " + weights[j]);
+		}
+		
+		//this is our first method, and this method gives us the length of the array:
+		System.out.println("length of weights: " + weights.length);
+		
+		i=0;
+		
+		//even though we may not know the amount of numbers in this array, we can use the length method to get he amount of numbers in the array, 
+		//and the loop will execute for each number in the array. 
+		while(i<weights.length) {
+			System.out.println(weights[i]);
+			i++;
+		}
+		
+		
+		//As this is done, the original array is gone:
+		weights = new double[54];
+		i=0;
+		
+		System.out.println("Blank double array:");	
+		while(i<weights.length) {
+			System.out.println(weights[i]);
+			i++;
+		}
+		
+		
+		//double[]dArray= {3.45,6.78,9.23,10.44};
+		
+		int counter = 0;
+		
+		while(counter<4) {
+			System.out.println("counter is " + counter);
+			System.out.println("double is " + dArray[counter]);
+			counter++;
+		}
+		//at the end of this loop, counter is 5 //++++++++++++++++
+		//so needs reset for use below:
+		
+	
+		counter = 0;
+		
+		//This loop will cause an array index out of bounds exception, bcause counter goes from 0 - 4, but our array only goes from 0 - 3. Last item in list is 'dArray[3]'
+		/*
+		while(counter<=4) {
+			System.out.println("counter is " + counter);
+			System.out.println("double is " + dArray[counter]);
+			counter++;
+		}
+		*/
 		
 		
 		
