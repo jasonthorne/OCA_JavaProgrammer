@@ -14,7 +14,7 @@ public class Main {
 		
 		/*
 		 * If age > 18, they gain admittance
-		 * ELSE they dont
+		 * ELSE they don't
 		 */
 		
 		if(age<18) {
@@ -24,15 +24,16 @@ public class Main {
 		}
 		System.out.println(adm);
 		
-		//TERNARY OPERATOR EQUIVILLENT:
+		//TERNARY OPERATOR EQUIVILLENT: 
 		
 		//variable x = (expression) ? value if true: value if false
 		
 		adm=age<18? "No admittance": "You get admitted"; //admin string is asigned 
 		
-		System.out.println("For ternary: " + adm);
+		System.out.println("Fromr ternary: " + adm);
 		
 		//OR as prinln:
+		System.out.print("From ternary 'println()': ");
 		System.out.println(age<18? "No admittance": "You get admitted");
 
 	}
