@@ -77,7 +77,7 @@ public class Main {
 		for(int i=1;i<=10;i++) {
 			if(i%2>0) { //if number is odd:
 				//System.out.println("Our number is: " + i);
-				continue;
+				continue; //jump to next iteration of the loop, so println below only works for even numbers
 			}
 			System.out.println("even number: " + i);
 		}
