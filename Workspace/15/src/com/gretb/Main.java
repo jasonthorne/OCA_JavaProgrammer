@@ -48,7 +48,7 @@ public class Main {
 		System.out.println("Name of Dog2 is: " + dog2.name);
 		System.out.println("Weight of Dog2 is: " + dog2.weight);
 		System.out.println("Height of Dog2 is: " + dog2.height);
-		System.out.println("Sex of Dog2 is: " + dog2.isMale);
+		System.out.println("Sex of Dog2 is: " + dog2.isMale + "\n");
 		
 		/*
 		 * the one Dog can have MANY references (many names)
@@ -92,6 +92,13 @@ public class Main {
 		System.out.println(noDog.isMale); //true
 		System.out.println(noDog.name); //null - 'Name' is a string which is an object. The default for an object that is an attribute of another object is null. 
 		
+		//this is just a reference, it's not actually a dog. Its only the name that java uses to refer to some Dog. 
+		Dog nullDog;
+		//System.out.println(nullDog);
+		
+		
+		//If you print out an object without an overridden toString() method. 
+		System.out.println("spot is: " + spot);
 		
 	}
 
