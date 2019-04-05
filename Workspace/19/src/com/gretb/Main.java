@@ -1,6 +1,11 @@
 package com.gretb;
 
 public class Main {
+	
+	/**
+	 * REFER TO F19 INSTEAD OFF THIS, AS THIS ISNT COMPLETE!!
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
