@@ -7,7 +7,7 @@ public class Animal {
 	
 	//Animal instance vars:
 	int id = 0; //Animal ID 
-	boolean isMale = true; //Animal gender
+	String gender = ""; //Animal gender
 	double maxHeight = 0.0; //max height of animal
 	double minHeight = 0.0; //min height of animal
 	double maxWeight = 0.0; //max weight of animal
@@ -19,9 +19,10 @@ public class Animal {
 	//show attributes of Animal:
 	void getAttributes(){
 		System.out.println("id: " + id); //show id
-		System.out.println("gender: " + isMale); //show gender
+		System.out.println("gender: " + gender); //show gender
 		System.out.println("weight: " + String.format("%.2f", weight)); //show weight to 2 decimal places
-		System.out.println("height: " + String.format("%.2f", height)); //show height to 2 decimal places
+		System.out.println("height: " + String.format("%.2f\n", height)); //show height to 2 decimal places
+		//https://www.mkyong.com/java/java-display-double-in-2-decimal-points/
 	}
 	
 	//make random values (for height and weight):
