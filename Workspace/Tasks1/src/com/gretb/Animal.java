@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class Animal {
 	
-	
 	//Animal instance vars:
 	int id = 0; //Animal ID 
 	String gender = ""; //Animal gender
@@ -14,7 +13,6 @@ public class Animal {
 	double minWeight = 0.0; //min weight of animal
 	double height = makeRand(maxHeight, minHeight); // Animal height
 	double weight = makeRand(maxWeight, minWeight); //Animal weight
-	
 	
 	//show attributes of Animal:
 	void getAttributes(){

@@ -7,6 +7,7 @@ public class Farmer {
 	//instance vars of farmer:
 	String name = ""; //name of Farmer
 	int age = 0; //age of Farmer
+	boolean isMale = true; //for receiving farmer's gender from user
 	String gender = ""; //gender of farmer or animal
 	int maxSheep = 10; //max number of sheep the farmer can own
 	int maxCattle = 5; //max number of cattle the farmer can own
@@ -17,14 +18,15 @@ public class Farmer {
 	Pig pig; //for pig objects
 	
 	//constructor
-	Farmer(String name, int age, String gender){
+	Farmer(String name, int age, boolean isMale){
 		this.name = name;
 		this.age = age;
-		this.gender = gender;
+		this.isMale = isMale;
+		if (isMale) gender = "male"; else gender = "female"; //assign gender string for printout
 		
-		System.out.println("Farmer: \n" + name + ", " + age  + ", " + gender + ".");
+		System.out.println("Farmer: \n" + name + ", " + age  + ", " + gender + "."); //print farmer's values
 		System.out.println("***************************");
-		makeAnimals();
+		makeAnimals(); //make animals for farmer
 	}
 	
 	
