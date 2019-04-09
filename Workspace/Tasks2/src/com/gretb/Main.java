@@ -2,16 +2,17 @@ package com.gretb;
 
 public class Main {
 	
-	static Dog dog;
+	static Dog dog; //Dog reference
 
 	public static void main(String[] args) {
 		
 		
+		//make 5 female dogs:
+		Dog[] femaleDogsArray = makeDogs(false); 
+		
 		//make 5 male dogs:
 		Dog[] maleDogsArray = makeDogs(true); 
 		
-		//make 5 female dogs:
-		Dog[] femaleDogsArray = makeDogs(false); 
 		
 		/*
 		for(int i=0;i<maleDogsArray.length; i++) {
@@ -25,8 +26,8 @@ public class Main {
 				
 				System.out.println(femaleDog.id + " " + maleDog.id); 
 				
-				//breed female dog with current male dog:
-				BreedDogs(femaleDog, maleDog);
+				//calculate puppy values from current female dog with current male dog:
+				CalcPuppyValues(femaleDog, maleDog);
 				
 			}	
 		}
@@ -46,12 +47,21 @@ public class Main {
 	}
 	
 	
-	//breed dogs with one another:
-	private static void BreedDogs(Dog femaleDog, Dog maleDog) {
+	//calculate puppy values based on given parents:
+	private static void CalcPuppyValues(Dog femaleDog, Dog maleDog) {
 		
 		int combinedWeight = femaleDog.weight + maleDog.weight; //calc combined weight
 		int pupNum = 0; //holds number of pups to be made
-		String heaviestDogId = ""; //holds heaviest dog's id
+		///////String heaviestDogId = ""; //holds heaviest dog's id
+		String heaviestDogBreed = ""; //holds heaviest dog's breed
+		String lightestDogBreed = ""; //holds heaviest dog's breed
+		//++++++++++++++
+		
+		int puppiesBreed75pc = 0;
+		int puppiesBreed25pc = 0;
+		
+		
+		//+++++++++++++
 		
 		//calculate number of pups to be made:
 		if(combinedWeight > 18) { //>18
@@ -62,39 +72,41 @@ public class Main {
 		}
 		
 		//find breed of pups:
-		String puppyBreed = ""; //hold breed value
-		if (femaleDog.breed == maleDog.breed) puppyBreed = femaleDog.breed; //if parent's breed are the same, puppies will all be of this breed 
+		String allPuppiesBreed = ""; //holds breed type for when all puppies are made of this breed
+		if (femaleDog.breed == maleDog.breed) allPuppiesBreed = femaleDog.breed; //if parent's breed are the same, puppies will all be of this breed 
 		else {
 	
 			//compare dog weights to find heaviest:
 			switch(Integer.compare(femaleDog.weight, maleDog.weight)) { //compare female weight vs male weight
 				case -1: //female weight is lightest
-					heaviestDogId = maleDog.id; //assign heaviest dog
+					heaviestDogBreed = maleDog.breed; //assign heaviest dog
 				break;
 				case 1: //male is lightest
-					heaviestDogId = femaleDog.id; //assign heaviest dog
+					heaviestDogBreed = femaleDog.breed; //assign heaviest dog
 				break;
 			}
 			
 			
+			//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 			//calculate percentage of puppy breeds, based on heaviest dog:
+			puppiesBreed75pc = pupNum - (pupNum * 75 )/100;
+			System.out.println(pupNum + " " + puppiesBreed75pc);
 			
 			
+			puppiesBreed25pc = pupNum;
+			System.out.println(pupNum + " " + puppiesBreed25pc);
+			//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		}
-		
-		//calculate percentage of puppy breeds: 
-		
 		
 		
 		//System.out.println("female weight: " + femaleDog.weight + ". male weight: " + maleDog.weight + "\n" + Integer.compare(femaleDog.weight, maleDog.weight));
 		////System.out.println("female weight: " + femaleDog.weight + ". male weight: " + maleDog.weight + "\n" + heaviestDogId);
 		
 		
-		
-		
 	}
 	
 	
+
 	
 	
 	
