@@ -25,54 +25,67 @@ public class Farmer {
 		if (isMale) gender = "male"; else gender = "female"; //assign gender string for printout
 		
 		System.out.println("Farmer: \n" + name + ", " + age  + ", " + gender + "."); //print farmer's values
-		System.out.println("***************************");
-		makeAnimals(); //make animals for farmer
+		assignAnimals(); //assign animals to farmer
 	}
 	
 	
 	//make farmer's animals: 
-	void makeAnimals(){
+	void assignAnimals(){
 		
-		//create animals:
-		int numOfSheep = numOfAnimals(maxSheep, minSheep); //create number of sheep
-		int numOfCattle =  numOfAnimals(maxCattle, minCattle); //create number of cows
-		int numOfPigs = numOfAnimals(maxPigs, minPigs); //create number of pigs
+		//make number of animals:
+		int numOfSheep = numOfAnimal(maxSheep, minSheep); //create number of sheep
+		int numOfCattle =  numOfAnimal(maxCattle, minCattle); //create number of cows
+		int numOfPigs = numOfAnimal(maxPigs, minPigs); //create number of pigs
 		
 		//make and print sheep:
-		System.out.println(numOfSheep + " Sheep: \n");
-		for(int i=0; i<numOfSheep; i++) {
-			if (i%2 == 0) gender = "male"; else gender = "female"; //assign gender
-			sheep = new Sheep(i+1, gender); //create object
-		}
 		System.out.println("***************************");
+		System.out.println(numOfSheep + " Sheep: \n");
+		createAnimals(numOfSheep, "sheep");
 		
 		//make and print cows:
-		System.out.println(numOfCattle + " Cow(s): \n");
-		
-		for(int j=0; j<numOfCattle; j++) {
-			if (j%2 == 0) gender = "male"; else gender = "female"; //assign gender
-			cow = new Cattle(j+1, gender); //create object
-		}
 		System.out.println("***************************");
+		System.out.println(numOfCattle + " Cow(s): \n");
+		createAnimals(numOfCattle, "cattle");
 		
 		//make and print pigs:
+		System.out.println("***************************");
 		System.out.println(numOfPigs + " Pig(s): \n");
-		
-		for(int k=0; k<numOfPigs; k++) {
-			if (k%2 == 0) gender = "male"; else gender = "female"; //assign gender
-			pig = new Pig(k+1, gender);  //create object
-		}
+		createAnimals(numOfPigs, "pig");
 		
 	}
 	
 	
 	//create a random amount of animals, based on a given range:
-	int numOfAnimals(int max, int min){
+	int numOfAnimal(int max, int min){
 		Random rand = new Random();
 		int randonNum = rand.nextInt((max - min) + 1) + 1;
 		return randonNum;
 	}
 	//https://stackoverflow.com/questions/20389890/generating-a-random-number-between-1-and-10-java
+	
+	
+	//create animal objects:
+	void createAnimals(int numOfAnimal, String animalType) {
+		
+		for(int i=0;i<numOfAnimal;i++) {
+		
+			if (i%2 == 0) gender = "male"; else gender = "female"; //assign gender
+			
+			switch(animalType){ //find animal type
+			  case "sheep":
+				sheep = new Sheep(i+1, gender); //create sheep object
+			    break;
+			  case "cattle":
+				cow = new Cattle(i+1, gender); //create cow object
+			    break;
+			  case "pig":
+				pig = new Pig(i+1, gender);  //create pig object
+			    break;
+			}
+			
+		}
+		
+	}
 	
 
 }

@@ -7,6 +7,7 @@ public class Main {
 		//+++++++++++++++++++++++++++++++++++++++++
 		//Question 1:
 	
+		/*
 		int bottles = 10;
 		String sentence1 = "";
 		String sentence2 = "and if one green bottle should accidently fall\nthere'll be ";
@@ -20,8 +21,6 @@ public class Main {
 				sentence3 = sentence1;
 				
 				System.out.println("\n");
-				
-				
 				System.out.println(bottles + sentence1);
 				System.out.println(bottles + sentence1);
 				bottles--;
@@ -33,7 +32,6 @@ public class Main {
 				
 			} 
 			
-			
 			System.out.println("\n");
 			sentence3 = " green bottle standing on the wall";
 			System.out.println(bottles + sentence3);
@@ -42,15 +40,17 @@ public class Main {
 			System.out.println(sentence2 + bottles + sentence1);
 			
 		}
-		
+		*/
 		
 		System.out.println("\n");
 		
 		
 
 		//farmer object for question 3:
-		/////////Farmer farmer = new Farmer("Bob" , 56, true);
+		Farmer farmer = new Farmer("Bob" , 56, true);
 		
+
+		System.out.println("***************************");
 		
 		//+++++++++++++++++++++++++++++++++++++++++
 		//Question 2:
@@ -68,7 +68,7 @@ public class Main {
 		}
 		
 		
-		
+		//int j = 1;
 		int rowSize2 = 4, colSize2 = 7;
 		
 		for(int i=0;i<=rowSize2; i++) {
@@ -79,6 +79,7 @@ public class Main {
 			
 			System.out.println(" ");
 		}
+		
 		
 	
 	}
