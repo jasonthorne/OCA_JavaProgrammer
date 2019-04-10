@@ -1,6 +1,6 @@
 package com.gretb;
 
-public class Pup extends Dog{ //doesn't really need to extend Dog, but seems odd not to! :D 
+public class Pup extends Dog{ //doesn't need to extend Dog, but seems odd not to! :D 
 	
 	
 	//puppy vars:
@@ -9,7 +9,7 @@ public class Pup extends Dog{ //doesn't really need to extend Dog, but seems odd
     String sex = ""; //sex of pup
     String colour = ""; //colour of pup
     String temperament = ""; //temperament of pup
-    double weight = 0;  //weight of pup
+    double weight = 0.0;  //weight of pup
 
 	
     //constructor:
@@ -21,7 +21,8 @@ public class Pup extends Dog{ //doesn't really need to extend Dog, but seems odd
 		this.temperament = temperament;
 		this.weight = weight;
 		
-		System.out.println(this.id + ", " + this.breed + ", " + this.sex + ", " + this.colour + ", " + this.temperament + ", " + this.weight);
+		//print values of pup (formatting weight to one decimal place):
+		System.out.println(this.id + ": " + this.breed + ", " + this.sex + ", " + this.colour + ", " + this.temperament + ", " + String.format("%.1f", this.weight));
 		
 	}
 

@@ -15,12 +15,13 @@ public class Dog {
     String colour = chooseElement(colourArray); //colour of dog
     String[] temperamentArray = {"aggressive", "placid", "nervous"}; //temperament options of dog
     String temperament = chooseElement(temperamentArray); //temperament of dog
-    int minWeight = 5; //min weight of dog
-    int maxWeight = 12; //max weight of dog
-    int weight = rand.nextInt((maxWeight - minWeight) + 1) + minWeight; //weight of dog //https://stackoverflow.com/questions/20389890/generating-a-random-number-between-1-and-10-java
-
+    double minWeight = 5.0; //min weight of dog
+    double maxWeight = 12.0; //max weight of dog
+   // int weight = rand.nextInt((maxWeight - minWeight) + 1) + minWeight; //weight of dog //https://stackoverflow.com/questions/20389890/generating-a-random-number-between-1-and-10-java
+    double weight = minWeight + (maxWeight - minWeight) * rand.nextDouble(); //weight of dog //https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range/3680648
     
-    Dog(){ //needed for Pup
+    
+    Dog(){ //needed for Pup inheritance
     	
     }
 
@@ -31,13 +32,12 @@ public class Dog {
         this.id = sex + "_" + intId; //assign an id to dog
 
 		/*
-		System.out.println("dog: ");
+		System.out.println(id);
 		System.out.println(weight);
 		System.out.println(breed);
 		System.out.println(colour);
 		System.out.println(temperament);
 		System.out.println(sex);
-		System.out.println(id);
 		System.out.println("=======================");
         */
 
