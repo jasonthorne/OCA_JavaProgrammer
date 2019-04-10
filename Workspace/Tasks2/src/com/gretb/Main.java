@@ -65,7 +65,7 @@ public class Main {
         ArrayList<String> pupSexArray = new ArrayList<String>();
 
         //calculate percentages of puppy num (for assigning breeds, colours and temperaments):
-        int pupNum75pc = (pupNum * 75 )/100; //75% of puppyNum
+        int pupNum75pc = (pupNum * 75)/100; //75% of puppyNum
         int pupNum25pc = pupNum - pupNum75pc; ////25% of puppyNum
         int pupNum50pc = pupNum/2; ////50% of puppyNum
 
@@ -95,7 +95,7 @@ public class Main {
         else{
 
             //calculate colour scores and compare them to find lightest colour:
-            switch(Integer.compare(scoreDogColour(femaleDog.colour), scoreDogColour(maleDog.colour))) {
+            switch(Integer.compare(scoreDogColour(femaleDog.colour), scoreDogColour(maleDog.colour))) { //compare female colour vs male colour
                 case -1: //male is lightest colour
                     addToArrayList(pupColourArray, maleDog.colour, pupNum75pc); //add lightest colour elements to pupColourArray
                     addToArrayList(pupColourArray, femaleDog.colour, pupNum25pc); //add darkest colour elements to pupColourArray
