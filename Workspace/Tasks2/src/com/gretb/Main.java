@@ -19,10 +19,10 @@ public class Main {
 
             for (Dog maleDog: maleDogsArray) { //loop through male dogs
 
-                System.out.println(femaleDog.id + " " + maleDog.id);
+             System.out.println("***********************\n" + femaleDog.id + " with " + maleDog.id + ":");
 
-                //calculate puppy values from current female dog with current male dog:
-                CalcPuppyValues(femaleDog, maleDog);
+                //make puppies from current female dog with current male dog:
+                makePups(femaleDog, maleDog);
             }
         }
 
@@ -41,11 +41,11 @@ public class Main {
     }
 
 
-    //calculate puppy values based on given parents:
-    private static void CalcPuppyValues(Dog femaleDog, Dog maleDog) {
+    //calculate and make puppies based on given parents:
+    private static void makePups(Dog femaleDog, Dog maleDog) {
 
         int combinedWeight = femaleDog.weight + maleDog.weight; //calc combined weight
-        int pupWeight = combinedWeight/20; //weight of pups
+        double pupWeight = ((double) combinedWeight) / 20; //calc weight of puppies
         int pupNum = 0; //holds number of pups to be made
 
         //calculate number of pups to be made:
@@ -55,7 +55,7 @@ public class Main {
             if (combinedWeight < 12) pupNum = 4; else pupNum = 8; // <12 = 4. <18 = 8.
         }
 
-        //arraylists for holding values to be randomly selected during Puppy creation:
+        //arrayLists for holding values to be randomly selected during Puppy creation:
         ArrayList<String> pupBreedArray = new ArrayList<String>();
         ArrayList<String> pupColourArray = new ArrayList<String>();
         ArrayList<String> pupTemperamentArray = new ArrayList<String>();
@@ -104,31 +104,49 @@ public class Main {
             }
         }
 
-        System.out.println(pupNum + " " + pupBreedArray + " " + pupColourArray); //+++++++++++++++++++++++++
-
-        //add temperaments to arraylist:
+        
+        //add temperaments to arrayList:
         addToArrayList(pupTemperamentArray, femaleDog.temperament, pupNum75pc); //75% from mother
         addToArrayList(pupTemperamentArray, maleDog.temperament, pupNum75pc); //25% from father
 
-        //add sexes to arraylist:
+        //add sexes to arrayList:
         addToArrayList(pupSexArray, femaleDog.sex, pupNum50pc); //50% from mother
         addToArrayList(pupSexArray, maleDog.sex, pupNum50pc); //50% from father
-
+      
         //make puppies!
-
-
-        //https://stackoverflow.com/questions/35254019/randomly-remove-element-from-array-java
-
+        Pup[] pupArray = new Pup[pupNum]; //array for storing pups (not needed, but doing anyway!)
+        
+        Pup pup; //for making Pup objects
+        int randomInt = 0; //for holding randomly assigned values
+        String randomBreed, randomSex, randomColour, randomTemperament = ""; //Strings for holding randomly assigned values
+        
+        for(int i=0;i<pupArray.length; i++) {
+        	
+        	//make random numbers for each arrayList, and grab and remove elements from those lists equal to said random numbers:
+        	randomInt = (int) ((Math.random() * pupBreedArray.size())); //make random num equal to list length
+        	randomBreed = pupBreedArray.remove(randomInt); //grab and remove a random breed
+        	randomInt = (int) ((Math.random() * pupSexArray.size())); //make NEW random num equal to list length
+        	randomSex = pupSexArray.remove(randomInt); //grab and remove a random sex
+        	randomInt = (int) ((Math.random() * pupColourArray.size())); //make NEW random num equal to list length
+        	randomColour = pupColourArray.remove(randomInt); //grab and remove a random colour
+        	randomInt = (int) ((Math.random() * pupTemperamentArray.size())); //make NEW random num equal to list length
+        	randomTemperament = pupTemperamentArray.remove(randomInt); //grab and remove a random temperament
+        	//https://stackoverflow.com/questions/35254019/randomly-remove-element-from-array-java
+        	
+        	pup = new Pup(Integer.toString(i+1), randomBreed, randomSex, randomColour, randomTemperament, pupWeight); //create a new pup, passing in values
+        	pupArray[i] = pup; //add dog to array
+        }
 
     }
-
+    
+    
     //add elements to arraylists:
-    private static ArrayList addToArrayList(ArrayList<String> list, String item, int num){
+    private static ArrayList<String> addToArrayList(ArrayList<String> list, String item, int num){
         //add items:
         for(int i=0;i<num;i++){
             list.add(item);
         }
-        return list; //return arraylist
+        return list; //return arrayList
     }
 
     //assigns a priority score to colours:
@@ -153,7 +171,6 @@ public class Main {
         return score;
     }
 
-
-
+    
 }
 

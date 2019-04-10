@@ -19,6 +19,10 @@ public class Dog {
     int maxWeight = 12; //max weight of dog
     int weight = rand.nextInt((maxWeight - minWeight) + 1) + minWeight; //weight of dog //https://stackoverflow.com/questions/20389890/generating-a-random-number-between-1-and-10-java
 
+    
+    Dog(){ //needed for Pup
+    	
+    }
 
     //constructor:
     Dog(boolean isMale, String intId){
