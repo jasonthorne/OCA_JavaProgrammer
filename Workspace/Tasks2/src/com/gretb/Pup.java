@@ -1,11 +1,10 @@
 package com.gretb;
 
-public class Pup {
+public class Pup extends Dog{
 	
 	
-	//constructor:
-	Pup(){
-		
-	}
+	  public Pup(boolean isMale, String intId) {
+	        super(isMale, intId);
+	    }
 
 }
