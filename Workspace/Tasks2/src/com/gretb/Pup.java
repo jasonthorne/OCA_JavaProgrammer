@@ -14,7 +14,7 @@ public class Pup extends Dog{ //doesn't need to extend Dog, but seems odd not to
 	
     //constructor:
 	public Pup(String id, String breed, String sex, String colour, String temperament, double weight) {
-		this.id = "Puppy_" + id; //assign an id to dog
+		this.id = "Puppy_" + id; //assign an id to pup
 		this.breed = breed;
 		this.sex = sex;
 		this.colour = colour;

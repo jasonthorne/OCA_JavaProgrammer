@@ -17,7 +17,6 @@ public class Dog {
     String temperament = chooseElement(temperamentArray); //temperament of dog
     double minWeight = 5.0; //min weight of dog
     double maxWeight = 12.0; //max weight of dog
-   // int weight = rand.nextInt((maxWeight - minWeight) + 1) + minWeight; //weight of dog //https://stackoverflow.com/questions/20389890/generating-a-random-number-between-1-and-10-java
     double weight = minWeight + (maxWeight - minWeight) * rand.nextDouble(); //weight of dog //https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range/3680648
     
     
@@ -30,7 +29,7 @@ public class Dog {
 
         if(isMale) sex = "male"; else sex = "female"; //assign sex of dog
         this.id = sex + "_" + intId; //assign an id to dog
-
+        
 		/*
 		System.out.println(id);
 		System.out.println(weight);
@@ -42,6 +41,17 @@ public class Dog {
         */
 
     }
+    
+    //================================
+    //ideas for improvement:
+    Dog partner; //dogs partner
+	Dog[]litter;
+    //takes a male dog for breeding
+    Dog(boolean isMale, String intId, Dog maleDog){
+    
+    }
+    
+    //================================
 
 
     //return a random element from given array:

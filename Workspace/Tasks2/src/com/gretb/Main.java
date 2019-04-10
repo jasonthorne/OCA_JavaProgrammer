@@ -19,13 +19,13 @@ public class Main {
 
             for (Dog maleDog: maleDogsArray) { //loop through male dogs
 
-            //print out values of current female dog and current male dog (formatting weight to one decimal place):
-             System.out.println("\n**********************************************\n"
-              + femaleDog.id + " (" + femaleDog.breed + ", "  + femaleDog.sex + ", " + femaleDog.colour + ", " + femaleDog.temperament + ", " + String.format("%.1f", femaleDog.weight) + ")"); 				
-    		 System.out.println("+ " + maleDog.id + " (" + maleDog.breed + ", "  + maleDog.sex + ", " + maleDog.colour + ", " + maleDog.temperament + ", " + String.format("%.1f", maleDog.weight) + ")\n"); 
+            	//print out values of current female dog and current male dog (formatting weight to one decimal place):
+            	System.out.println("\n**********************************************\n"
+        		 + femaleDog.id + " (" + femaleDog.breed + ", "  + femaleDog.sex + ", " + femaleDog.colour + ", " + femaleDog.temperament + ", " + String.format("%.1f", femaleDog.weight) + ")"); 				
+    		 	System.out.println("+ " + maleDog.id + " (" + maleDog.breed + ", "  + maleDog.sex + ", " + maleDog.colour + ", " + maleDog.temperament + ", " + String.format("%.1f", maleDog.weight) + ")\n"); 
                 
-    		 //make puppies from current female dog with current male dog:
-                makePups(femaleDog, maleDog);
+    		 	//make puppies from current female dog with current male dog:
+             	makePups(femaleDog, maleDog);
             }
         }
 
