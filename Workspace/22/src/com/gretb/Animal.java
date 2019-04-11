@@ -55,7 +55,7 @@ class Cow extends Animal{
 	 */
 	
 	void eat(){
-		System.out.println("cow eating ");
+		System.out.println("cow eating");
 		System.out.println("inside eat method of cow, age of cow is: " + age);
 		System.out.println("inside eat method of cow, age of animal is " + super.age);
 		
@@ -77,10 +77,5 @@ class Zebra extends Animal{
 	 * e object class is a hidden super class which all objects ultimately inherit
 	 */
 }
-
-
-
-
-
 
 
