@@ -39,7 +39,7 @@ public class SexyTime {
     private void calcPupTraits(){
 
         double combinedWeight = femaleDog.getWeight() + maleDog.getWeight(); //calc combined weight of dogs
-        pupWeight = ((double) combinedWeight) / 20; //calc weight of puppies
+        pupWeight = combinedWeight/20; //calc weight of puppies
 
         //calculate number of pups to be made:
         if(combinedWeight > 18) { //>18
