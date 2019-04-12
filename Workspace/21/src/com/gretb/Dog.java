@@ -1,54 +1,61 @@
 package com.gretb;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 public class Dog {
-
-    Random rand = new Random(); //instance of random
-
-    //dog vars:
-    String id =""; //dog id
-    String[] breedArray = {"cocker spaniel", "collie", "terrier", "bulldog", "st bernard"}; //breed options of dog
-    String breed = chooseElement(breedArray); //breed of dog
-    String sex = ""; //sex of dog
-    String[] colourArray = {"red", "black", "white", "brown"}; //colour options of dog
-    String colour = chooseElement(colourArray); //colour of dog
-    String[] temperamentArray = {"aggressive", "placid", "nervous"}; //temperament options of dog
-    String temperament = chooseElement(temperamentArray); //temperament of dog
-    double minWeight = 5.0; //min weight of dog
-    double maxWeight = 12.0; //max weight of dog
-    double weight = minWeight + (maxWeight - minWeight) * rand.nextDouble(); //weight of dog //https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range/3680648
-    private ArrayList<Pup> puppiesArray = new ArrayList<>(); //holds femaleDog's puppies
-
-    //constructor:
-    Dog(boolean isMale, String intId){
-        if(isMale) sex = "male"; else sex = "female"; //assign sex of dog
-        this.id = sex + "_" + intId; //assign an id to dog
-    }
-
-    //return a random element from given array:
-    String chooseElement(String[] targetArray) {
-        return targetArray[rand.nextInt(targetArray.length)]; //https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
-    }
-
-    //add pup to puppiesArray
-    public void addToPuppies(Pup pup) {
-        puppiesArray.add(pup);
-    }
-
-    //show a litter of female dog's puppies
-    public void showLitter(Dog sireDog){
-        for(Pup puppy: puppiesArray){ //grab each pup in list
-
-            //find dogs belonging to target dad:
-            if(puppy.sireDog == sireDog){
-                //print values of pup (formatting weight to one decimal place):
-                System.out.println(puppy.id + ": " + puppy.breed + ", " + puppy.sex + ", " + puppy.colour
-                + ", " + puppy.temperament + ", " + String.format("%.1f", puppy.weight));
-            }
-        }
-    }
-
-
+	int age;//age of dog
+	String name;//name of dog
+	double weight;//weight of dog
+	Dog partner;//dogs partner
+	Dog[]litter;//if female, the pups the female has
+	boolean sex;
+	//a constructor that takes no arguments
+	Dog(){
+		System.out.println("blank dog constructor called");
+	}
+	/*
+	 * a constructor is still a method (albeit a method with no return type)
+	 * so you overload it, and the exact same rules that apply to other overloaded
+	 * methods also apply to overloaded constructors
+	 * this constructor takes a int, String and a double
+	 */
+	Dog(int age,String name,double weight){
+		this.age=age;
+		this.name=name;
+		this.weight=weight;
+		System.out.println("Dog constructor that takes a int, String and double");
+	}
+	/*
+	 * an overloaded constructor that takes a String, an int and weight and
+	 * assigns these to the name, age and weight of the newly created Dog
+	 */
+	Dog(String name,int age,double weight){
+		this.name=name;
+		this.age=age;
+		this.weight=weight;
+		System.out.println("Dog constructor that takes a string, int and double");
+	}
+	/*
+	 * an overloaded constructor that takes just an int and assigns this to the
+	 * age of the newly created dog.
+	 */
+	Dog(int age)
+	{
+		this.age=age;
+		System.out.println("Dog constructor that takes only an int");
+	}
+	/*
+	 * this constructor is a dog that has pups and is female
+	 */
+	Dog(Dog[]litter){
+		this.litter=litter;
+		this.sex=true;
+	}
+	/*
+	 * this returns a string that contains all of the details of a dog
+	 */
+	String printDog() {
+		return "age of dog is "+age+" name of dog is "+name+"weight of dog is "+
+					weight;
+	}
+	
+	
 }

@@ -25,6 +25,19 @@ public class Main {
 		 * and we are overriding the eat() method in the Cow class. So this method takes its implementation from the Cow class.
 		 */
 		bessie.eat(); 
+		
+		Shark bruce = new Shark();
+		Fly bob = new Fly();
+		Zebra charlie = new Zebra();
+		
+		//You can have a Superclass reference to a subclass object.
+		//A cow IS an animal, a shark is an animal.
+		
+		Animal[]zoo = {bruce, bob, charlie}; //for different object types in the same array.
+		
+		for(Animal a: zoo) {
+			a.eat();
+		}
 	}
 
 }
