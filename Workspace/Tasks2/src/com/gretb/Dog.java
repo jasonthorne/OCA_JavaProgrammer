@@ -27,7 +27,6 @@ public class Dog {
         this.id = sex + "_" + intId; //assign an id to dog
     }
 
-
 	//return a random element from given array:
     private String chooseElement(String[] targetArray) {
         return targetArray[rand.nextInt(targetArray.length)]; //https://stackoverflow.com/questions/8065532/how-to-randomly-pick-an-element-from-an-array
