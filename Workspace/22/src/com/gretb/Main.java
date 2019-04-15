@@ -25,19 +25,47 @@ public class Main {
 		 * and we are overriding the eat() method in the Cow class. So this method takes its implementation from the Cow class.
 		 */
 		bessie.eat(); 
+		bessie.drink(); 
+		bessie.drink(4); 
+		System.out.println("age of bessie is: " + bessie.age);
+		
+		Zebra zeb = new Zebra();
+		
+		//all of these methods are from Animal superclass: 
+		zeb.eat();
+		zeb.move();
+		zeb.reproduce();
+		zeb.breath("p", 6);
 		
 		Shark bruce = new Shark();
-		Fly bob = new Fly();
-		Zebra charlie = new Zebra();
+	
+		bruce.attack(); //only available to sharks as this method resides there
+		
+		
+		
+	Fly bob = new Fly();
+	Zebra charlie = new Zebra();
 		
 		//You can have a Superclass reference to a subclass object.
 		//A cow IS an animal, a shark is an animal.
 		
-		Animal[]zoo = {bruce, bob, charlie}; //for different object types in the same array.
-		
+	Animal[]zoo = {bruce, bob, charlie}; //for different object types in the same array.
+	
 		for(Animal a: zoo) {
 			a.eat();
 		}
+		
+		//An animal reference to a shark obj
+		Animal aShark = new Shark(); 
+		
+		//An animal ref to a cow obj:
+		Animal aCow = new Cow();
+		
+		//when you have a superclass reference to a subclass obj, you can only call methods that were first defined in the superclass. 
+		//The reference is checked for existence first, and if so, then is run. If method only exists in the object, then it wont compile.
+		aShark.eat(); //works as exists in Aniaml
+		//aCow.drink(); //wont work ,as isnt in Animal
+		
 	}
 
 }

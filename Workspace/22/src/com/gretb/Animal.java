@@ -26,19 +26,19 @@ public class Animal {
 	 */
 	
 	void eat() {
-		System.out.println("eating");
+		System.out.println("Animal eating");
 	}
 	
 	void move() {
-		System.out.println("animal moving");
+		System.out.println("Animal moving");
 	}
 	
 	void reproduce() {
-		System.out.println("animal reproducing");
+		System.out.println("Animal reproducing");
 	}
 	
 	int breath(String name, double bp){
-		System.out.println("animal breathing");
+		System.out.println("Animal breathing");
 		return 12;
 	}
 	
@@ -65,10 +65,15 @@ class Cow extends Animal{
 	}
 	
 	
-	//this is only avaliable to the cow class, and any child classes
+	//this is only available to the cow class, and any child classes
 	void drink() {
 		System.out.println("cow drinking ");
 	}
+	
+	//overloaded method
+		void drink(int num) {
+			System.out.println("cow drinking ");
+		}
 	
 }//cow class
 
@@ -85,6 +90,7 @@ class Zebra extends Animal{
 
 class Shark extends Animal{
 	//overriding the eat() method in the animal class:
+	
 	void eat() {
 		System.out.println("A shark eating");
 	}
@@ -98,6 +104,7 @@ class Shark extends Animal{
 	//this attack method is only avaliable to the shark, and no other animal:
 	void attack() {
 		System.out.println("shark attacking");
+		
 	}
 	
 }
