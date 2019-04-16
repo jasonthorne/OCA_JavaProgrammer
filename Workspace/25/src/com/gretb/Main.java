@@ -18,6 +18,10 @@ public class Main {
 		System.out.println("My car is: " + myCar2);
 		//System.out.println("My car is: " + myCar.);
 		
+		Animal andy = new Animal(2, "Andy", 4.5);
+		Animal angela = new Animal(3, "Angela", 6.7);
+		
+		System.out.println(andy); //'toString' method is automatically called in println(), and the overridden one is used ++++++++++++++++++++++++
 	}
 
 }
