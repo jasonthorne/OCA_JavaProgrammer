@@ -1,5 +1,7 @@
 package com.gretb;
 
+import com.employee.Test;
+
 public class Main {
 	
 	/**
@@ -37,9 +39,11 @@ public class Main {
 		//rex.bark(); //not accessible as private
 		System.out.println("Name of rex is: " + rex.getName());
 		
+		rex.getBark(); //calling the public method getBark(); to access the private bark() method
 		
-		
-		
+		Test myTest = new Test(); //make an instance of Test
+		System.out.println("\nTesting doTest():");
+		myTest.doTest(); //call doTest()
 		
 		
 		

@@ -1,5 +1,24 @@
 package com.gretb;
 
+
+//top level classes (a class not inside another class) can only be either public or default package level access. ++++++++++++
+class Car{
+	
+}
+
+class Astronaught{
+	
+	//This is an INNER class and can be of any type
+	private class heart{
+		
+	}
+}
+
+
+
+
+
+
 public class Dog { //public - available to all classes within all packages
 
 
