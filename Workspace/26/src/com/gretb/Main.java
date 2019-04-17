@@ -45,20 +45,11 @@ public class Main {
 		System.out.println("\nTesting doTest():");
 		myTest.doTest(); //call doTest()
 		
+		Cat myCat = new Cat(23, "bob", 3.3, 3);
+		
+		System.out.println(myCat);
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 	}
 
 }

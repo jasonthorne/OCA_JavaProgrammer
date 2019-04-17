@@ -38,8 +38,16 @@ class Collie extends Dog{
 	}
 	
 	//constructor that that has a call to the protected constructor in the super class (Dog class). 
-	Collie(int age) {
+	Collie(int age) { //CAN have other params, but MUST the super's param MUST be the first param here.
+		
 		super(age); //calling the Dog classe's constructor that takes this arg. 
+	}
+	
+	public void accessVar() {
+		System.out.println("age: " + age); //age can be accessed because age is public
+		System.out.println("height: " + height); //height can be accessed because height is protected
+		eat(); //public
+		drink(); //protected
 	}
 	
 }
