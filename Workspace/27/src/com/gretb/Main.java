@@ -28,8 +28,9 @@ public class Main {
 		
 		Trainee.riot(); //calling a static method in the RIGHT way. (Class name followed by method name).
 		
-		
-		
+		//You dont have to create an instance of Maths class to call the static methods add() and multiply() //+++++++++++++++++++
+		Maths.add(2,3);
+		Maths.multiply(56,345);
 	}
 
 }

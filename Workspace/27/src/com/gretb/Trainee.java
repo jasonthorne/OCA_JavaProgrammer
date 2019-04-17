@@ -33,7 +33,7 @@ public class Trainee {
 	 Static method is the same as static variables in that these methods apply to the class and not the individual objects.
 	 The riot method below belongs to everyone in the class, you cant access individual attributes of a particular trainee
 	 */
-	static void riot() { //you can only access static things in this method!
+	static void riot() { //you can ONLY access static things in this method!
 		
 		//You cant access instance vars/attributes of an individual trainee in a method that applies to every trainee. 
 		//System.out.println("age is " + age); //age can't be accessed here
@@ -44,7 +44,41 @@ public class Trainee {
 		Trainee roger = new Trainee(234, "Roger", 34);
 		System.out.println(roger.age);
 		
+		//You can access static methods inside other static methods:
+		swarm();
+		//learn(); //wont work as not static (each object has their own learn method)
+		
 	}
+	
+	static void swarm() {
+		System.out.println("We are swarming!");
+	}
+	
+	//REGULAR methods can access BOTH statics and non statics: ++++++++++++++++++++++++
+	
+	public void learn() {
+		
+		System.out.println("Non static age is: " + age);
+		System.out.println("Static counter is: " + counter);
+		riot(); //static method
+		swarm(); //non static method
+		
+	}
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
 	
 
 }
