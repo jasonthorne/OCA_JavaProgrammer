@@ -23,6 +23,7 @@ public class Examples {
 		int age=4;
 		String name="Tom";
 		boolean isMale = true;
+		double weight = 4.5;
 		
 		//two dogs with the same name and age:
 		Dog spot = new Dog(age, name);
@@ -31,6 +32,12 @@ public class Examples {
 		System.out.println("Are dogs the same dog? " + (spot==lassie));
 		System.out.println("Are dogs equal? " + (spot.equals(lassie))); //it checks spot's Dog class for an equals method, if not there then goes and checks object class
 		
+		//two cats with the same values:
+		Cat tibbles = new Cat(age, name, weight, isMale);
+		Cat mog = new Cat(age, name, weight, isMale);
+		Cat tabby = new Cat(5, "tabby", 45.6, false);
+		
+		System.out.println("Using overriden equals in Cat class: " + tibbles.equals(mog)); //check the vars of these cats. (we have overridden the equals method to check these values)
 	}
 
 }

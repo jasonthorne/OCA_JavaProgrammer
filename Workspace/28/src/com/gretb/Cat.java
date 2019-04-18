@@ -40,10 +40,10 @@ public class Cat {
 	}
 	*/
 
-	//This is overriding the equals() method
+	//This is overriding the equals() method.
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
+	public boolean equals(Object obj) { //Object param here can be of ANY child object. ++++++++++++++++
+		if (this == obj) //are both obj references pointing to the same obj
 			return true;
 		if (obj == null)
 			return false;
