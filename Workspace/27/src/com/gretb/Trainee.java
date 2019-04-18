@@ -15,7 +15,6 @@ public class Trainee {
 	static int courseCode = 2367; //all objects will share this same variable. If this is changed anywhere, it will change for all Trainee objects. ++++++++++++++++++
 	static String location = "Galway"; //All attendees are attending the course that is in Galway. 
 	
-	
 	static int counter = 0; //counts how many objects are being created
 
 	//constructor for Trainees
