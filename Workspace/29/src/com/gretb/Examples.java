@@ -24,7 +24,8 @@ public class Examples {
 		
 		//Always use '.equals' instead of creating 'new' for strings+++++++++++++++++++
 		
-		//different methods of the same class:
+		//=======================================different methods of the same class: ====================================
+		
 		System.out.println("\n***Trim***");
 		str3 = "    pat    ";
 		System.out.println(str3);
@@ -43,10 +44,33 @@ public class Examples {
 		
 		//displays part of your string using numbering, so it starts at 0, and goes up to 8, BUT NOT INCLUDING 8.
 		System.out.println(str4.substring(0, 8)); //prints out "humpty d". it doesnt include the 'u' as 'u' is at position 8.
-		System.out.println(str4.substring(2, 9)); //prints out "mpty du". it doesnt include the 'm' as 'm' is at position 9.
+		System.out.println(str4.substring(2, 13)); //prints out "mpty du". it doesnt include the 'm' as 'm' is at position 9.
 		
+		//this is an overloaded substring method that prints everything from position 3 onwards:
+		System.out.println(str4.substring(3));
 		
+		//Length
+		System.out.println("\n***Length***");
+		System.out.println(str4.length()); //includes the space as space is a character.
 	
+		//ChatAt
+		System.out.println("\n***ChatAt***");
+		System.out.println(str4.charAt(2)); //shows the character at given position
+		
+		//indexOf
+		System.out.println("\n***indexOf***");
+		System.out.println(str4.indexOf('u')); //shows the character at given position
+		
+		String myString1 = "jason";
+		String myString2 = "JASON";
+		
+		//System.out.println(myString1.equals(myString2)); //will be false due to case
+		
+		System.out.println("\n***equalsIgnoreCase***");
+		System.out.println(myString1.equalsIgnoreCase(myString2));
+		
+		
+
 	}
 	
 }
