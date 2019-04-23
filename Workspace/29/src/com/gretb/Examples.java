@@ -70,7 +70,47 @@ public class Examples {
 		System.out.println(myString1.equalsIgnoreCase(myString2));
 		
 		
+		Cat tibbles = new Cat(2, "Tibbles", 2.5);
+		System.out.println("name of cat: " + tibbles.name);
+		System.out.println("age of cat: " + tibbles.age);
+		System.out.println("weight of cat: " + tibbles.weight);
+		
+		tibbles.age = 500; //can change name
+		//tibbles.name = "woo"; //CANT DO THIS as its 'final'. 
+		
 
 	}
+	
+	static void ex2() {
+		//STRING BUILDERS (The methods of the stringBuilder class DO change the value of the String. They're not with a normal string, as normal string class is FINAL)
+		
+		System.out.println("String Builders");
+		
+		/*
+		 * The string class is final, or can be said to be immutable. Once you create a String, any methods of the sgring class doesnt vhange the original string. 
+		 * 'StringBuilder' is a type of string class that IS mutable. (not final)
+		 * This means that the methods of the StringBuilder class can change the text inside a StringBuilder object.
+		 * 
+		 */
+		
+		StringBuilder sb = new StringBuilder("Yo dawg"); //this is the BEST way to create a StringBuilder.
+		
+		System.out.println("before change StringBuilder is: " + sb);
+		
+		sb.append(10);
+		sb.append("top");
+		sb.append(true);
+		sb.append(2.88);
+		System.out.println("after append() change StringBuilder is: " + sb);
+		
+		System.out.println(sb.reverse().append("hi"));
+		
+		
+		
+		
+	}
+	
+	
+	
 	
 }
