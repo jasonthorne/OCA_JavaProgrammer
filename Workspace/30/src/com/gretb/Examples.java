@@ -100,16 +100,31 @@ public class Examples {
 		sammy.fight();
 		sammy.shoot();
 		
-		//You CAN have an interfcace reference
+		//You CAN have an interface reference
 		//Cant do this though: Movement movement = new Movement(); //An interface is an abstract class, and you cant create an instance of an abstract class. 
 		
 		//You CAN have an interface reference to a class that implements that interface. 
 		//these only give access to the methods overridden in the 'Movement' interface: 
 		Movement moveInsect = new Insect(); 
-		Movement moveRobot = new Robot();
-		Movement moveSoldier = new Soldier();
+		Movement moveSoldier = new Soldier(); //this object ONLY has access to the methods in the movement interface. (Though uses its own overridden versions)
+		Movement moveRobot = new Robot(); //This implements from two interfaces, but only has access to the methods of the one its referencing (Movement).
 		
+		//==============
+		//An array of Objects that implement the movement interface:
+		Movement[]movers = {iona, ronnie, sammy};
 		
+		for(Movement m:movers) {
+			m.fly();
+			m.swim();
+			//etc..
+		}
+		
+		//==============
+		ForensicAccountant freddy = new ForensicAccountant();
+		freddy.angry(); //behaviour interface
+		freddy.work(); //Employee class
+		freddy.calculate(); //Accountant class
+		freddy.eat(); //Person class
 		
 	}
 
