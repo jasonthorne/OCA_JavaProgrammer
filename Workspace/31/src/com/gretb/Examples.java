@@ -89,6 +89,20 @@ public class Examples {
 		myInts.add(num5);
 		myInts.add(5); //is automatically wrapped into an object during insertion (Autoboxing) //+++++++++++++++++++AUTOBOXING WILL BE IN EXAM
 		
+		System.out.println(myInts);
+		
+		ArrayList<Number>allNumbers = new ArrayList<>();
+		Double dNumber = new Double(3.33);
+		Integer iNumber = new Integer(3);
+		Float fNumber = new Float(33.33);
+		
+		allNumbers.add(dNumber);
+		allNumbers.add(iNumber);
+		allNumbers.add(fNumber);
+		
+		System.out.println(allNumbers);
+		
+		
 	}
 	
 
