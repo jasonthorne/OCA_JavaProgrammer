@@ -19,5 +19,4 @@ public class Person {
 	com.building.Apartment apt1 = new com.building.Apartment(); //from com.building
 	com.building.Bungalow bung1 = new com.building.Bungalow(); //from com.building
 	
-	
 }
