@@ -19,7 +19,7 @@ public class Animal {
 	{
 		age=23;
 		name="Andy";
-		System.out.println("Animal Initialiser called");
+		System.out.println("First Initialiser called");
 	}
 	
 	static {
@@ -28,7 +28,7 @@ public class Animal {
 	
 	
 	Animal(){
-		System.out.println("Animal constructor called");	
+		System.out.println("Animal constructor called\n");	
 	}
 	
 	
