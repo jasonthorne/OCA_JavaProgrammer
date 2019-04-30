@@ -11,10 +11,14 @@ package com.android;
 //import com.building.commercial.Factory; //importing a single class
 
 import com.building.MultiStory;
+
 import com.exam.Test1;
+//import com.exam.Test3;
+
 
 //import com.building.*; //DOSNT import package subclasses!! Just the classes in this package.
-import static com.exam.Test3.*; // imports ALL of the statics from Test3 class
+import static com.exam.Test3.*; // imports ALL of the STATIC classes from Test3 class +++++++++++++++++++++++
+//Allows accessing of stat methods 
 
 public class Main {
 
@@ -29,8 +33,8 @@ public class Main {
 		System.out.println(Test1.statStr);
 		Test1.statMethod();
 		
-		Test1 myTest = new Test1(); //creating a test object to accesss NON static variables and NON static methods
-		System.out.println(myTest.num);
+		Test1 myTest = new Test1(); //creating a test object to access NON static variables and NON static methods
+		//System.out.println(myTest.num); //cant be accessed as 'num' has only default (package level) access.
 		System.out.println(myTest.myString);
 		myTest.testMethod(); //this is non static. 
 		
@@ -41,6 +45,12 @@ public class Main {
 		
 		System.out.println(statIntTest3); //print out static value from Test3. ++++++++++++++++
 		
+		//using a fully qualified name to create a test2 object
+		com.exam.Test2 myTest2 = new com.exam.Test2();
+		myTest2.test2StatMethod(); //calling static method in Test2
+		
+		staticMethod(); //can access the STATICS from Test3 directly, as we've imported all statics from it (line 20).
+		//Test3.staticMethod(); //Cant create a member of the Test3 class during invocation though as statics are now part of the class. 
 	}
 
 }
