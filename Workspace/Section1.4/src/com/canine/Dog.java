@@ -1,5 +1,9 @@
 package com.canine;
 
-public class Dog {
+import com.building.Animal;
+
+public class Dog extends Animal{
+
+	
 
 }
