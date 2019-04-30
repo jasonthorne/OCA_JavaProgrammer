@@ -56,18 +56,40 @@ public class Animal {
 	
 	//a public method that cab be accessed anywhere in the project
 	public void run() {
-		System.out.println("Animal running");
+		System.out.println("Animal running, and age is: " + age); //accessing a private variable with a public method
 	}
 	
-	//a package level method, that can only be accessed within the same package. 
+	//a default/package level method, that can only be accessed within the same package. 
 	void eat() {
 		System.out.println("Animal eating");
 	}
 	
+	//a method that can ONLY be accessed within the Animal class
+	private void drink() {
+		System.out.println("Animal drinking. Private level access");
+	}
+	
+	//this can only be accessed inside the same package or by children within other classes.
+	protected void sleep() {
+		System.out.println("Animal sleeping. Protected level access");
+	}
+	
+	//this can be done, but doesn't make sense as you cant go: Animal.herd().
+	static private void herd() {
+		
+	}
 	
 	
-	
-	
+	Animal andy = new Animal();
 	
 
 }
+
+
+class Zebra extends Animal{
+	
+	
+}
+
+
+
