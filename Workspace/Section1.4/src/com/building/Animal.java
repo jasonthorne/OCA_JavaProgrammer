@@ -81,13 +81,13 @@ public class Animal {
 	
 	
 	Animal andy = new Animal();
-	
+	Zebra zed = new Zebra(); //Zebra class has package level access, which means you can only access the Zebra class if in 'com.building'
 
 }
 
 
+//This whole class is only package level access, which means you can't access this class in any other package.
 class Zebra extends Animal{
-	
 	
 }
 

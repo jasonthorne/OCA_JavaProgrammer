@@ -27,6 +27,10 @@ public class Main {
 		andy.run();
 		
 		Animal andy2 = new Animal(3); //calling another public constructor in Animal.
+		
+		//Zebra zelda = new Zebra(); //can't be imported, because Zebra is package level access only.
+		
+		//Siamese sam = new Siamese(); //can't be imported, because Siamese is package level access only.
 
 	}
 
