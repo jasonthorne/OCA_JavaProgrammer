@@ -38,6 +38,30 @@ public class Main {
 		sammy.bite(); //abstract from Reptile. Overriden in Snake
 		sammy.mad(); //concrete from Animal. NOT overridden
 		sammy.sad(); //concrete from Animal. NOT overridden
+		
+		Ape andy = new Ape();
+		System.out.println("\n");
+		
+		//These 4 methods were abstract methods in the behaviour interface:
+		andy.jealous();
+		andy.joy();
+		andy.anger(3.33, '3');
+		andy.euphoria();
+		
+		/*Ape implements the Behaviour interface, the behaviour interface has a default method called nervous. 
+		This method is fully formed and has a body. It is NOT implemented in the Ape class.
+		*/
+		andy.nervous();
+		
+		Flamingo freddy = new Flamingo();
+		
+		freddy.joy();
+		
+		//The flamingo class implements Behaviour, and we CHOOSE to OVERRIDE the default nervous method in the Flamingo class
+		freddy.nervous();
+		
+		//You can ONLY access a static method in an interface in a static way. That means interface name.method name
+		Behaviour.statMethod(); 
 
 	}
 
