@@ -26,6 +26,19 @@ public class Building implements InterfaceTwo {
 	
 	}
 	
+	//European is in the Person class
+	void buildIt(European ed) { //Takes a European object OR any object that extends a European
+		//System.out.println("Name of European");
+		ed.talk();
+	}
+	
 	
 
+}
+
+class Bungalow extends Building{
+	
+	void buildIt(Irish pat) {
+		
+	}
 }

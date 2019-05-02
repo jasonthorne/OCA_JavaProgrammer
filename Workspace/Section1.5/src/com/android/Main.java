@@ -102,6 +102,11 @@ public class Main {
 		
 		//every var and object within the object CAN be changed though:
 		thomas.age=333; //non static instance var changed
+		
+		
+		Building myBuilding = new Building();
+		myBuilding.buildIt(new European());
+		myBuilding.buildIt(new Irish()); //CAN be passed an Irish object as it's a subclass of an object.
 	}
 
 }
