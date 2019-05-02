@@ -62,7 +62,46 @@ public class Main {
 		
 		//You can ONLY access a static method in an interface in a static way. That means interface name.method name
 		Behaviour.statMethod(); 
-
+		
+		//When accessing a static var or method, you do not need to create an instance of the class to access it.
+		//They MUST be called in a static way though (className.staticMethodName)
+		System.out.println("\naccessing courseCode statically: " + Trainee.courseCode);
+		System.out.println("accessing courseAddress statically: " + Trainee.courseAddress);
+		Trainee.statMethod();
+		
+		
+		//Accessing static members through objects (Accessing in a non static way) DONT DO THIS!! 
+		Trainee tom = new Trainee();
+		Trainee tanya = new Trainee();
+		
+		System.out.println("\nTom's course code is: " + tom.courseCode);
+		System.out.println("Tanya's course code is: " + tanya.courseCode);
+		
+		//Null is an attempt by Java to understand the concept of nothing. +++++++++++++++++++++++++++++++++
+		
+		Trainee nullTrainee=null;
+		//null.ordMethod(); //null objects DONT have access to it's classe's methods. Gives Runtime NullPointerException. +++++++++++++++++++++++++++++++
+		//System.out.println(nullTrainee.age); //No access to this instance var. Gives Runtime NullPointerException. 
+		
+		//A null object CAN access static methods ++++++++++++++++++++++++++++++++++++++++++++ASKED IN EXAM!! =======================================================
+		nullTrainee.statMethod(); 
+		
+		
+		
+		//==========================================
+		
+		//Final (in Person class):
+		
+		Person percy = new Person(3.33);
+		percy.name="Tom"; //non final so can be changed.
+		//percy.age = 56; //gives error as 'age' is final.
+		
+		//creating a final object. This means that this Trainee reference CANNOT be reassigned. 
+		final Trainee thomas = new Trainee();
+		//thomas = new Trainee(); //Gives error as CANT be reassigned!
+		
+		//every var and object within the object CAN be changed though:
+		thomas.age=333; //non static instance var changed
 	}
 
 }
