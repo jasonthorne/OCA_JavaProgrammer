@@ -14,10 +14,10 @@ public class Person {
 	 * The return type here is a Factory, which is a sub class of Building
 	 * So a method can return the same class or a sub class
 	 */
-Building buildIt(Person builder) {
+	Building buildIt(Person builder) {
 	System.out.println("person building a Building");
 	return new Building();
-}
+	}
 
 }
 
