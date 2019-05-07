@@ -60,16 +60,46 @@ public class Examples {
 		//Casting a float to a double: 
 		myDouble = (double)myFloat;
 		
+		//Casting the number 45 to be a long:
+		myLong = (long)45;
+		
+		//doesnt work:
+		//myLong = (long)200_000_000_000;
+		
+		//does work:
+		myLong = 200_000_000_000l;
 		
 		
 		
+		myDouble = 45.99; 
+		
+		//if you cast a double to be an int, it simply chops off the decimal places:
+		myInt = (int)myDouble; //chops off the .99 (DOESNT round up) ++++++++++++++++
 		
 		
+		//You can cast a long to be of type int, however the results can be unpredictable. 
+		//This happens if the long number is greater than the maximum or minimum allowable value for an int. 
+		//Approx 2.1 billion.
 		
+		myLong = 2_000_000_000l;
+		myInt = (int)myLong; //this is fine as long is within int range
 		
+		myLong = 200_000_000_000l;
+		myInt = (int)myLong;
 		
+		//this looks nothing like the original number:
+		System.out.println("myInt cast to number greater than 2.1 bilion: " + myInt);
 		
+		//Can't cast to or from a boolean to any other primitive data type.
+		//myBool = (boolean)myInt; //doesn't work
 		
+		//assigning a number to a char:
+		myChar = (char)myInt;
+		
+		myInt = myChar; //this works as a char fits inside an int.
+		//myChar = myInt; //doesn't work as an int doesn't fit inside a char.
+		
+		//Characters can only be assigned a positive number. You CAN cast a minus number to it, but weird stuff happens!! 
 		
 		
 		
