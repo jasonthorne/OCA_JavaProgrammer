@@ -100,7 +100,64 @@ public class Examples {
 		//myChar = myInt; //doesn't work as an int doesn't fit inside a char.
 		
 		//Characters can only be assigned a positive number. You CAN cast a minus number to it, but weird stuff happens!! 
+	
 		
+	}
+	
+	
+	static void ex2() {
+	
+		/*
+		 * BINARY NUMBERS:
+		 * 
+		 * Binary numbers are numbers that only use the symbols 1 and 0.
+		 * They begin with a '0b', they are displayed in decimal by default.
+		 * If you use any number other than a 0 or 1 you'll get an error!
+		 */
+		
+		System.out.println("BINARY:");
+		int biNum = 0b100; //0b identifies it as binary
+		System.out.println("0b100 in decimal is: " + biNum);
+		biNum =0b1000110011;
+		System.out.println("0b100 is now: " + biNum);
+		
+		int biNum2 = 0b1_000_110_011;
+		System.out.println("2 binary numbers added are: " + (biNum+biNum2));
+		
+		//int errorBiNum = 0b10102; //gives error because of '2' (leading '0b' defines it as binary).
+		
+		
+		/* OCTAL NUMBERS:
+		 * 
+		 * Octal numbers are base 8, go from 0-7. Displayed by default in decimal (base 10). 
+		 * They begin with a '0'.
+		 */
+		System.out.println("\nOCTAL:");
+		int octNum = 0100; //number 64
+		System.out.println("octNum in decimal is: " + octNum);
+		octNum = 076775430;
+		System.out.println("octNum is now: " + octNum);
+		
+		
+		/* HEXIDECIMAL NUMBERS:
+		 * 
+		 * Hex numbers begin wit '0x', and are also displayed in decimal by default.
+		 * 10 will appear as 16, 100 (16*16) will appear as 256. 
+		 * Numbers go from 1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+		 * f is 15. 
+		 */
+		
+		
+		System.out.println("\nHEXIDECIMAL:");
+		int hexNum=0x10;
+		System.out.println("hexNum is: " + hexNum);
+		hexNum=0xabcdef9;
+		System.out.println("hexNum is now: " + hexNum);
+		
+		
+		
+		
+
 		
 		
 	}
