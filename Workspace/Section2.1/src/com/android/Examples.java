@@ -106,6 +106,14 @@ public class Examples {
 	
 	
 	static void ex2() {
+		
+		//LEARN CONVERSIONS!!! //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		
+		/*+ binary to dec
+		 *+ hex to dec
+		 *+ oct to dec
+		 */
+		
 	
 		/*
 		 * BINARY NUMBERS:
@@ -155,9 +163,38 @@ public class Examples {
 		System.out.println("hexNum is now: " + hexNum);
 		
 		
+		//DISPLAYING NUMBERS IN BINARY, HEX AND OCTAL
+		
+		System.out.println("\nDISPLAYING NUMBERS IN BINARY, HEX AND OCTAL:");
+		//this answer is still in decimal:
+		System.out.println("octNum + hexNum + biNum (in decimal): " + (octNum + hexNum + biNum));
+		
+		int sum = octNum+hexNum+biNum;
+		
+		//display in binary:
+		System.out.println("In binary: " + Integer.toString(sum, 2)); //2 for base 2.
+		System.out.println("In octal: " + Integer.toString(sum, 8)); //8 for base 8.
+		System.out.println("In hex: " + Integer.toString(sum, 32)); //32 for base 32.
+		
+		//base can go as high as 36.
+		
+		//You CAN put underscores in variable number values to aid with reading:
+		long bigNum=1_000_000_000_000l;
+		//var wrongNum1=_123; //can't have underscore at start of number
+		//var wrongNum2 = 123_; //can't have underscore at end of number
+		double rightDouble=1.234_456_789;
+		//wrongNum3=1._45 //can't have underscore directly after point
+		//wrongNum4=1_.45 //can't have underscore directly before point
+		
+		//can put underscores in other number formats:
+		octNum=04_56;
+		biNum=1000_00_111;
+		hexNum=0xa_fff_fff;
 		
 		
-
+		
+		
+		
 		
 		
 	}
