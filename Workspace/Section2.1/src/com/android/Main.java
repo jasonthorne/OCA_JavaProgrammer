@@ -18,6 +18,9 @@ public class Main {
 		//Examples.ex1();
 		
 		Examples.ex2();
+		
+		//Chapter 2.1 in Book: +++++++++++++++++++++++++++
+		Examples.ex3();
 	}
 	
 	

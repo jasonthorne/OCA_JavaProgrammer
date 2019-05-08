@@ -191,12 +191,82 @@ public class Examples {
 		biNum=1000_00_111;
 		hexNum=0xa_fff_fff;
 		
+		//cant place underscores here:
+		//hexNum=0x_a568; //cant place the underscore after the suffix (0x)
+		//bigNum=100000000000_L;  //cant place the underscore before the L
 		
 		
+		//RULES FOR UNDERSCORES AND NUMBERS
+		/*
+		+ You can't start or end a number with an underscore
+		+ You can't place an underscore right before the prefixes for hex, octal or binary (0b, 0x, 0).
+		+ You can't place an underscore right AFTER the prefixes for hex or binary (0b, 0x) but CAN for octal (0) +++++++++++++++++++++++++++
+		+ you can't place an underscore before the L, F and D suffix.
+		+ You can't place an underscore before or after a decimal point.
+		+You can have as many underscores beside each other, where valid.
+		*/
+		
+		//REMEMBER: 
+		//With octal you CAN place an underscore AFTER the 0 in an octal:
+		octNum=0_456;
 		
 		
+		//============================
 		
+		
+		//PARSERS
+		
+		//used in GUIs because input by the user in text boxes are in strings
+		
+		System.out.println("\nPARSERS:");
+		
+		String strNum1 = "345";
+		String strNum2 = "100";
+		
+		int i = Integer.parseInt(strNum1);
+		
+		System.out.println(i);
+		
+		double dNum = Double.parseDouble("3.33");
+		long lNum = Long.parseLong("3333333333333333333");
+		boolean bNum = Boolean.parseBoolean("trUe"); //NOT case sensitive
+		System.out.println(bNum);
+		
+		System.out.println(i+ dNum); //these are now int and double, so can be added.
 		
 	}
+	
+	
+	
+	static void ex3() {
+		System.out.println("This is Section 2.2 (Variable names)");
+		
+		//There's no limit to the size of the variable: 
+		int fdfdfdfsdfdfdfdfdfqqqaaxxxssssddxcccccczzaaaqqeiihhhtyyyy;
+		
+		//underscores can be used anywhere in a variable name:
+		int _myNu_mber;
+		
+		//The only NON aplphanumeric symbols you can use in a variable name are currency symbols and underscores:
+		int $£num; 
+		
+		//int-num //cant be used
+		
+		//You can use numbers in a variable name EXCEPT at the beginning of the name, and the variable name can't be made up of JUST numbers: 
+		int num1;
+		//int 1num; //can't be used
+		//int 123; //can't be used
+		
+		
+		//double speacial@; //can't be used
+		
+		//You CANT use java keywords for variable names (see page 106 of mala gupta book for keywords):
+		
+		//String for; //can't be used
+		//Int double; //can't be used
+		
+		
+	} 
 
+	
 }
