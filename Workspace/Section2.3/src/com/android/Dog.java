@@ -1,6 +1,6 @@
 package com.android;
 
-public class Dog {
+public class Dog implements Behaviour{
 	
 	static int counter=1;
 	int age=45;
@@ -15,4 +15,26 @@ public class Dog {
 		counter++; //increments every-time constructor called
 	}
 
+	@Override
+	public void mad() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sad() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void bad() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+
+class Collie extends Dog{
+	
 }
