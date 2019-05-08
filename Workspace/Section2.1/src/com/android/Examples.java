@@ -203,7 +203,7 @@ public class Examples {
 		+ You can't place an underscore right AFTER the prefixes for hex or binary (0b, 0x) but CAN for octal (0) +++++++++++++++++++++++++++
 		+ you can't place an underscore before the L, F and D suffix.
 		+ You can't place an underscore before or after a decimal point.
-		+You can have as many underscores beside each other, where valid.
+		+ You can have as many underscores beside each other, where valid.
 		*/
 		
 		//REMEMBER: 
