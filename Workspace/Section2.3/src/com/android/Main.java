@@ -1,5 +1,7 @@
 package com.android;
 
+import java.lang.reflect.Method;
+
 /**
  * 
  * Exam objective 2.1. - Declare and initialize variables (including casting of primitive data types)
@@ -87,6 +89,36 @@ public class Main {
 		Sheep flossie = new Sheep();
 		Pig babe = new Pig();
 		
+		//When a method can take a superclass object, that means it can also take a subclass of the superclass. ++++++++++++++++
+		System.out.println("\n");
+		takeAnimal(andy);
+		takeAnimal(bessie);
+		takeAnimal(fred);
+		takeAnimal(flossie);
+		takeAnimal(babe);
+		
+		
+		lassie.age=2;
+		lassie.weight = 4.5;
+		int changeNum=200;
+		System.out.println("\nbefore method call, age of lassie is: " + lassie.age);
+		System.out.println("before method call, weight of lassie is: " + lassie.weight);
+		System.out.println("before method call, id of lassie is: " + lassie.dogId);
+		System.out.println("before method call, changeNum is: " + changeNum + "\n");
+		
+		/*An Object reference does NOT store the object itself. All it stores is the address of the object.
+		When you pass an object into a method it is passed by reference. This means that when you change the attributes of an object in a method
+		the attributes are also changed outside the Method.class 
+		In this case we change the age and weight of the dog inside the method, the age and eight are then changed outaide the of the method.
+		 
+		*/
+		changeValues(lassie, changeNum);
+		
+		System.out.println("\nafter method call, age of lassie is: " + lassie.age);
+		System.out.println("after method call, weight of lassie is: " + lassie.weight);
+		System.out.println("after method call, id of lassie is: " + lassie.dogId);
+		System.out.println("after method call, changeNum is: " + changeNum + "\n"); //was passed by value. ie a copy of the PRIMITIVE var is what is passed.
+		
 		
 	}
 	
@@ -94,6 +126,24 @@ public class Main {
 	static void takeAnimal(Animal myAnimal) {
 		System.out.println("Type of animal is: " + myAnimal.getClass().getSimpleName()); //getClass gets entire class path. getSimpleName simplifies it to just class name.
 	}
+	
+	static void changeValues(Dog lassie, int myNum) {
+		lassie.age=9000;
+		System.out.println("inside method, age of lassie is: " + lassie.age);
+		lassie.weight=100.33;
+		System.out.println("inside method, weight of lassie is: " + lassie.weight);
+		myNum=7800;
+		System.out.println("inside method, num is: " + myNum);
+		System.out.println("inside method, id of the dog is: " + lassie.dogId);
+		
+		lassie = new Dog(); //make lassie a new dog.
+		System.out.println("inside method, id of the NEW dog is: " + lassie.dogId);
+		
+	}
+	
+	
+	
+	
 	
 
 }
