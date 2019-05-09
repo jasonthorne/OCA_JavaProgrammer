@@ -42,7 +42,6 @@ public class Main {
 		System.out.println("\nId of hunter " + hunter.dogId);
 		
 		
-		//===========================================================================
 		//superclass reference to a subclass object:
 		Dog dogCollie=hunter; //Now ONLY has access to stuff created in the Dog class. (nothing in Collie) +++++++++++++++++++
 		
@@ -57,7 +56,44 @@ public class Main {
 		benji = new Dog(); //id now 8
 		ruby = new Dog(); //id now 9
 		
-
+		
+		//===========================================================================
+		//TESTING FOR EQUIVELLANCE
+		System.out.println("\nTESTING FOR EQUIVELLANCE");
+				
+		Zebra zed = new Zebra(); //an id of 1
+		Zebra zelda = new Zebra(); //an id of 2
+		Zebra zoe = zed; //creating a new REFERENCE to zed object called zoe (has id of 1).
+		
+		int num1 =45;
+		int num2 =45;
+		
+		System.out.println("Testing if two numbers are the same: " + (num1 == num2));
+		System.out.println("Testing for equivellance: "); 
+		System.out.println(zoe == zed); //true as both reference the same object
+		System.out.println(zoe == zelda); //false as both reference a different object
+		zed.age=3;
+		zelda.age=3;
+		zed.weight=2.3;
+		zelda.weight=2.3;
+		//If we dont OVERRIDE this equals method then all it will do is to check if zed and zelda are the same zebra (point to the same object). +++++++++++++++++++++++
+		//WE want to check if they have the same age and weight so we override the equals method.
+		System.out.println("Are zed and zelda's age and weight the same: " + zed.equals(zelda)); 
+				
+		
+		Animal andy = new Animal();
+		Cow bessie = new Cow();
+		Fresian fred = new Fresian();
+		Sheep flossie = new Sheep();
+		Pig babe = new Pig();
+		
+		
 	}
+	
+	
+	static void takeAnimal(Animal myAnimal) {
+		System.out.println("Type of animal is: " + myAnimal.getClass().getSimpleName()); //getClass gets entire class path. getSimpleName simplifies it to just class name.
+	}
+	
 
 }
