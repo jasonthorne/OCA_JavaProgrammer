@@ -120,6 +120,66 @@ public class Examples {
 		System.out.println("\nsum is: " + sum); //112
 		System.out.println("num2 is: " + num2); //101
 		
+		//=========================================================
+		
+		//Friday questions:
+		System.out.println("Friday questions:");
+		
+		/*
+		order of precedence:
+		()
+		+ -
+		* /
+		
+		*/
+		
+		System.out.println("\nExample 1:");
+		num1=10;
+		num2=100;
+		sum = ++num1 - num2++;
+		System.out.println("num1 is: " + num1 + " num2 is: " + num2 + " sum is: " + sum); //11, 101 (1 added after sum assignment), -89
+		
+		
+		System.out.println("\nExample 2:");
+		num1=10;
+		num2=100;
+		sum = ++num1 + num2++ + --num1 + --num2;
+		System.out.println("num1 is: " + num1 + " num2 is: " + num2 + " sum is: " + sum); //
+		
+		
+		System.out.println("\nExample 3:");
+		num1=10;
+		num2=100;
+		sum = ++num1 + --num1 + num1++ + num1 - ++num2 + num2 + num2 - num2;
+		System.out.println("num1 is: " + num1 + " num2 is: " + num2 + " sum is: " + sum); //
+		
+		
+		//sum = 11 + 10 + 10 + 11 - 101 + 101 + 101 - 101 = 42
+		//sum1: 11
+		//num2: 101
+		
+		System.out.println("\nExample 4:");
+		num1=10;
+		num2=100;
+		sum = num1-- + num2++ - num1 + num2 + ++num1 - num2 + num1--;
+		System.out.println("num1 is: " + num1 + " num2 is: " + num2 + " sum is: " + sum); //
+		
+		//sum = num1--  num2++  num1  num2  ++num1  num2  10(9);
+		//sum = 
+		
+		
+		System.out.println("\nExample 5:");
+		int i=0;
+		System.out.println("loop sum");
+		for(i=0;i<10;i++) { //0, 3
+			int total = ++i + i + i++; //i: 1 + 1 + 1(2) = 3., 4 + 4 + 4(5) = 12
+			System.out.println("total:" + total); //3, 12
+			System.out.println("i is:" + i); //2, 5
+		}
+		
+		
+		
+		
 		
 		
 	}
