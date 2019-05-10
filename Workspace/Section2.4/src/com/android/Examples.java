@@ -179,7 +179,23 @@ public class Examples {
 		
 		
 		
+		//ASCII key values can be treated as numbers: //++++++++++++++++++++++++++++++++
 		
+		char char1 = 'a'; //a has the value of 97
+		System.out.println("char is: " + char1);
+		//add 1 to the ascii key value and it becomes 98:
+		char1++;
+		System.out.println("char is now: " + char1);
+		
+		
+		//print alphabet:
+		System.out.println("\nprint alphabet:");
+		char aplh = 'a';
+		
+		for(int j=0;j<26;j++){
+			System.out.print(aplh + " ");
+			aplh++;
+		}
 		
 		
 	}
