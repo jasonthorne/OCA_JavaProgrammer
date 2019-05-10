@@ -198,6 +198,10 @@ public class Examples {
 		}
 		
 		
+		char1 = 'a';
+		char char2 = 'b';
+		System.out.println("\nboth numbers combined is: " + (char1+char2));
+		
 	}
 
 }
