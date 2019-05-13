@@ -396,8 +396,7 @@ public class Examples {
 		System.out.println(spot.name); //a null object
 		//System.out.println(spot.name.length()); //null pointer exception meaning the string is null, so can't call the length of itself.
 		
-				
-		
+			
 	}
 
 	
@@ -405,6 +404,7 @@ public class Examples {
 	
 		System.out.println("problem 1");
 		int num=4,num2=10,num3=5;
+		System.out.println("Answer: 15???");
 		System.out.println(num+num2*++num/num);
 		
 		num=4;num2=10;num3=5;
