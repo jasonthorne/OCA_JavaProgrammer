@@ -316,13 +316,115 @@ public class Examples {
 		char myChar2 = 'b';
 		System.out.println(myChar1>myChar2);
 		
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		/*precedence order: 
+		1 ()
+		2 ++, --
+		3 *,/,%
+		4 +,-
+		5 >=,<=
+		6 ==, !
+		*/
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		
 		
+		int num1=4;
+		int num2=4;
+		System.out.println(num1*2>num2*3); //prints false as multiplication is done first. 
 		
+		System.out.println((num1=num2*2)==num1); //(8 == 8) if assigning a value in the middle of a calculation, you HAVE TO put the calculation in brackets. 
+		
+	}
+	
+	
+	
+	static void logicalOpperators() {
+		
+		 //These are AND '&&' and OR '||'
+		
+		/*
+		 * For AND, both have to be true. 
+		 * For OR, either can be true.
+		 * ! is NOT
+		 */
+		
+		int a=10, b=15;
+		
+		//Both have to be true:
+		System.out.println(a>20 && b>5); //false
+		System.out.println(a<20 && b<20); //true
+		
+		//either can be true:
+		System.out.println(a>20 || b>5); //true
+		System.out.println(a<20 || b>15); //true
+		System.out.println(a<5 || b<15); //false
+		
+		//not operator:
+		System.out.println(!(a>10)); //true (is 10 NOT greater than 100)	
+		System.out.println(!(b>10)); //false (is 15 NOT greater than 10)
+		System.out.println(!(a==b)); //true (is a NOT equal to b)
+		
+		
+		/*//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		 * Both && and || are short circuited operators, which means if the first part of the equation is NOT true, the second part is never evaluated.
+		 */
+		
+		
+		int c=50;
+		a=10;
+		b=15;
+		
+		System.out.println(a<=c && b>=a); //both are true so whole statement is true
+		System.out.println("\n");
+		System.out.println(a<=c || b>=a); //true
+		System.out.println(a>b && b<=c && a<=c); //false
+		System.out.println(a<b || b>=c && a<=c); //true
+		
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		System.out.println(a>20 && ++a<100); //the first condition is false, so the rest of the check isnt evaluated, stopping 'a' being incremented
+		System.out.println("value of a is: " + a); //a is still 10 as shortcut operator (&&) never gets to ++a, as first statement is false.  
+	
+		System.out.println(a>20 & ++a<100); //this WILL increment 'a', as this ISNT a short circuit operator, but still works for comparison 
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		
+		String str = "hello";
+		System.out.println(str);
+		
+		
+		String myString; //a local var so has NO DEFAULT VALUE
+		Dog spot = new Dog();
+		System.out.println(spot.name); //a null object
+		//System.out.println(spot.name.length()); //null pointer exception meaning the string is null, so can't call the length of itself.
+		
+				
 		
 	}
 
 	
+	static void questions() {
+	
+		System.out.println("problem 1");
+		int num=4,num2=10,num3=5;
+		System.out.println(num+num2*++num/num);
+		
+		num=4;num2=10;num3=5;
+		System.out.println("problem 2");
+		System.out.println(num++*++num+(num2- --num));
+		
+		num=4;num2=10;num3=5;
+		System.out.println("problem 3");
+		System.out.println(++num + --num *(num++ + --num2)+(num3++ - num3));
+		
+		System.out.println("problem 4");
+		System.out.println(num + num2 *(++num%2)+(--num2 + num2--)+ num2);
+		//4+10*(5%2)+(9+9)+8
+		
+		num=4;num2=10;num3=5;
+		System.out.println("Problem 5");
+		System.out.println(num+++num2*(num3-- +num++)+(num2%num)-num++
+				+(--num * num2));
+
+	}
 	
 	
 	

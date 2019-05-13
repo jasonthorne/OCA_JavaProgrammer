@@ -13,11 +13,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Examples.assignmentOperators();
+		//Examples.assignmentOperators();
 		
-		Examples.arithmeticOperators();
+		//Examples.arithmeticOperators();
 		
-		Examples.relationalOperators();
+		//Examples.relationalOperators();
+		
+		Examples.logicalOpperators();
 	}
 	
 	
