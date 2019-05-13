@@ -72,7 +72,7 @@ public class Examples {
 		
 		
 		/*
-		 * Modulus is the remainderw when we divide an int by another int. 
+		 * Modulus is the remainder when we divide an int by another int. 
 		 * It DOESNT deal with doubles. 
 		 * It is the remainder from integer division
 		 */
@@ -203,5 +203,128 @@ public class Examples {
 		System.out.println("\nboth numbers combined is: " + (char1+char2));
 		
 	}
+	
+	static void widening() {
+		/*
+		 * Certain numeric data types are larger than other numeric data types. 
+		 * I.E a byte is smaller than a short. A short is smaller than an int. An int is smaller than a long. 
+		 * Widening is the process where we have a number of smaller data types that are automatically upgraded to a larger data type.
+		 * Shorts are WIDENED to be an int. Or ints are WIDENED to be a long.
+		 * 
+		 * When you use bytes or shorts in calculation the result is ALWAYS an int. 
+		 * When you are doing calculations that ONLY has bytes, shorts or ints, then the answer will always be an int. 
+		 */
+		
+		byte b1=2;
+		byte b2 = 10;
+		
+		//this will produce an error as the answer will be given in an INT: 
+		//byte newB = b1+b2; //correct way
+		
+		//here we have two bytes, the result of these two numbers is WIDENED to become an int. 
+		int num = b1+b2;
+		
+		short sNum=230;
+		//short newS = sNum+b1+b2; //when you have shorts and bytes, the answer is always going to be an int. 
+		//int newS = sNum+b1+b2; //correct way
+		
+		
+		//==========
+				
+		long lNum = 567;
+		
+		//If there is a larger data type than an int in the calculation then the answer is always to WIDEN to the largest primitive data type in the calculation: 
+		//int sum=lNum+num+b1; //long+int+btye, meaning answer MUST be a long:
+		long lSum=lNum+num+b1;
+		
+		//A double is the largest numeric data type.
+		double dNum = 2.34;
+		//lSum = dNum+lNum+num+sNum+b1; //double+long+int+short+byte //doesnt compile as a double is larger than a long
+		
+		double dSum = dNum+lNum+num+sNum+b1;
+		
+		
+		//==========
+		/*
+		 * Adding two bytes and wanting the answer to be in bytes (not int by default)
+		 */
+		
+		final byte fByte1=3;
+		final byte fByte2=20;
+		byte sumByte1 = fByte1+fByte2;
+		
+		//OR cast to a byte:
+		
+		byte sumByte2 = (byte)(fByte1+fByte2);
+		
+	}
+	
+	static void relationalOperators() {
+		
+		 // >,<,>=,<=,!, ==
 
+		int a=10,b=10,c=100;
+		
+		double d =10;
+		
+		System.out.println(a>b); //false
+		System.out.println(a>=b); //true
+		System.out.println(a<=b); //true
+		System.out.println(a==b); //true
+		System.out.println(a!=b); //false
+		System.out.println(a!=c); //true
+		
+		//System.out.println(a==d); //true
+		
+		
+		for(int i=1;i<=4;i++) {
+			System.out.println("i is: " + i);
+		}
+		
+		
+		boolean b1=false;
+		System.out.println(b1==true); //asking if b1 is true. Its not, so prints false.
+		System.out.println(b1==false); //true
+		System.out.println(b1!=false); //false
+		
+		if(b1) {
+			System.out.println("yo"); //doesn't print, as b1 is not true.
+		}
+		
+		
+		while(!b1) {
+			System.out.println("yo dawg"); 
+			b1 = true;
+		}
+		
+		System.out.println(b1==true); //checking if b1 is true
+		
+		
+		//======
+		
+		a=10;
+		b1=false;
+				
+		//with relational operators you cant use incompatable data types with each other. eg boolean to an int. 
+				
+		//You CAN compare numbers of all primitive types
+		double dNum = 33.33;
+		System.out.println(dNum>a);
+		
+		//chars are treated as numbers:
+		char myChar1 = 'a';
+		char myChar2 = 'b';
+		System.out.println(myChar1>myChar2);
+		
+		
+		
+		
+		
+	}
+
+	
+	
+	
+	
+	
 }

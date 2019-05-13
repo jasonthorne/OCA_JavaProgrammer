@@ -16,6 +16,8 @@ public class Main {
 		Examples.assignmentOperators();
 		
 		Examples.arithmeticOperators();
+		
+		Examples.relationalOperators();
 	}
 	
 	
