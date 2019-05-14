@@ -1,5 +1,7 @@
 package com.android;
 
+import java.util.ArrayList;
+
 public class Examples {
 	
 	/*
@@ -33,13 +35,51 @@ public class Examples {
 		
 		//Method3:
 		//assign a literal value to a wrapper:
-		Integer myInt4 = 33;
+		Integer myInt4 = 33; //this AUTOBOXES the primitive int into an Integer obj ++++++++++++++++++++++++++++++
 		
 		//Method 4:
 		//Using the static method 'valueOf' of the integer class
-		//One method takes an int one takes a string. 
-		Integer myInt5 = Integer.valueOf(3); 
-		myInt5 =Integer.valueOf("3");
+		Integer myInt5 = Integer.valueOf(3); //takes an int
+		myInt5 =Integer.valueOf("3"); //takes a string
+		
+		Double myDouble1=Double.valueOf(3.33);
+		myDouble1 = Double.valueOf("3.33");
+		
+		Boolean myBool=Boolean.valueOf("true");
+		myBool=Boolean.valueOf(true);
+		
+		/*
+		 * There are numerous methods for all wrapper numbers, such as intValue90 below:
+		 */
+		int newNum=myDouble1.intValue(); //extracts the int value form the double (chops off everything after the decimal)
+		System.out.println(newNum);
+		
+		//An arrayList can only take Objects. So when you add a number to an arraylist, what's actually being added is a wrapper object that contains a number.
+		//eg numList.add(45);
+		/*When we assign a literal number to a wrapper Object or when we add a literal number to an arraylist, 
+		the process by which this number is converted to a wrapper object is called AUTOBOXING.*/
+		ArrayList<Integer>numList = new ArrayList<>();
+		
+		//adding 23 and 67 to the arrayList. Where they're autoboxed to become an integer, then added to the arrayList. 
+		numList.add(23);
+		int newNum2=67;
+		numList.add(newNum2);
+		
+		
+		Integer myInt7=89;
+		
+		//myDouble=myInt7; //you CANT assign between different wrapper types. (As you can with primitives)
+		//myDouble=56;
+		
+		ArrayList<Double>dList = new ArrayList<>();
+		//dList.add(4); //WONT WORK as arg isnt a double
+		//dList.add(myInt7); //WONT WORK as arg isnt a double
+		
+		
+		ArrayList<Number>numberList = new ArrayList<>();
+		numberList.add(2.34);
+		numberList.add(myDouble1); //adding a double wrapper
+		numberList.add(2); //adding an int
 		
 		
 		
