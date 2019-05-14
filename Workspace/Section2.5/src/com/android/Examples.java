@@ -83,6 +83,60 @@ public class Examples {
 		
 		
 		
+		/*All wrappers (with the exception of Character wrappers) have 2 constructors in their classes.
+		 * One that takes a primitive value of the correct type
+		 * One that takes a String that contains a primitive value of the correct type.
+		 */
+		
+		Boolean myBool3 = new Boolean(true);
+		myBool3 = new Boolean("tRue"); //constructor arguement isnt case sensitive! 
+		
+		
+		
+		//=================CHAR WRAPPERS ++++++++++++++++++++++++++++++++++++++++++
+		//ONLY have ONE constructor;
+		
+		/*
+		 * The ONLY way to create a character wrapper object with a constructor is by passing in an actual character to the character constructor.
+		 */
+		Character myCharacter1 = new Character('a');
+		//Character myCharacter = new Character(67); //Doesn't work
+		//Character myCharacter = new Character("a"); //Doesn't work
+		
+		//The primitive var is being autoboxed to a character object.
+		myCharacter1 = 'Z'; 
+		myCharacter1 = 67;
+		
+		char mychar = '1';
+		Character myCharacter2 = new Character(mychar);
+		
+		
+		
+		Integer number5 = new Integer(333);
+		
+		Integer number6 = new Integer(333);
+		
+		System.out.println(number5 == number6); //comparing if they're the same object
+		System.out.println(number5.intValue() == number6.intValue()); //correct to compare their contained values. 
+		
+		//This is the ORACLE RECOMMENDED way to create wrappers. By using the static methods of the wrapper class: ++++++++++++++++++++++++++++++
+		Integer staticInt = Integer.valueOf(12);
+		Double staticDouble = Double.valueOf(3.33);
+		Byte staticByte = Byte.valueOf("3");
+		
+		
+		Integer staticInt2 = staticDouble.intValue(); //trims off everything after the decimal.
+		staticByte = staticDouble.byteValue();
+		
+		
+		//convert int to double:
+		double dNum=staticInt2.doubleValue(); 
+		
+		//Adding an int to an arraylist of doubles:
+		ArrayList<Double>doubleList=new ArrayList<>();
+		doubleList.add(staticInt2.doubleValue()); //calling the method of the Integer class that will convert the number to a double.
+		
+		
 	}
 
 }
