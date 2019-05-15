@@ -244,6 +244,92 @@ public class Examples {
 		System.out.println(cBool1==cBool2); //gives false, as two different objects
 		System.out.println(cBool1 = Boolean.valueOf(cBool2)); 
 		
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		Integer cNumber1=500;
+		Integer cNumber2 = cNumber1; //reference the same object
+		
+		System.out.println("cNumbers: " + (cNumber1 == cNumber2));
+		//incrementors OR decrementors on a wrapper obj, automatically create a NEW wrapper object, storing the new value. 
+		cNumber1++; //THIS AUTOMATICALLY CREATES A NEW WRAPPER OBJECT (holding the value 501) ++++++++++++++
+		System.out.println("cNumber1 is: " + cNumber1);
+		System.out.println("cNumber2 is: " + cNumber2);
+		//cNumber1--;
+		
+		/*
+		 * When you change a wrapper number in any way, you are creating a new wrapper (with the exception of numbers less than 128 & greater than -129)
+		 * So above cNumber1 & cNumber2 begin as references to the same object, and both contain the number 500.
+		 * With ++cNumber1 we are adding 1 to the value of this wrapper object value, so cNumber1 becomes 501, and this creates a NEW WRAPPER OBJECT.
+		 * So cNumber1 is now 501, and cNumber2 is still 500. 
+		 */
+		
+		--cNumber1; //This also creates a new object (giving value of cNumber2), so this is still false:
+		System.out.println("cNumbers: " + (cNumber1 == cNumber2));
+		System.out.println("cNumbers (using .equals): " + cNumber1.equals(cNumber2));//correct way of comparing
+		
+		
+		//====================Exception to rules above:
+		
+		cNumber1=10;
+		cNumber2=cNumber1;
+		
+		cNumber1++;
+		System.out.println("cNumbers: " + (cNumber1 == cNumber2)); //the above increment will differ these values so a new object is created (as long as number is less than 128 & > -129)
+		cNumber1--;
+		System.out.println("cNumbers: " + (cNumber1 == cNumber2)); //both values are now the same so the objects will now share the same reference again. 
+		
+		/*
+		 * If the number is less than 128 & greater than -129 then the below will print true.
+		 */
+		
+		System.out.println("cNumbers: " + (cNumber1 == cNumber2)); //true
+		
+		//========================
+		
+		Integer i3 = Integer.valueOf(99);
+		
+		Byte b1=34;
+		
+		//Byte wrapper construction arguments need CAST (as the args are ints initially) ++++++++++++++++++++++++++++++
+		//Byte myByte1 = new Byte(33); //wont compile
+		Byte myByte1 = new Byte((byte)33);
+		Byte b2=Byte.valueOf((byte)12);
+		
+		//i3=myByte; //this wont work as i3 is an Int and myByte is a byte, so they CANT be assigned to one another. 
+		//You have to cast the byte to an int first;
+		i3=(int)myByte1;
+		
+		//You cant test for equivalence with two different wrapper types;
+		//System.out.println(i3==myByte1);		
+		
+		//The below wont compile as you can ONLY cast from a smaller type to  bigger type.
+		//IE from a byte to an int. But not from a bigger type to a smaller type.
+		//myByte=(byte)i3;
+		
+		//This WILL compile, but will always give false because i3 is an Integer wrapper and myByte1 is a Byte wrapper (so proper comparison wont work).
+		System.out.println(i3.equals(myByte1));
+		
+		
+		//This is the way to compare them (casting myByte1 to be an int)
+		System.out.println(i3.equals((int)myByte1));
+		//OR:
+		System.out.println(i3.equals(myByte1.intValue())); //true
+		
+		//=========
+		
+		Long myLong = 12340000L;
+		
+		//creating Object wrappers with the long value (changed to relevent values during assignment):
+		Integer finalInt = myLong.intValue();
+		Byte finalByte=myLong.byteValue();
+		Short finalShort=myLong.shortValue();
+		Double finalDbl=myLong.doubleValue();
+		Float finalFloat=myLong.floatValue();
+		
+		System.out.println(finalInt);
+		System.out.println(finalByte);
+		System.out.println(finalShort);
+		System.out.println(finalDbl);
+		System.out.println(finalFloat);
 		
 		
 		
