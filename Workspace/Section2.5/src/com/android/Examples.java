@@ -198,6 +198,56 @@ public class Examples {
 		 * or a wrapper object of the samwe type. I.E a wrapper double assigned to a wrapper double.
 		 */
 		
+		
+		Integer number1=1000;
+		Integer number2=1000;
+		
+		int num1=100;
+		int num2=100;
+		
+		System.out.println(num1==num2); //true as comparing values
+		System.out.println(number1==number2); //false as comparing if they're pointing to the same object
+		
+		//If we want to see if two wrapper objects contain the same nymber, we use equals:
+		System.out.println(number1.equals(number2)); //true
+		
+		num1=1000;
+		
+		//You can also compare a wrapper with it's primitive equivalent (of SAME type):
+		System.out.println(number1.equals(num1)); //true
+		double dNum1 = 1000.00;
+		//System.out.println(number1.equals(dNum1)); //doesn't give an error, but will return false (as you're trying to compae two different things that cant be compared.
+		
+		
+		//number1 & number2 are integer wrapper objects. 
+		number1 = 12; //value of 12 is autoboxed into the wrapper object
+		number2 = 12; //value of 12 is autoboxed into the wrapper object
+		//If two Integer wrappers are less than or equal to 127, and greater than or equal to -128, then the two wrappers point to the same object.
+		System.out.println("Number1 and number2: " + (number1==number2));
+		
+		//When you use the NEW keyword to create a wrapper, YOU ALWAYS HAVE different objects.
+		
+		number1=new Integer(50);
+		number2=new Integer(50);
+		//this will print false
+		System.out.println("number1 and number2 using new: " + (number1 == number2));
+		
+		
+
+		//All these references will point to the same Boolean wrapper object:
+		Boolean cBool1 = true;
+		Boolean cBool2 = true;
+		Boolean cBool3 = true;
+		
+		System.out.println(cBool1==cBool2==cBool3);
+		cBool1 = new Boolean(true); //create a NEW Boolean wrapper obj
+		System.out.println(cBool1==cBool2); //gives false, as two different objects
+		System.out.println(cBool1 = Boolean.valueOf(cBool2)); 
+		
+		
+		
+		
+		
 	}
 
 }
