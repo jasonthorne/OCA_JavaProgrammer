@@ -137,6 +137,67 @@ public class Examples {
 		doubleList.add(staticInt2.doubleValue()); //calling the method of the Integer class that will convert the number to a double.
 		
 		
+		//=================================================PARSERS========================================
+		
+		
+		System.out.println("\nPARSERS:");
+		
+		//Parsers are methods of the wrapper classes, and are used for converting numbers in a string to a primitive data type. 
+		
+		String strNum2="123";
+		String strNum3 = "2";
+		
+		int primitiveInt = Integer.parseInt(strNum2); //note that this converts string to a PRIMITIVE variable. +++++++++++++++++++
+		
+		System.out.println(Integer.parseInt(strNum2) + Integer.parseInt(strNum3)); //parsing string to int
+		System.out.println(Double.parseDouble(strNum2) + Double.parseDouble(strNum3)); //parsing string to double
+		
+		boolean bValue = Boolean.parseBoolean("tRue");
+
+		
+		/*
+		 * UNBOXING: Taking the int variable out of the Integer wrapper object and assigning it to an int. 
+		 */
+		
+		Integer statInt2=Integer.valueOf(89); //an Integer wrapper object (with an instance var with value of 89)
+		int num=67; //primitive var
+		System.out.println("Num is: " + num);
+		num=statInt2; //assigning the value in the int wrapper to the primitive var
+		System.out.println("Num is now: " + num);
+		
+		
+		ArrayList<Integer>intList=new ArrayList<Integer>();
+		intList.add(num); //int will be AUTOBOXED into an Integer wrapper
+		intList.add(statInt2); //Integer warapper
+		
+		System.out.println(intList.get(0));
+		System.out.println(intList.get(1));
+		
+		//Get the class name of the second object in the arraylist:
+		System.out.println(intList.get(0).getClass().getSimpleName());
+		System.out.println(intList.get(1).getClass().getSimpleName());
+		
+	}
+	
+	
+	
+	static void compareWrappers() {
+		
+		/*
+		 * You cant assign one wrapper object of one type to another wrapper of a different type. 
+		 */
+		
+		Short sNumer=45;
+		//Integer iNumber = sNumber; //Wont work
+		double dNum=67; //asigning a value to a primitive.
+		//Double dNumber = 67; //Doesnt work as only a primitive double can be autoboxed.+++++++++++++++TYPES matter NOT amount (only primitives care about size) 
+		Double dNumber = 67.0; //assigning a value to a double wrapper object.
+		
+		/*
+		 * When directly assigning a value to a wrapper object you caon ONLY asign the primitive equivillent (ie a primitive double to a wrapper double)
+		 * or a wrapper object of the samwe type. I.E a wrapper double assigned to a wrapper double.
+		 */
+		
 	}
 
 }

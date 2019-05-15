@@ -19,6 +19,7 @@ public class Main {
 	
 	public static void main (String [] args) {
 		
-		Examples.createWrappers();
+		//Examples.createWrappers();
+		Examples.compareWrappers();
 	}
 }
