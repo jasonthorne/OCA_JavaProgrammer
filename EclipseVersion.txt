@@ -2,3 +2,5 @@ Eclipse IDE for Enterprise Java Developers.
 
 Version: 2018-12 (4.10.0)
 Build id: 20181214-0600
+
+eclipse-jee-2018-12-R-win32-x86_64\eclipse
