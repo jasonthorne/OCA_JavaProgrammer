@@ -331,8 +331,33 @@ public class Examples {
 		System.out.println(finalDbl);
 		System.out.println(finalFloat);
 		
+		//===================
+		//Book questions. p136
 		
 		
+		//Q2-1
+		int myChar1 = 97; //'a'; //97
+		int myChar2 = 98; //'b'; //98
+		
+
+		//In a print statement if you have NO STRING before you use the plus symbol (+) this symbol will be the addition symbol.
+		System.out.println((char)myChar1 + (char)myChar2); //Casting doesnt work here as they're chars already.
+		
+		System.out.println("yo dawg: " + myChar1 + myChar2); //A string before we use the + symbol, so that means everything AFTER the + symbol is considered a string
+		System.out.println("yo dawg: " + (myChar1 + myChar2)); //chars added, as they're summed in the bracket before concatenation.
+		
+		System.out.println(myChar1 + myChar2); //No string b4 the + so treated as an addition operator.
+		
+		
+		//Q2-2
+		char c = '1';
+		char b=1;
+		
+		System.out.println(c + " " + b);
+		
+		//===================
+		byte a = -0;
+		System.out.println(a);
 		
 	}
 
