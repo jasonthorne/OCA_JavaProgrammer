@@ -24,6 +24,11 @@ public class Main {
 		
 		//Static vars should be accessed in a STATIC WAY:
 		System.out.println("accessing in a static way: " + Local.courseId);
+		
+		Pupil.takeCourse();
+		
+		Phone phone = new Phone();
+		phone.dialUp(3);
 	}
 
 }
