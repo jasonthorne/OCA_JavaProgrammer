@@ -26,8 +26,39 @@ public class Main {
 		pauline=paul; //pauline now refers to person n
 		paul=null; //paul now refers to nothing. (Remember Person n can still be reached through pauline).
 		
+		//=================================================
 		
-
+		//created 4 animals for our zoo:
+		Monkey monty = new Monkey();
+		Elephant nellie = new Elephant();
+		Lion leo = new Lion();
+		Zebra zed = new Zebra();
+		
+		System.out.println("id of monty is: " + monty.id);
+		
+		//create a zoo object that takes our previously created animals:
+		Zoo myZoo = new Zoo(monty, leo, nellie, zed);
+		
+		//id of the monkey in the zoo is:
+		System.out.println("id of the monkey in the zoo is: " + myZoo.monty.id); 
+		
+		//Monkey object now has TWO REFERENCES (monty.id & myZoo.monty.id) +++++++++++++++++++++++++++++++++++++++++
+		
+		//create new objects for all references
+		monty = new Monkey();
+		nellie = new Elephant();
+		leo = new Lion();
+		zed = new Zebra();
+		
+		System.out.println("\nid of monty is now: " + monty.id);
+		System.out.println("id of monty IN ZOO is still: " +  myZoo.monty.id);
+		
+		//create a NEW zoo, adding the new animal objects
+		myZoo = new Zoo(monty, leo, nellie, zed);
+		System.out.println("\nid of monty is now: " + monty.id);
+		System.out.println("id of monty in zoo is NOW: " +  myZoo.monty.id);
+		
+		
 	}
 
 }
