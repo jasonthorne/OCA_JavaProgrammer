@@ -46,7 +46,7 @@ public class Person {
 		}
 		
 		
-		//taking two arrays, and returnng an array
+		//taking two arrays, and returning an array
 		int[]methodArrays(int[]intArray, double[]doubleArray){
 			return new int[5];
 		}
