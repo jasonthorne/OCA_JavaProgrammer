@@ -42,6 +42,15 @@ public class Main {
 		//samsung.call(2, 3);
 		//samsung.call(8, 1);
 		
+		Tablet myTablet = new Tablet();
+		
+		Message myMessage = new Message();
+		myMessage.read(samsung);
+		myMessage.read(myTablet);
+		myMessage.read(new Pc());
+		myMessage.read(new GameConsole());
+		myMessage.read(new Appliance());
+		
 		
 	}
 	
