@@ -35,7 +35,7 @@ public class Main {
 		
 		Elephant nellie = Elephant.makeElephant(); //creating an Elephant statically.
 		
-		
+		Donkey d = new Donkey();
 		
 		
 		

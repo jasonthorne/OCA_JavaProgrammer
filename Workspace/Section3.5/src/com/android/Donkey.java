@@ -6,16 +6,20 @@ public class Donkey {
 	String name;
 	double weight;
 	
-	Donkey(){
-		this(12, "neddy", 120.2); //this looks in the same class for a constructor that takes these args +++++++++++++++++++++++
+	public Donkey(){
+		//calling a private constructor from a public constructor
+		this(12, "neddy", 120.2); //this looks in the same class for a constructor that takes these args.CALL MUST BE THE FIRST THING IN CONSTRUCTOR +++++++++++++++++++++++
+		System.out.println("Donkey constructor that takes no arguements");
 	}
 	
-	public Donkey(int age, String name, double weight) {
+	private Donkey(int age, String name, double weight) {
 		super();
-		System.out.println("Donkey constructor that takes an int, string and double");
+		//this(); //calling the donkey constructor that takes no args (not allowed as it creates a loop!)
+		System.out.println("\nDonkey constructor that takes an int, string and double");
 		this.age = age;
 		this.name = name;
 		this.weight = weight;
+		
 	}
 	
 	
