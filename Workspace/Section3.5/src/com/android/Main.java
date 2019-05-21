@@ -37,7 +37,9 @@ public class Main {
 		
 		Donkey d = new Donkey();
 		
+		Human harry = new Human(43, "harry", 156, false);
 		
+		Employee eddie = new Employee();
 		
 	}
 	
