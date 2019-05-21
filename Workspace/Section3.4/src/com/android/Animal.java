@@ -40,6 +40,12 @@ public class Animal {
 		System.out.println("drink method in Animal class that takes NO args.");
 	}
 	
+	String type = this.getClass().getSimpleName(); //this variable will be either an Animal, Dog or Collie (depending upon the scope of this)
+	
+	void identifyMe() {
+		System.out.println("I am a " + this.getClass().getSimpleName());
+	}
+	
 }
 
 class Dog extends Animal{
@@ -54,6 +60,15 @@ class Dog extends Animal{
 	void drink() {
 		
 	}*/
+	
+	void bark() {
+		System.out.println("I am a " + type + " barking");
+	}
+	
+}
+
+class Collie extends Dog{
+	
 }
 
 

@@ -51,8 +51,33 @@ public class Main {
 		myMessage.read(new GameConsole());
 		myMessage.read(new Appliance());
 		
+		takeAnimal(new Collie()); //this will call the (Dog myDog) method as its the CLOSEST overloaded method TO IT. ++++++++++++++++IMPORTANT!++++++++++++++++++
 		
+	}//main
+	
+	
+	
+	static void takeAnimal(Animal myAnimal){ //can take an animal, a dog and a collie
+		myAnimal.identifyMe();
+		System.out.println("Animal calling me");
 	}
+	
+	static void takeAnimal(Dog myDog){ //can take a dog and a collie
+		myDog.identifyMe();
+		myDog.bark();
+		System.out.println("Dog calling me");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }
