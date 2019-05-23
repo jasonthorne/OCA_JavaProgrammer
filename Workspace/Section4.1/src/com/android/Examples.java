@@ -240,8 +240,134 @@ public class Examples {
 		
 		String str=" the quick brown fox jumped over the lazy dog ";
 		
+		//count the characters (excluding spaces) in this sentence, count the words in the sentence.
+		
+		str = str.trim(); //remove spaces before or after the space
+		int count = 0;
+		for(int i=0;i<str.length();i++) {
+			if (str.charAt(i)== ' ') {
+				count++;
+			}
+		}
+		
+		System.out.println("count is: " + count);
+		System.out.println("ammount of words is: " + ++count);
+	}
+	
+	
+	
+		
+	static void ex6() {
+		
+		String poet = "Wordsworth";
+		
+		/*
+		 * Methods of the String class always produce a NEW String, 
+		 * which means they are NOT added to the pool or they do NOT check the pool to see if string already exists. 
+		 */
+		
+		
+		String str1 = poet.substring(5); //produces NEW word 'worth' (so not added to string pool)
+		System.out.println(str1);
+		
+		String str2 = poet.substring(5); //produces NEW word 'worth'  (so not added to string pool)
+		
+		System.out.println(str1.equals(str2)); //true, as they both contain the word 'worth'
+		
+		/*this will be false as subString() produces a NEW string. 
+		 * It uses the NEW keyword to create a new string, and anytime the new keyword is used to create a string it is NOT placed in the pool.
+		 */
+		System.out.println(str1==str2);
+		
+		String str3 = "worth";
+		
+		/*
+		 * This will be false as str1 was not placed in the pool, as it was created using a method of the string class.
+		 */
+		
+		System.out.println(str1==str3);
+		
+		/*
+		 * This will be true as str1 and str3 both contain the word "worth"
+		 */
+		
+		System.out.println(str1.contentEquals(str3));
+		
+		String str4 = "worth";
+		
+		System.out.println("str3==str4: " + (str3==str4)); //true asstr3 added 'worth' to pool
 		
 	}
+	
+	static void ex7() {
 		
+		/*
+		 * With strings you can only use certain operators, namely concatenation:
+		 * +,+=
+		 */
+		
+		String name="Mary"; 
+		
+		name +=" fahey"; //this is the same as name = name+"fahey"
+		
+		System.out.println(name);
+		
+		
+		/*and equallity:
+		 * ==,
+		 * != checks to see if they are not the same object
+		 */
+		
+		
+		String str1 = "apple";
+		String str2 = new String("apple");
+		
+		//this will return true as they are NOT the same object:
+		System.out.println(str1!=str2);
+		
+		
+		//===========================
+		
+		String aString = "santa " + "claus" + " is coming to town";
+		System.out.println(aString);
+		
+		
+		int num1 = 10;
+		int num2 = 30;
+		
+		 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		//When you encounter a string in a print statement, everything AFTER that is treated as a string. everything BEFORE that is treated as its original data type
+		System.out.println(num1 + num2 +aString);
+		
+		System.out.println(aString+num1+num2); //this will treat the numbers AFTER the string as strings, so concatenates them.
+		
+		//how ot add the numbs after they follow the string;
+		System.out.println(aString+(num1+num2));
+		
+		
+		Dog spot = null;
+		System.out.println(spot);
+		
+		//if you try to print a null object with a NON STRING data type, you will get an error:
+		//System.out.println(spot+null);
+		
+		
+		//When you use a null with a string in a print statement, it will convert the the null object to the string "null":
+		
+		//this will work
+		System.out.println(spot + " yo dawg!");
+		
+		//as will this:
+		System.out.println(null + " yo dawg!");
+		
+		//this wont, as you've other data types BEFORE the null. You have to have the null AFTER the string
+		//System.out.println(10+20+null + "yo dawg!");
+		
+		//this is the right way:
+		System.out.println(10+20+ "yo dawg!"+null);	
+		
+		
+	}
+	
 	
 }
