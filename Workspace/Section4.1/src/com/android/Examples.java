@@ -206,13 +206,41 @@ public class Examples {
 	
 	static void ex4() {
 		
-		//CHAINING ++++++++++++++++++++++++++++++
+		//METHOD CHAINING ++++++++++++++++++++++++++++++
 		
 		String str1 = "hello";
 		String str2 = "there";
 		
 		System.out.println(str1+str2);
 		System.out.println(str1.concat(str2));
+		
+		System.out.println("METHOD CHAINING:");
+		
+		String myDay = ("    sunday    ");
+		
+		
+		System.out.println("***"+myDay.trim().replace('d', 'z').concat("men")+"***");
+		
+		
+		
+		//'monday' - replace 'm' with 't', add 'day' to end. get a substring that starts  at pos 2, and up to pos 6.
+		
+		String day= "monday";
+		//day=day.
+		
+		
+		//'saturday' -get a substring that starts  at pos 3, and up to pos 7. replace u with o, then add 'day' to the end
+		
+		
+	}
+	
+	
+	static void ex5() {
+		System.out.println("simple word character count:");
+		
+		String str=" the quick brown fox jumped over the lazy dog ";
+		
+		
 	}
 		
 	
