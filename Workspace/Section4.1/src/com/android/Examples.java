@@ -82,4 +82,138 @@ public class Examples {
 		
 		
 	}
+	
+	
+	
+	static void ex3() {
+	
+		//=======================================================charAt()
+		
+		
+		String name = "paul";
+		
+		System.out.println("\ncharAt();");
+		
+	/*
+	 * char() shows what character is at a particular index in a string. Numbering in a string is array numbering, so it starts at 0.
+	 */
+		System.out.println("at position 0: " + name.charAt(0)); 
+		System.out.println("at position 3: " + name.charAt(3));
+		
+		//gives exception as it only has 4 characters, so numbering goes from 0 to 3.
+		//name.charAt(4);
+		
+		//=======================================================length()
+		
+		System.out.println("\nlength();");
+		
+		//gives the length of a string:
+		System.out.println("length of string: " + name.length()); 
+		System.out.println(name.charAt(name.length()-1)); //-1 needed, as length is 4, but array is 0 indexed, giving out of bounds exception.
+		
+		//=======================================================indexOf()
+		
+		System.out.println("\nindexOf();");
+		
+		String nursery = "Mary had a little lamb, her fleese was white as snow, and everywhere that Mary went, her lamb was sure to go";
+		
+		//shows the first occurrence of char (or set of chars) in a string. 
+		
+		System.out.println(nursery.length()); //108 (including spaces) so indexing goes from 0 - 107
+		
+		System.out.println("first h in nursery: " + nursery.indexOf('h'));
+		
+		System.out.println("first occurance of 'lamb' is at pos: " + nursery.indexOf("lamb"));
+		
+		
+		//this will start our search at pos 22:
+		System.out.println("second occurance of 'lamb' is at pos: " + nursery.indexOf("lamb", 22));
+		
+		//search for second occurrence of 'lamb', using (first occurrence + 1) as the start point. 
+		System.out.println("second occurance of 'lamb' is at pos: " + nursery.indexOf("lamb", nursery.indexOf("lamb")+1));
+		
+		//if index of() can't find a particular string, it will return -1.
+		System.out.println("Search of Z" + nursery.indexOf('z'));
+		
+		//=======================================================substring()
+		
+		System.out.println("\nsubstring()");
+		
+		
+		//There are a few overloaded substring() methods. The first type takes as an arg, the starting pos index:
+		String exam="oracle";
+		String cut=exam.substring(2);
+		System.out.println(cut); //prints: acle
+		
+		
+		String cut2=exam.substring(2, 4); //start at pos 2, go up to but NOT INCLUDING 4 /++++++++++++++++++++++++++++++++WILL PROBABLY BE IN EXAM!!! 
+		System.out.println(cut2); //prints: ac
+		
+		//=======================================================trim()
+		
+		System.out.println("\ntrim()");
+		
+		//Gets rid of the trailing spaces in a string (any spaces at the beginning and end of a string. NOT spaces between words)
+		
+		name="  Tom Jones  ";
+		
+		System.out.println("****"+name+"****");
+		System.out.println("****"+name.trim()+"****");
+		
+		
+		//=======================================================replace()
+		
+		System.out.println("\nreplace()");
+		
+		//Replaces a character or string with another character or string
+		
+		name="tommy";
+		cut=name.replace('m', 'z'); //replaces the m's with z's
+		System.out.println(cut);
+				
+		String str="the quick brown fox jumped over the lazy fox";
+		cut=str.replace("fox", "wolf");
+		System.out.println(cut);
+		
+		//this doesnt change anything, just prints out the string:
+		System.out.println(str.replace("yo", "jam"));
+		
+		//You CANT replace a string with a char or vice versa:
+		//cut=str.replace("fox", 'f'); //doesnt compile
+		
+		
+		//=======================================================endsWith() & startsWith()
+		
+		System.out.println("\nendsWith() & startsWith()");
+				
+		str="ABCAB";
+		
+		//startswith:
+		
+		//these methods return a boolean. ALWAYS take a string (NOT a char)
+		System.out.println(str.startsWith("AB")); //true
+		System.out.println(str.startsWith("a")); //false
+		
+		//checking the position as well (pos 3):
+		System.out.println(str.startsWith("A", 3)); //true
+		
+		//endsWith:
+		
+		System.out.println(str.endsWith("AB")); //true
+		System.out.println(str.endsWith("A")); //false
+		
+	}
+	
+	static void ex4() {
+		
+		//CHAINING ++++++++++++++++++++++++++++++
+		
+		String str1 = "hello";
+		String str2 = "there";
+		
+		System.out.println(str1+str2);
+		System.out.println(str1.concat(str2));
+	}
+		
+	
 }
