@@ -115,21 +115,102 @@ public class Examples {
 		String str = "hello" + sb6;
 		
 	}
+	
+	static void ex3() {
+		
+		StringBuilder sb1 = new StringBuilder("yo");
+		
+		System.out.println("Insert:");
+		//INSERT:
+		
+		/*
+		 * This inserts text or any other primitive data type or object into certain locations in you StringBuilder object
+		 */
+		
+		
+		sb1.insert(2, " dawg"); //index pos to add it to, value. 
+		System.out.println(sb1);
+		
+		sb1.insert(3, 34);
+		System.out.println(sb1);
+		
+		
+		Cat cat = new Cat(4, "Tom");
+		sb1.insert(4, cat);
+		System.out.println(sb1);
+		
+		sb1.insert(0, "nice");
+		System.out.println(sb1);
+		
+		//even though index pos go from 0-4, this will insert at 5 (as its the direct next index). insert at 6 would give outOfBounds ++++++++++++++++++++++++++++++++ 
+		sb1 = new StringBuilder("hello");
+		sb1.insert(5, "there");
+		System.out.println(sb1);
+		
+	}
 
 	
+	static void ex4() {
+		
+		//DELETE
+		System.out.println("Delete:");
+		
+		//delete removes the characters in a substring off the specified StringBuilder object:
+		
+		StringBuilder numSb = new StringBuilder("0123456789");
+		
+		numSb.delete(2, 4); //start at pos 2, and go UP TO but NOT INCLUDING pos 4.
+		System.out.println(numSb);
+		
+		System.out.println(numSb.delete(4, 30)); //index CAN be out of bounds for the 'up to' value. +++++++++++++++++++++
+		
+		//if the start point is greater than the amount of elements though, then you will get an outOfBounds:
+		//System.out.println(numSb.delete(20, 30)); 
+		
+		//string gives same error:
+		String myStr = "Jason";
+		//System.out.println(myStr.charAt(5));
+		
+		//=========================================================
+		
+		
+		//deleteCharAt()
+		
+		//Removes a character at a specified location:
+		
+		numSb = new StringBuilder("0123456789");
+		
+		numSb.deleteCharAt(1);
+		System.out.println(numSb);
+		
+		//=========================================================
+		
+		//reverse()
+		
+		numSb = new StringBuilder("0123456789");
+		numSb.reverse();
+		System.out.println(numSb);
+		
+		//=========================================================
+		
+		//replace()
+		
+		//Replaces a String in the StringBuilder at a specified location:
+		
+		numSb = new StringBuilder("0123456789");
+		
+		numSb.replace(0, 5, "AB"); //(start pos, end pos (up to but NOT INCLUDING IT), replacement string).
+		System.out.println(numSb);
+		
+		
+		numSb = new StringBuilder("0123456789");
+		numSb.replace(2, 7, "hello");
+		System.out.println(numSb); //01hello789
+		
+		
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }
