@@ -52,7 +52,7 @@ public class Examples {
 		//dArray1 = myArray1; cant assign an int array to a double array.
 		//myArray1 = dArray1; cant assign a double array to an int array.
 		
-		
+		//
 	}
 
 }
