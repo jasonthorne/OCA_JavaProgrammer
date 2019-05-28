@@ -85,8 +85,28 @@ public class Examples {
 		}
 		
 		
+	}
+	
+	
+	static void ex2() {
+		System.out.println("Multi dimentsional arrays");
+		
+		int twoDArray1 [][] = new int[3][5];//x3 1 dim arrays with 5 elements in each (3 rows, 5 columns). 
+		
+		int twoDArray2 [][] = new int[3][3];//x3 1 dim arrays with 3 elements in each (3 rows, 3 columns). 
+		
+		double[]doubleD[]=new double[3][4];
+		
+		String[][]names = 
+		{
+			{"noel", "mick", "kevin"}, //first row
+			{"patrica", "connie", "kate"}, //second row
+			{"michele", "laura", "colm"} //third row
+		};
 		
 		
+		
+				
 	}
 
 }
