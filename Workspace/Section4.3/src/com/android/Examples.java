@@ -52,7 +52,41 @@ public class Examples {
 		//dArray1 = myArray1; cant assign an int array to a double array.
 		//myArray1 = dArray1; cant assign a double array to an int array.
 		
-		//
+		//===================================================================================looping through arrays:
+		
+		//enhanced for:
+		for(double dNum: dArray2) {
+			System.out.println("enhanced for: "+dNum);
+		}
+		
+		String[] names = {"noel", "patsy", "nora"};
+		
+		for(String name: names) {
+			System.out.println("name is: "+name);
+		}
+		
+		
+		dArray1 = new double[] {3.4,5.6,7.8};
+		
+		for(double d: dArray2) {
+			System.out.println(d);
+			d=4.56; //this doesn't effect the array, just the value of 'd'
+		}
+		
+		
+		//populate an array with 7 numbers:
+		int[]numArray=new int[7];
+		for(int i=0;i<numArray.length;i++) {
+			numArray[i] = i+2;
+		}
+		
+		for(int num:numArray) {
+			System.out.println("num is: " + num);
+		}
+		
+		
+		
+		
 	}
 
 }
