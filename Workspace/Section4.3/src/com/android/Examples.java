@@ -89,7 +89,8 @@ public class Examples {
 	
 	
 	static void ex2() {
-		System.out.println("Multi dimentsional arrays");
+		
+		System.out.println("Multi dimentsional arrays"); //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		
 		int twoDArray1 [][] = new int[3][5];//x3 1 dim arrays with 5 elements in each (3 rows, 5 columns). 
 		
@@ -97,16 +98,103 @@ public class Examples {
 		
 		double[]doubleD[]=new double[3][4];
 		
+		//this is new String [3][3] (x3 1 dim arrays with 3 elements in each)
 		String[][]names = 
 		{
-			{"noel", "mick", "kevin"}, //first row
-			{"patrica", "connie", "kate"}, //second row
-			{"michele", "laura", "colm"} //third row
+			{"noel", "mick", "kevin"}, //first row. array 0. To access elements in this array: [0][x]
+			{"patrica", "connie", "kate"}, //second row. array 1. To access elements in this array: [1][x]
+			{"michele", "laura", "colm"} //third row. array 2. To access elements in this array: [2][x]
 		};
 		
+		System.out.println(names[0][0]); //noel
+		System.out.println(names[1][1]); //connie
+		System.out.println(names[2][1]); //laura
 		
+		//both give outOfBoundsExceptions:
+		//System.out.println(names[1][3]); 
+		//System.out.println(names[3][1]); 
 		
+		//================================================
+		
+		//printing a 2dim array: ++++++++++++++++++++++++++++++++++
+		
+		/*
+		 * To print a 2 dim array, we need to create an inner/nested loop.
+		 * The outer loops takes care of the rows, and will loop 3 times.
+		 * The inner loop takes care of the columns and will print 3 times.
+		 */
+		
+		int num=names[0].length; //gives amount of elements in first row (array)
+		//names.length //gives amount of rows (arrays) in outer array
+		
+		for(int i=0;i<names.length;i++) {
+			for(int j=0;j<names[i].length;j++) {
+				System.out.println("name is: "+ names[i][j]); 
+			}
+		}
+		
+		//assigning a value directly into a 2 dim array:
+		names[0][1] = "bob";
+		System.out.println(names[0][1]);
+		
+		int[][] int2D = new int[4][3];
+		
+		//populate the 2d array:
+		for(int i=0;i<int2D.length;i++) {
+			for(int j=0;j<int2D[i].length;j++) {
+				int2D[i][j]= i+j; 
+			}
+		}
+		
+		for(int i=0;i<int2D.length;i++) {
+			for(int j=0;j<int2D[i].length;j++) {
+				System.out.println(int2D[i][j]);
+			}
+		}
+		
+		//===prints out the first number in every row 
+		for(int i=0;i<int2D.length;i++) {
+				System.out.println(int2D[i][0]);
+		}
+	
+		
+	}
+	
+	static void ex3() {
+		
+		System.out.println("3 dim arrays");
+		
+		//3 dim arrays ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		
+		//An array of x3 2dim arrays, and each of those has x4 1 dim arrays, and each of those has 2 ints.
+		int [][][]threeD = new int[3][4][2]; //i,j,k
+		
+		//outer loop (depth):
+		for(int i=0;i<threeD.length;i++) {
+			
+			//rows (number of arrays):
+			for(int j=0;j<threeD[i].length;j++) {
 				
+				//colums (number of array elements):
+				for(int k=0;k<threeD[i][j].length;k++) {
+					
+					threeD[i][j][k] = i+j+k;
+					System.out.print(threeD[i][j][k]);
+					/*
+					 * 000=0
+					 * 001=1
+					 * 010
+					 * 101
+					 * 011
+					 * 
+					 */
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+		
+		
 	}
 
 }
