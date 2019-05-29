@@ -194,7 +194,107 @@ public class Examples {
 			System.out.println();
 		}
 		
+		//===================================================
+		
+		//POPULATING A 3D ARRAY +++++++++++++++++++++++++++++++++++++++++++++
+		//to make an array; [2][3][3] - 2 2d arrays, each with 3 1d array, each with 3 elements.
+		
+		
+		int[][][]threeD2 = { //new int[2][3][3]
+				
+			//first 2d array:
+			{
+				//inside the 2d array are 3 1d arrays: 
+				{23, 45, 67}, //each array has 3 elements
+				{3, 567, 890}, //To access elements in this array: [0][2][x]
+				{69, 99, 100}
+			},
+			
+			//second 2d array:
+			{
+				{99, 991, 1000}, //first row. array 0. To access elements in this array: [1][0][x]
+				{45, 88, 9345}, //second row. array 1. To access elements in this array: [1][1][x]
+				{567, 321, 9345} //third row. array 2. To access elements in this array: [1][2][x]
+			}
+				
+		};//threeD2
+		
+		
+		//=========
+		
+		int[]numArray1 = {3,5,88};
+		int[]numArray2 = {33,44,88};
+		int[]numArray3 = {66,77,99};
+		
+		//make a 2d array from above arrays:
+		int[][]twoDMakeUp = { //[3][3]
+			
+			//adding 3 1d arrays:
+			numArray1,
+			numArray2,
+			numArray3
+		};
+		
+		
+		//make a 3d array:
+		int[][][]threeDMakeUp = { //[2][3][3]
+			
+			//adding 2 2d arrays:
+			twoDMakeUp, 
+			twoDMakeUp
+		};
+		
+		
+		//=====================================================================
+		
+		
+		//ASYMETRIC MULTIDIMENSIONAL ARRAY +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		//different amounts of numbers on each line
+		
+		int[][]numbers= { // = [2][3]
+			{34,56,78},
+			{34,56,78}
+		};
+		
+		//this is the ONLY way to create an asymetric array (can't use a loop)
+		int[][]asymetricNum= {
+			{45,67,8},
+			{45},
+			{45,67},
+			{45,67,8,100},
+			{45,67,8}
+		};
+		
+	}//ex3
+	
+	
+	static void ex4() {
+		
+		/*if no values are intitialsed in the array, the default value is given to each element in the array. 0 or 0.0 (for floats & doubles)
+		 * for booleans its flase
+		 * for chars its a blank ''
+		 * for objects its null
+		 */
+		
+		int[]numbers = new int[5];
+		double[]dNumbers = new double[5];
+		boolean[]booleans = new boolean[5];
+		char[]characters = new char[5];
+		String[]strings = new String[5];
+		
+		for(int i=0;i<5;i++) {
+			System.out.println(numbers[i]);
+			System.out.println(dNumbers[i]);
+			System.out.println(booleans[i]);
+			System.out.println(characters[i]);
+			System.out.println(strings[i]);
+		}
+			
+		
+		
 		
 	}
+	
+	
 
 }
