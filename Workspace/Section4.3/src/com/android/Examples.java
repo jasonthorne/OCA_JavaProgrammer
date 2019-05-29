@@ -422,6 +422,39 @@ public class Examples {
 		betty.fly(); //from own method
 		
 		
+		Ford myFord=new Ford();
+		myFord.drive();
+		myFord.move();
+		
+		//Vehicle is a superClass of Car & Car is a superclass of Ford, which means that Vehicle is a superclass of Ford.
+		Vehicle vCar = new Ford(); //This ONLY gives access to methods in the Vehichle class.
+		
+		//THe object above can ONLY call methods first xefined in the vehichle class;
+		vCar.move();
+		//vCar.drive(); //no dice!
+		
+		
+		//An array of Superclass objects can take a superclass object & any SUBCLASS of the superclass object.
+		
+		Vehicle[]vehicleList = new Vehicle[5];
+		Boat boaty = new Boat();
+		Car cary = new Car();
+		Bike bikey = new Bike();
+		Vehicle vehicle = new Vehicle();
+		Ford fordy = new Ford();
+		
+		vehicleList[0]=boaty;
+		vehicleList[1]=cary;
+		vehicleList[2]=bikey;
+		vehicleList[3]=vehicle;
+		vehicleList[4]=fordy;
+		
+		
+		System.out.println("\nall vehicles moving:");
+		
+		for(Vehicle v:vehicleList) {
+			v.move();
+		}
 	}
 
 }
