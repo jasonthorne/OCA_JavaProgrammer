@@ -369,11 +369,59 @@ public class Examples {
 			System.out.println("\nname of cat eating: " + catList[i].name);
 			catList[i].eat();
 			catList[i].drink();
-			
+		}
+		
+		for(Cat c:catList) {
+			c.eat();
+			c.drink();
+			System.out.println("name of cat is: "+c.name);
+			System.out.println(c);
 		}
 		
 		
 	}//ex5
 	
+	
+	static void ex6() {
+		
+		
+		Animal andy; //you CAN have a reference that is an abstract class or interface.
+		//new Animal(); // you CANT however create an OBJECT of an abstract class.
+		//You CAN however have a superclass abstract class reference to a subclass object:
+		
+		/*This animal ONLY has access to the methods and variables FIRST defined in the Animal class. 
+		 * If any of the methods are overridden in the Hippo class, it will take from them.
+		 * Drink HAS to be overridden as its abstract. 
+		 */
+		
+		Animal hipAnimal = new Hippo();
+		hipAnimal.drink();
+		hipAnimal.eat();
+		hipAnimal.sleep();
+		System.out.println("age of hippo" + hipAnimal.age);
+		
+		
+		
+		Hippo henry = new Hippo();
+		Monkey monty = new Monkey();
+		Bird betty = new Bird();
+		
+		System.out.println();
+		henry.eat(); //from Animal class
+		henry.drink(); //overrides abstract drink method from Animal class
+		henry.swim(); //from own method
+		
+		System.out.println();
+		monty.eat(); //from Animal class
+		monty.drink(); //overrides abstract drink method from Animal class
+		monty.climb(); //from own method
+		
+		System.out.println();
+		betty.eat(); //from Animal class
+		betty.drink(); //overrides abstract drink method from Animal class
+		betty.fly(); //from own method
+		
+		
+	}
 
 }
