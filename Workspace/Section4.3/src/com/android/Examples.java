@@ -282,19 +282,98 @@ public class Examples {
 		char[]characters = new char[5];
 		String[]strings = new String[5];
 		
-		for(int i=0;i<5;i++) {
-			System.out.println(numbers[i]);
-			System.out.println(dNumbers[i]);
-			System.out.println(booleans[i]);
-			System.out.println(characters[i]);
-			System.out.println(strings[i]);
-		}
+		
+			System.out.println(numbers[1]);
+			System.out.println(dNumbers[1]);
+			System.out.println(booleans[1]);
+			System.out.println(characters[1]);
+			System.out.println(strings[1]);
+	
 			
 		
+		Dog[]dogList = new Dog[2];
+		
+		//we never populated this array of dogs, so each entry is given a default value for each object of null.
+		for(Dog d:dogList) {
+			System.out.println("dog is: " + d);
+		}
+		
+		dogList[0] = new Dog();
+		dogList[1] = new Dog();
+		
+		//prints the address of each dog, as we have NO toString method defined in the Dog class. 
+		for(Dog d:dogList) {
+			System.out.println("dog is: " + d);
+		}
 		
 		
-	}
+		//=====================
+		//the 'toString' method has been overriden in the House class to print it's instance vars
+		House house1 = new House(12.34, 45.6,"GGGGalway");
+		House house2 = new House(67.7, 33.3,"Dublin");
+		House house3 = new House(37.7, 23.1,"Limerick");
+		House house4 = new House(7.4, 80.2,"Cork");
+		
+		House[] eastate = {house1, house2, house3, house4};
+		
+		for(House h: eastate) {
+			System.out.println(h);
+		}
+		
+		
+		//====
+		
+		//if initialising an array over two lines of code as below, you have to use the 'new' keyword:
+		int[]intArray;
+		//intArray = {45,67}; //WONT compile.
+		intArray=new int[] {56,89,99}; 
+		
+		//assigning an existing array to a new array:
+		int[]newArray = intArray;
+		
+		//THis means they're referencing the same object, so this will print true:
+		System.out.println(newArray == intArray);
+		
+		
+	}//ex4
 	
+	
+	static void ex5() {
+		
+		//create a Cat array:
+		Cat[]catList = new Cat[3];
+		
+		//add Cats to array:
+		Cat tibbles = new Cat(2, "tibbles");
+		Cat tomCat = new Cat(3, "tomCat");
+		Cat fluffles = new Cat(4, "fluffles");
+		
+		catList[0] = tibbles;
+		catList[1] = tomCat;
+		catList[2] = fluffles;
+		
+		//create a new array, and add cats: 
+		Cat catList2[] = {tibbles, tomCat, fluffles};
+		
+		//there are two ways to reach each Cat object. 
+		System.out.println("name of first cat is: " + catList[0].name); //through the array reference
+		System.out.println(tibbles.name); //through its own Cat reference
+		
+		
+		//System.out.println(catList[0].eat()); //doesnt work as the eat method returns void. 
+		
+		catList[0].eat(); //first cat in list eating
+		
+		//looping cats:
+		for(int i=0;i<catList.length;i++) {
+			System.out.println("\nname of cat eating: " + catList[i].name);
+			catList[i].eat();
+			catList[i].drink();
+			
+		}
+		
+		
+	}//ex5
 	
 
 }
