@@ -503,6 +503,22 @@ public class Examples {
 	
 	static void ex7() {
 		
+		/*
+		 * You can't create an interface object, because an interface is a purely abstract class.
+		 */
+		
+		Behaviour behaviour; // You CAN have an interface reference. = new Behaviour(); 
+		
+		//You can have an interface reference to an object that is an instance of a child class.
+		Behaviour behaviourPerson = new Person();
+		Behaviour behaviourFireman = new Fireman();
+		Behaviour behaviourEmpl = new Employee();
+		
+		//BUT you only get access to the methods of the child that were defined in the interface.  
+		behaviourPerson.happy(); //from behaviour interface
+		//behaviourPerson.eat(); //CANT be seen, as not in interface.
+		
+		
 	}
 
 }

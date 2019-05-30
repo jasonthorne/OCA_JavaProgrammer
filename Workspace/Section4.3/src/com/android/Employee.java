@@ -26,7 +26,7 @@ public class Employee implements Behaviour{
 	void doWork() {
 		System.out.println("Employee working");
 	}
-	
+
 
 }
 
@@ -59,6 +59,8 @@ class Fireman extends Employee{
 	protected void doWork() {
 		
 	}
+	
+	
 	
 	
 	
