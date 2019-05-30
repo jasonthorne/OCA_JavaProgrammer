@@ -457,7 +457,7 @@ public class Examples {
 		}
 		
 		//array of 4 game characters, that each have their own fight() method, which each override the fight method in the GameCharacter class.
-		 //each object ONLY has access to the methods inside of GameCharacter ('fight' method), but each overriden fight method invokes that object's unique PRIVATE method
+		 //each object ONLY has access to the methods inside of GameCharacter ('fight' method), but each overridden fight method invokes that object's unique PRIVATE method
 		GameCharacter[]myGame= {
 				new Wizard(),
 				new Dragon(), 
@@ -465,24 +465,44 @@ public class Examples {
 				new Wizard()
 		};
 		
-		System.out.println("fight!");
+		System.out.println("\n===================\nfight!");
 		
 		for(GameCharacter g:myGame) {
+			System.out.println();
 			g.fight();
 		}
 		
+		//The ONLY way we can access each of the GameCharacters in the myGame array, is though the array, as they were anonymously instantiated.
+		//This is adding a reference to the first character in the array:
+		GameCharacter wizChar = myGame[0];
+		
+		//===================================
 		
 		
+		Animal[]animalList = {monty, betty, henry}; //creating an array of type Animal. This is valid and will compile even though Animal is an abstract class.
+		Animal[]listAnimal = new Animal[4]; //creating an array of 4 null objects. THis is NOT creating 4 animals. As you CANT, as animal is an abstract class. Ypou can still only add subclasses to this array (bird, hippo, monkey etc...)
 		
 		
+		//==========
+		//PROBABLY IN EXAM!!! *******************************************************
+		Bike myBike = new Bike();
+		Vehicle myVehicle = new Vehicle();
+		myBike.move();
+		myVehicle.move();
+		System.out.println("age of bike is " + myBike.age);
+		System.out.println("age of vehicle is " + myVehicle.age);
 		
+		Vehicle vBike = new Bike(); //Vehicle reference to a bike object
+		vBike.move(); //determined at RUNTIME. 
+		System.out.println("age of vBike is " + vBike.age); //gives VEHICLE'S age, not bike's as it works the other way around from how methods work.. //determined at COMPILE TIME. 
 		
-		
-		
-		
+		//shadow variables: //+++++++++++++++++++++++++++++++++++++++++++++++
+		//vars of the same name in sub and super classes, that are both given default values. 
 		
 	}//ex6
 	
-	
+	static void ex7() {
+		
+	}
 
 }
