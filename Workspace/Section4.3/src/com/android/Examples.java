@@ -518,6 +518,39 @@ public class Examples {
 		behaviourPerson.happy(); //from behaviour interface
 		//behaviourPerson.eat(); //CANT be seen, as not in interface.
 		
+		//================================
+		
+		//An array of behaviour type, thst takes objects that IMPLEMENT the behaviour interface (Fireman, Employee & Person)
+		Behaviour[]behaves=new Behaviour[3];
+		
+		Person percy = new Person();
+		Employee enta = new Employee();
+		Fireman sam = new Fireman();
+		Dog spot = new Dog();
+		
+		behaves[0] = percy;
+		behaves[1] = enta;
+		behaves[2] = sam; //This implements the Behaviour interface as it extends Employee
+		
+		
+		//invoking the objects behaviour methods:
+		for(int i=0;i<behaves.length;i++) {
+			behaves[i].happy();
+			behaves[i].sad();
+			behaves[i].mad();
+			System.out.println();
+		}
+		
+		for(Behaviour b: behaves) {
+			b.happy();
+			b.sad();
+			b.mad();
+		}
+		
+	}
+	
+	static void ex8() {
+		
 		
 	}
 

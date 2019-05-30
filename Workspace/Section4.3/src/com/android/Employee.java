@@ -51,7 +51,7 @@ class Fireman extends Employee{
 	
 	@Override
 	public void mad() {
-		System.out.println("Employee mad");
+		System.out.println("Fireman mad");
 		
 	}
 	
@@ -60,9 +60,7 @@ class Fireman extends Employee{
 		
 	}
 	
-	
-	
-	
+
 	
 	//================
 	
