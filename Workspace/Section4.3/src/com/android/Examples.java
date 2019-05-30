@@ -298,8 +298,8 @@ public class Examples {
 			System.out.println("dog is: " + d);
 		}
 		
-		dogList[0] = new Dog();
-		dogList[1] = new Dog();
+		//dogList[0] = new Dog();
+		//dogList[1] = new Dog();
 		
 		//prints the address of each dog, as we have NO toString method defined in the Dog class. 
 		for(Dog d:dogList) {
@@ -526,7 +526,7 @@ public class Examples {
 		Person percy = new Person();
 		Employee enta = new Employee();
 		Fireman sam = new Fireman();
-		Dog spot = new Dog();
+		//Dog spot = new Dog();
 		
 		behaves[0] = percy;
 		behaves[1] = enta;
@@ -551,6 +551,32 @@ public class Examples {
 	
 	static void ex8() {
 		
+		
+		Dog spot = new Dog(2, "spot");
+		Dog rex = new Dog(3, "rex");
+		Dog lassie = new Dog(4, "lassie");
+		
+		Dog[] dogList = {spot,rex, lassie};
+		System.out.println("id of first dog is: " + dogList[0].id);
+		System.out.println("name of first dog is: " + dogList[0].name);
+		System.out.println();
+		System.out.println("id of spot is: " + spot.id);
+		System.out.println("name of spot is: " + spot.name);
+		
+		spot.name = "benji";
+		System.out.println("=============================");
+		System.out.println("spot.name = benji: \n");
+		System.out.println("name of first dog is now: " + spot.name);
+		System.out.println("id of first dog is still: " + spot.id);
+		System.out.println();
+		System.out.println("id of first dog is: " + dogList[0].id);
+		System.out.println("name of first dog is: " + dogList[0].name);
+		
+		spot= new Dog(5, "lady");
+		System.out.println("=============================");
+		System.out.println("spot= new Dog(5, \"lady\"): \n");
+		System.out.println("id of first dog in array is: " + dogList[0].id);
+		System.out.println("id of spot is now: " + spot.id);
 		
 	}
 
