@@ -455,6 +455,34 @@ public class Examples {
 		for(Vehicle v:vehicleList) {
 			v.move();
 		}
-	}
+		
+		//array of 4 game characters, that each have their own fight() method, which each override the fight method in the GameCharacter class.
+		 //each object ONLY has access to the methods inside of GameCharacter ('fight' method), but each overriden fight method invokes that object's unique PRIVATE method
+		GameCharacter[]myGame= {
+				new Wizard(),
+				new Dragon(), 
+				new Soldier(), 
+				new Wizard()
+		};
+		
+		System.out.println("fight!");
+		
+		for(GameCharacter g:myGame) {
+			g.fight();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}//ex6
+	
+	
 
 }
