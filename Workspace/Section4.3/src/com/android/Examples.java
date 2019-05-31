@@ -578,6 +578,18 @@ public class Examples {
 		System.out.println("id of first dog in array is: " + dogList[0].id);
 		System.out.println("id of spot is now: " + spot.id);
 		
+		
+		
+	}
+	
+	static void ex9() {
+		Object obj = new Object();
+		System.out.println(obj.toString());
+		System.out.println(new Dog(2, "spot"));
+		
+		//object array. All object ONLY have access to Obj methods. THough array can take ANY object. 
+		Object[] objArray= {new Hippo(), new Car(), new Dog(1, "rex"), "hello", 5, new Integer(1), new int[4]};
+		
 	}
 
 }
