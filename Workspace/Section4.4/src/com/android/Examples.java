@@ -289,11 +289,68 @@ public class Examples {
 		
 		
 		try {
+			//This produces an 'indexOutOfBounds' exception. And as its in a try-catch, it's caught
 			intList.set(10,15);
 		}
 		catch(Exception e) { //Exception is the superclass of all Exceptions
 			System.out.println("Exception is: " + e);
+			//e.printStackTrace();
 		}
+		
+		System.out.println("code continues");
+		
+	}
+	
+	
+	static void ex4() {
+		
+		
+		//ARRAYLIST METHODS: +++++++++++++++++++++++++++++++++++++++++++++++++++
+		
+		//REMOVE:
+	
+		System.out.println("Remove");
+		String sb1 = "one";
+		String sb2 = "two";
+		String sb3 = "three";
+		String sb4 = "four";
+		
+		
+		ArrayList<String>strList = new ArrayList<>();
+		
+		strList.add(sb1);
+		strList.add(sb2);
+		strList.add(sb3);
+		strList.add(sb4);
+		
+		System.out.println("Before remove: ");
+		System.out.println(strList);
+		
+		/*
+		 * There are two overloaded remove() methods in the ArrayList class.
+		 * One takes an obj to be removed, the other takes an index pos.
+		 */
+		
+		strList.remove(sb2);
+		System.out.println("After first remove: ");
+		System.out.println(strList);
+		
+		strList.remove(0);
+		System.out.println("After second remove: ");
+		System.out.println(strList);
+		
+		//if you try to remove from an index pos that no longer exists, you will get an indexOutOfBOunds exception:
+		//strList.remove(4);
+		
+		//if trying to remove an obj that doesnt exist, it just does nothing
+		strList.remove(sb1);
+		
+		//this returns false if obj wasn't there:
+		if (strList.remove(sb1) == false) {
+			System.out.println("yo");
+		}
+		
+		
 		
 	}
 	
