@@ -199,8 +199,103 @@ public class Examples {
 		//You can set the size of the initial array in the arrraylist Class. This means that the initial array in the background will be of size 50.
 		ArrayList<Double>intList = new ArrayList<>(50); //adding a set size to the arayList
 		
+		//+++++++++++++++++++++++++++++++
+		
+		Cat tibbles = new Cat(4, "tibbles");
+		Cat fluffy = new Cat(3, "fluffy");
+		Cat tom = new Cat(2, "tom");
+		
+		ArrayList<Cat>catList = new ArrayList<>();
+		catList.add(tibbles);
+		catList.add(fluffy);
+		catList.add(tom);
+		
+		//spinning through the method with a for 
+		for(int i=0;i<catList.size();i++) {
+			//System.out.println(catList.get(i)); //get each cat
+			//System.out.println(catList.get(i).name); //get each cats name
+			//catList.get(i).eat(); //call each cat's  eat method
+		}
+		
+		//spin through with an enhanced for:
+		for(Cat c:catList) {
+			//System.out.println(c);
+			//System.out.println(c.name);
+			c.eat();
+		}
+		
 	}
 	
+	static void ex3() {
+		
+		//SET for changing an element in an arrayList (CANT be used in an enhanced for loop)
+		
+		ArrayList<Integer>intList = new ArrayList<Integer>();
+		
+		intList.add(1);
+		intList.add(new Integer(2));
+		intList.add(3);
+		intList.add(4);
+		
+		
+		System.out.println("Before set method: ");
+		System.out.println(intList);
+		
+		
+		//SET METHOD +++++++++++++++++++++++++++++++++++++
+		/*
+		 * In an arrayList, if you want to reassign the values, you can use the set method()
+		 * The set method takes 2 args, the index pos of where you want to change, and WHAT you want to change the elements value to.
+		 * Set method does NOT add extra elements to an arrayList, it just REPLACES what was at that pos
+		 */
+		
+		intList.set(0, 1000); //change pos 0 to hold 1000
+		intList.set(1, 2000);
+		intList.set(2, 3000);
+		intList.set(3, 4000);
+		
+		System.out.println("After set method: ");
+		System.out.println(intList);
+		
+		for(int i=0;i<intList.size();i++) {
+			intList.set(i, intList.get(i)*2);
+		}
+		
+		System.out.println(intList);
+		
+		//----------
+		
+		ArrayList<Cat>catList = new ArrayList<>();
+		
+		Cat tibbles = new Cat(2, "tiddles");
+		Cat ginger = new Cat(3, "ginger");
+		
+		catList.add(tibbles);
+		catList.add(ginger);
+		catList.add(new Cat(7, "tom"));
+		
+		catList.set(0, new Cat()); //replace Cat at id with a new Cat
+		catList.set(1, tibbles); //replace Cat at id with an existing Cat
+		
+		System.out.println(catList);
+		
+		catList.set(0, catList.get(2));
+		
+		System.out.println(catList.get(0));
+		
+		//-----------
+		
+		//EXCEPTIONS
+		
+		
+		try {
+			intList.set(10,15);
+		}
+		catch(Exception e) { //Exception is the superclass of all Exceptions
+			System.out.println("Exception is: " + e);
+		}
+		
+	}
 	
 	
 }
