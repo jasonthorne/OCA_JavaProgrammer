@@ -92,8 +92,77 @@ public class Examples {
 			System.out.println(names.get(i));
 		}
 		
+		//Adding the name laura at pos 2, pushes every other element 1 pos (increasing the size of the array)
+		names.add(2, "laura");
+		System.out.println("with laura added:");
+		System.out.println(names);
 		
 		
+		//=========
+		
+		Dog spot = new Dog(); //uses blank constructor
+		Dog rex = new Dog(3, "Rex");  //uses constructor that  takes int, string
+		Dog lassie = new Dog();  //uses blank constructor
+		
+		//create a Dog arraylist:
+		ArrayList<Dog>dogList = new ArrayList<>();
+		
+		//add Dogs to arraylist:
+		dogList.add(spot); //spot npow has 2 references ('spot' & 'dogList.get(0)')
+		dogList.add(rex);
+		dogList.add(lassie);
+		dogList.add(new Dog());
+		
+		dogList.get(3).name="benji";
+		
+		System.out.println(dogList.get(3).name);
+		
+		/*
+		 * The arrayList class has a toString method 
+		 * which takes the toString method of the objects contained within the arrayList  and attempts to print out that object
+		 *The Dog class HAS NO toString method which means it takes the Object class toString method and prints out the address of the object, so this prints 4 addresses:
+		 * 
+		 */
+		System.out.println(dogList);
+		
+		
+		//========
+		
+		Cat tibbles = new Cat(4, "tibbles");
+		Cat fluffy = new Cat(2, "fluffy");
+		Cat ginger = new Cat();
+		Cat tom = new Cat(12, "tom");
+		
+		ArrayList<Cat>catList = new ArrayList<Cat>();
+		
+		catList.add(tibbles);
+		catList.add(fluffy);
+		catList.add(ginger);
+		catList.add(tom);
+		catList.add(new Cat());
+		
+		//this takes the toString method for each Cat and prints out the details of the cat. 
+		//The Cat class does have a toString method, so this will print out the 4 cat's ages & names:
+		System.out.println("\n" + catList);
+		
+		
+		//change tibbles name:
+		tibbles.name = "puss";
+		
+		System.out.println(tibbles.name);
+		System.out.println(catList.get(0));
+		
+		//assign a new name to tibbles, meaning catListList[0] still referss to the id of 1, and new Cat refers to itself with the id of 6:
+		tibbles = new Cat(); //change tibbles to be a new obj
+		System.out.println(catList);
+		System.out.println(tibbles);
+		
+		
+		System.out.println();
+		//spin through the arrayList:
+		for(Cat c:catList) {
+			c.eat();
+		}
 		
 	}
 }
