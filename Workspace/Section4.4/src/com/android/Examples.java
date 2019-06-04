@@ -164,5 +164,43 @@ public class Examples {
 			c.eat();
 		}
 		
+		
+		//=========================================
+		
+		/*if you dont specify a type for the array (like below), you are creating an arrayList of type OBJECT
+		 * and the same rules apply to arrays of objects apply to arraylists of objects.
+		 * You can add ANY obj to this arraylist, but it is limited what you can do with it as you can only work with methods of the object class.
+		 */
+		
+		ArrayList objList = new ArrayList<>();
+		objList.add(2);
+		objList.add(true);
+		objList.add("apple");
+		objList.add(23.4);
+		objList.add(spot); //Dog's toString hasn;t been overridden, so prints out obj address
+		objList.add(fluffy); //Cat's toString has been overridden
+		System.out.println("printing out Objects");
+		System.out.println(objList);
+		
+		
+	}//ex1
+	
+	
+	static void ex2() {
+		/*
+		 * When you create an arrayList, what is happening is that in the background, an array is being created that is of size 16, 
+		 * and this is used to store your values, IF your arraylist has no more than 16 items in it.
+		 * As soon as you are creating more than 16 items in an arraylist a new array is created in the background of size 17. 
+		 * If you add one more, an array of size 18 is created, and so on for each item you add to the list.
+		 */
+		
+		ArrayList<Double>dList = new ArrayList<>();
+		
+		//You can set the size of the initial array in the arrraylist Class. This means that the initial array in the background will be of size 50.
+		ArrayList<Double>intList = new ArrayList<>(50); //adding a set size to the arayList
+		
 	}
+	
+	
+	
 }
