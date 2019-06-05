@@ -2,6 +2,7 @@ package com.android;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /*
  *An arraylist is a list. It implements the list interface.
@@ -350,9 +351,98 @@ public class Examples {
 			System.out.println("yo");
 		}
 		
+		//================================================
+		
+		ArrayList<String>nameList = new ArrayList<>();
+		
+		nameList.add("test1");
+		nameList.add("test2");
+		
+		//Add an array to an arraylist:
+		
+		String[] fruits = {"a", "b", "c"};
+		
+		//This DOESNT WORK for arrays:
+		
+		//nameList.addAll(fruits);
+		
+		
+		//Use Collections instead
+		//THis adds the elements from the fruit array into the nameList array.
+		Collections.addAll(nameList, fruits);
+		
+		System.out.println(nameList);
+		
 		
 		
 	}
+	
+	
+	static void ex6() {
+		
+		//DEEP COPY & SHALLOW COPY +++++++++++++++++++++++++++++
+		
+		/*
+		 * Deep copy & shallow copy
+		 * 
+		 * Deep copy: two references to the same arrayList
+		 * Shallow copy: two arraylists with the same values, but are different arraylists.
+		 */
+		
+		String sb1 = new String("one");
+		String sb2 = new String("two");
+		String sb3 = new String("three");
+		String sb4 = new String("four");
+		
+		ArrayList<String>strList =new ArrayList<>();
+		
+		strList.add(sb1);
+		strList.add(sb2);
+		strList.add(sb3);
+		strList.add(sb4);
+		
+		//---------------------
+		//DEEP COPY (having two references to the same arraylist)
+		System.out.println("DEEP COPY:");
+		
+		//two references to the same list:
+		ArrayList<String>strCopy=strList;
+		
+		System.out.println("same reference? " + (strCopy==strList));
+		System.out.println("same values? " + (strCopy.equals(strList)));
+		
+		
+		//change the value at pos 0. from one to orange:
+		strCopy.set(0, "orange");
+		
+		
+		System.out.println("strCopy " + strCopy);
+		System.out.println("strList " + strList);
+		
+		
+		//----------------------------
+		//SHALLOW COPY (two arrayLists with the same values)
+		System.out.println("\nSHALLOW COPY:");
+		
+		strList =new ArrayList<>();
+		
+		strList.add(sb1);
+		strList.add(sb2);
+		strList.add(sb3);
+		strList.add(sb4);
+		
+		ArrayList<String>newStrings=new ArrayList<>(); //an empty arrayList
+		newStrings.addAll(strList); //adding the values from one arrayList to the empty arrayList
+		
+		System.out.println("same reference? " + (newStrings==strList));
+		System.out.println("same values? " + (newStrings.equals(strList)));
+		
+		System.out.println("newStrings " + newStrings);
+		System.out.println("strList " + strList);
+		
+	}
+	
+	
 	
 	
 }
