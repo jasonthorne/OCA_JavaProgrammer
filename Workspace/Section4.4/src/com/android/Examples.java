@@ -443,6 +443,151 @@ public class Examples {
 	}
 	
 	
+	static void ex7() {
+		
+		//MORE ARRAYLIST METHODS ++++++++++++++++++++++
+		
+		String sb1 = new String("one");
+		String sb2 = new String("two");
+		String sb3 = new String("three");
+		String sb4 = new String("four");
+		
+		ArrayList<String>strList =new ArrayList<>();
+		
+		strList.add(sb1);
+		strList.add(sb2);
+		strList.add(sb3);
+		strList.add(sb4);
+		
+		//CLEAR - deletes all elements from an arraylist
+		
+		strList.clear();
+		System.out.println("empty strList: " + strList);
+		
+		//--------------------------------------
+		
+		//CONTAINS - returns true if the list contains the specified element
+		
+		strList =new ArrayList<>();
+		
+		strList.add(sb1);
+		strList.add(sb2);
+		strList.add(sb3);
+		strList.add(sb4);
+		
+		System.out.println(strList.contains("one")); //true
+		System.out.println(strList.contains("car")); //false
+		System.out.println(strList.contains(sb1)); //true (looking for object within the list)
+		
+
+		//--------------------------------------
+		
+		//INDEX OF  - returns returns the first index of the element if it exists in the arraylist and -1 if it doesn't
+		
+		strList.add("three"); //add another "three" to the list
+		System.out.println("strList: " + strList);
+		
+		System.out.println(strList.indexOf("three")); //finds the FIRST instance of the target value. (doesnt find the one at the end of list)
+		
+		System.out.println(strList.indexOf("bob"));
+		
+	}
+	
+	static void ex8() {
+		
+		
+		ArrayList<Integer>intList =new ArrayList<>();
+		
+		intList.add(5);
+		intList.add(150);
+		intList.add(250);
+		intList.add(350);
+		intList.add(350);
+		intList.add(350);
+		
+		Integer myInt = 1500;
+		
+		intList.add(myInt);
+		intList.add(myInt);
+		
+		System.out.println("Before removal: " +  intList);
+		
+	}
+	
+	
+	static void ex9() {
+		
+		//SHALLOW COPY ARRAYLIST ++++++++++++++++++++++++++++++++
+		
+		ArrayList<Cat>catList =new ArrayList<Cat>();
+		
+		Cat tom = new Cat(2, "tom");
+		Cat tibbles = new Cat(4, "tibbles");
+		Cat mog = new Cat(5, "mog");
+		
+		catList.add(tom);
+		catList.add(tibbles);
+		catList.add(mog);
+		
+		System.out.println("Deep copy of Cats:");
+		
+		ArrayList<Cat>copyCatList = catList; //make another reference to catList
+		
+		System.out.println("same reference? " + (copyCatList==catList));
+		System.out.println("same values? " + (copyCatList.equals(catList)));
+		
+		System.out.println("copyCatList " + copyCatList);
+		System.out.println("catList " + catList);
+		
+		
+		//change the first cat:
+		catList.set(0, new Cat());
+		
+		System.out.println("copyCatList " + copyCatList.get(0));
+		System.out.println("catList " + catList.get(0));
+		
+		//----------------------------------
+		//MAKING A SHALLOW LIST: 
+		
+		//new list
+		ArrayList<Cat>shallowCatList =new ArrayList<Cat>();
+		
+		//make shallow copy
+		shallowCatList.addAll(catList);
+		
+		System.out.println("same reference? " + (shallowCatList==catList)); //not pointing to the same arrays
+		System.out.println("same values? " + (shallowCatList.equals(catList))); //both lists are referencing the same cats ++++++++++++++++++++++++++++++
+		
+		
+		//-----------------
+		
+		//CLONE - Another way of making a shallow copy ++++++++++++++++++++++++++++++++++MIGHT BE IN EXAM!!  
+		
+		catList =new ArrayList<Cat>();
+		
+		catList.add(tom);
+		catList.add(tibbles);
+		catList.add(mog);
+		
+		/*
+		 * THe clone method in the arrayList class returns an object reference to an arraylist obj
+		 * that is a shallow copy of the arraylist calling the clone method.
+		 */
+		
+		Object clonedCatList = catList.clone(); //cloned returns an OBJECT REFERENCE to a returned arraylist object. (can ONLY call the methods of the object class)
+		
+		System.out.println(clonedCatList); //An arraylist of reference object
+		
+		//casting the 'clonedCatList'(an object reference) into 'castCloneCatList' (an arraylist reference) (giving access to arrayList methods)  ++++++++++++++++++++++++++++++++++++++
+		ArrayList<Cat>castCloneCatList=(ArrayList<Cat>)clonedCatList;
+		
+		
+		
+		
+	}
+	
+	
+	
 	
 	
 }
