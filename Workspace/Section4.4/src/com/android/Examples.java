@@ -3,6 +3,7 @@ package com.android;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.ListIterator;
 
 /*
  *An arraylist is a list. It implements the list interface.
@@ -582,12 +583,75 @@ public class Examples {
 		ArrayList<Cat>castCloneCatList=(ArrayList<Cat>)clonedCatList;
 		
 		
-		
-		
 	}
 	
 	
-	
+	static void ex10() {
+		
+		ArrayList<String>nameList=new ArrayList<String>();
+		
+		nameList.add("pat");
+		nameList.add("kate");
+		nameList.add("shelly");
+		nameList.add("kate");
+		nameList.add("laura");
+		nameList.add("kate");
+		
+		System.out.println(nameList);
+		
+		//search the list of the word kate and replace it with linda
+		
+		for(int i=0;i<nameList.size();i++) {
+			
+			if(nameList.get(i).equals("kate")) { //if element at pos i equals kate
+				nameList.remove(i); //remove the element at this pos
+				nameList.add(i, "Lynda"); //add lynda at this index pos
+			}
+		}
+		
+		System.out.println(nameList);
+		
+		//====================================================
+		
+		//LIST ITERATOR
+		
+		/*
+		 * A list iterator is a class that is used specifically for going through any type of list. 
+		 */
+		
+		nameList=new ArrayList<String>();
+		
+		nameList.add("pat");
+		nameList.add("kate");
+		nameList.add("shelly");
+		nameList.add("kate");
+		nameList.add("laura");
+		nameList.add("kate");
+		
+		
+		ListIterator<String>strIterator = nameList.listIterator(); //creating a list iterator (linking it with another list (nameList)).
+		
+		/*
+		 * There are tow mrthods of the list iterator class that we used when accessing records from the database:
+		 * + hasNext() - This checks to see if your at the end of your list. Returns true if there is another value after the current, and returns false if its the last item on the list.
+		 * + next() - This is what causes your loop to advance to the next iteration.
+		 */
+		
+		//a while loop using the iterator's "hasNext"
+		while(strIterator.hasNext()) { //while there's another element in the list
+			
+			if(strIterator.next().equals("kate")) {
+				strIterator.remove();
+				strIterator.add("Lynda");
+			}
+			
+			strIterator.next(); //this is what kicks the iterator to the next element
+			
+		}//while
+		
+		
+		System.out.println(nameList);
+	}
 	
 	
 }
