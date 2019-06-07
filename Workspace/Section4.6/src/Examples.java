@@ -101,7 +101,87 @@ public class Examples {
 		 * Alos LocalDate knows knows leap years & illegal dates.
 		 * IE you can have the 32 of Jan. An illegal date generates DateTimeException.
 		 */
-		LocalDate date2 = LocalDate.of(2021, Month.FEBRUARY, 44);
+		LocalDate date2 = LocalDate.of(2021, Month.FEBRUARY, 21);
+		
+		
+		//---------------------
+		
+		//PARESERS FOR DATES
+		
+		System.out.println("Parsers for dates");
+		
+		/*
+		 * For converting all time formats in a string to LocalDate, LocalTime, LocalDateTime we use PARSERS.
+		 * 
+		 * Parsers for dates are in the format: YYYY-mm-dd
+		 */
+		
+		date2=LocalDate.parse("2018-08-02");
+		System.out.println("date2 is now: " + date2);
+		
+		
+		//---------------------
+		
+		//GETS() for localDate
+		
+		System.out.println("get()");
+		
+		date2=LocalDate.now();
+		System.out.println("Month is: " + date2.getMonth()); //get month
+		System.out.println("day of week is: " + date2.getDayOfWeek()); //get day of the week
+		System.out.println("day of year is: " + date2.getDayOfYear()); //get day of the year
+		System.out.println("day of the month: "+ date2.getDayOfMonth()); //get day of the month
+		System.out.println("year is: "+ date2.getYear()); //get the year
+		System.out.println("month numeric value is: "+ date2.getMonth()); //get the numeric value of the month
+		
+		
+		//---------------------
+		
+		//ISBOFORE() & ISAFTER()
+		
+		System.out.println("isBefore() & isAfter()");
+		
+		LocalDate xmas = LocalDate.of(2019, 12, 25);
+		LocalDate paddys = LocalDate.of(2019, Month.MARCH, 17);
+		
+		System.out.println("xmas before paddies: " + xmas.isBefore(paddys));
+		System.out.println("xmas after paddies: " + xmas.isAfter(paddys));
+		System.out.println("xmas same day as paddies: " + xmas.equals(paddys)); //check if they're the same day
+		
+		//---------------------
+		
+		//MINUS & PLUS
+				
+		/*
+		 * All minus and plus methods dont change the LocalDates ans LocalDates are final like the string class.
+		 */
+		xmas=xmas.minusDays(10); //take 10 days from xmas
+		System.out.println(xmas);
+		xmas=xmas.minusMonths(2); //take 2 months from previously edited xmas
+		System.out.println(xmas);
+		xmas=xmas.minusWeeks(17); //take 17 weeks from previously edited xmas
+		System.out.println(xmas);
+		xmas=xmas.minusYears(10); //take 10 years from previously edited xmas
+		System.out.println(xmas);
+		
+		
+		//PLUS IS EXACLTY THE SAME!! :P
+		
+		date2=LocalDate.of(2018, Month.APRIL, 15);
+		System.out.println("ten days on: " + date2.plusDays(10));
+		System.out.println("day2 is still 15th of april: " + date2); //All dates are FINAL, so any of the date methods DONT CHANGE THE DATE
+		
+		
+		date2=LocalDate.of(2000, 1, 1);
+		System.out.println("millenium: " + date2);
+		System.out.println(date2.plusMonths(2).plusYears(3));
+		
+		
+		//The year 2000 was a leap year, so there was a 29th of feb. So 59 days onto the 0-0-2000 is 29th of feb
+		System.out.println(date2.plusDays(59));
+		
+		System.out.println(date2.plusDays(59).plusYears(1));
+		
 		
 	}
 	
