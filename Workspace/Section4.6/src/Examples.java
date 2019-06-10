@@ -242,10 +242,28 @@ public class Examples {
 		
 		System.out.println(preEpoc.toEpochDay()); //this is a number so we can add and subtract numbers from this and we cant use any methods of time (plusDays, minusHours, etc)
 		
+		System.out.println("max date:");
+		System.out.println(LocalDate.MAX);
 		
+		System.out.println("min date:");
+		System.out.println(LocalDate.MIN);
 		
+		System.out.println(LocalDate.now().getEra()); //CE (AD)
+		System.out.println(LocalDate.now().minusYears(3000).getEra()); //o back 3000 years (BC)
+		System.out.println(LocalDate.now().minusYears(1500).getEra());//go back 1000 years
 	}
 	
+	
+
+	static void ex3() {
+		
+		System.out.println("LocalTime");
+		
+		/*
+		 * Time from java8 onwards uses the class LocalTime.
+		 * LocalTime stores in the format: hours-mins-secs-nanoSecs (without timezones)
+		 */
+	}
 	
 	
 	
