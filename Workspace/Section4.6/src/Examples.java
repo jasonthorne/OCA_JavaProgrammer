@@ -182,6 +182,67 @@ public class Examples {
 		
 		System.out.println(date2.plusDays(59).plusYears(1));
 		
+		//---------------------
+		
+		//WITH: returns a COPY (not the original as it's final) of the date with a REPLACEMENT for the day, month or year
+		
+		date2 = LocalDate.of(2019, 12, 26);
+		
+		System.out.println("original date: " + date2);
+		System.out.println("with day of month: " + date2.withDayOfMonth(14));
+		
+		System.out.println("with month: " + date2.withMonth(5));
+		System.out.println("with year: " + date2.withYear(1979));
+		System.out.println("with day of year: " + date2.withDayOfYear(100)); //100 days into the year
+		
+		
+		
+		//---------------------
+		
+		//At TIME()
+		
+		/*
+		 * for converting a local date to a localDateTime.
+		 */
+		
+		date2 = LocalDate.of(2019, 12, 26); //a local date
+		
+		LocalDateTime ldTime = LocalDateTime.now(); //the current time 
+		System.out.println();
+		
+		System.out.println(ldTime);
+		
+		System.out.println(date2.atTime(16,30));
+		System.out.println(date2.atTime(17,30, 30));
+		
+		LocalDateTime localDt = date2.atTime(20,17,54,56746);
+		
+		System.out.println(localDt);
+		System.out.println(date2.atTime(LocalTime.now())); //gives the local time on this date
+		System.out.println(date2.atTime(LocalTime.now().plusHours(4))); //gives the local time on this date
+		
+		
+		System.out.println(date2.atStartOfDay()); //gets us 00:00
+		
+		
+		//---------------------
+		
+		//EPOCH()
+		
+		/*
+		 * 01-01-1970 is date 0 for computers, so all dates & times are calculated from this point. 
+		 */
+		
+		System.out.println(LocalDate.now().toEpochDay()); //how many days after 01-01-1970
+		//System.out.println(LocalDate.now().toEpochDay());
+		
+		LocalDate preEpoc = LocalDate.of(1959, 10, 15);
+		System.out.println(preEpoc); //the amount of days before we get to date 0 of the 01/01/1970. this returns an int NOT A DATE
+		
+		
+		System.out.println(preEpoc.toEpochDay()); //this is a number so we can add and subtract numbers from this and we cant use any methods of time (plusDays, minusHours, etc)
+		
+		
 		
 	}
 	
