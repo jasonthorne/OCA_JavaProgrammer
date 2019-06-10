@@ -262,7 +262,57 @@ public class Examples {
 		/*
 		 * Time from java8 onwards uses the class LocalTime.
 		 * LocalTime stores in the format: hours-mins-secs-nanoSecs (without timezones)
+		 * Like LocalDate, LocalTime is immutable and cannot change.
+		 * Created in a similar way to LocalDate in that we use static methods to create a LocalTime,
+		 *  and is displayed as a 24 hour clock by default
 		 */
+		
+		LocalTime time1= LocalTime.of(13, 54); //hours, minutes
+		System.out.println(time1);
+		time1= LocalTime.of(11, 15, 45); //hours, minutes, secs
+		System.out.println(time1);
+		time1= LocalTime.of(11, 15, 45, 778); //hours, minutes, secs, nanosecs
+		System.out.println(time1);
+		
+		
+		//There is no am & pm in localTime, but you can dispaly it, but you need to use a time formatter.
+		
+		//time1 = LocalTime.of(15,60); //gives runtime error as secs are invalid. only goes to .59 NOT compile time error.
+		//time1 = LocalTime.of(24,00); //gives runtime error as hours are invalid. only goes to 23.59
+		
+		/*
+		 * LocalTime just like LocalDate also has parsers. 
+		 * So it can take a String time and convert it to a LocalTime value.
+		 */
+		
+		//parsing:
+		time1 = LocalTime.parse("16:06"); //evening
+		time1 = LocalTime.parse("04:06"); //morning - String must be exact (ie have the leading 0 here)
+		System.out.println("parse time is: " + time1);
+		
+		//gets current time:
+		System.out.println("current time is: " + LocalTime.now());
+		System.out.println(LocalTime.NOON); //12 midday
+		System.out.println(LocalTime.MIDNIGHT); //midnight
+		System.out.println(LocalTime.MIN); //midnight
+		System.out.println(LocalTime.MAX); //last nanosec of today
+		
+		time1=LocalTime.now();
+		
+		System.out.println("hour of now is: " + time1.getHour()); 
+		System.out.println("minute of now is: " + time1.getMinute()); 
+		System.out.println("second of now is: " + time1.getSecond()); 
+		System.out.println("nano of now is: " + time1.getNano()); 
+		
+		//plus times:
+		System.out.println(time1.plusHours(4)); //add 4 hours
+		System.out.println(time1.plusMinutes(99)); //add 99 mins
+		System.out.println(time1.plusHours(2).plusMinutes(25).plusSeconds(56)); //add 2 hours, 25 minus & 56 secs
+		
+		//minus times:
+		System.out.println(time1.minusHours(5)); //minus 5 hours
+		System.out.println(time1.minusMinutes(45)); //minus 45 mins
+		
 	}
 	
 	
