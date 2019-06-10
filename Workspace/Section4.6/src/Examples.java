@@ -313,8 +313,46 @@ public class Examples {
 		System.out.println(time1.minusHours(5)); //minus 5 hours
 		System.out.println(time1.minusMinutes(45)); //minus 45 mins
 		
+		LocalTime rightNow=LocalTime.now();
+		System.out.println(rightNow.plusHours(24)); //current time
+		System.out.println(rightNow); //current time
+		LocalTime midDay=LocalTime.NOON;
+		
+		System.out.println("is current time before noon?"); 
+		System.out.println(rightNow.isBefore(midDay)); 
+		System.out.println("is current time after noon?"); 
+		System.out.println(rightNow.isAfter(midDay));
+		
+		//-----------
+		
+		LocalTime startTime = LocalTime.of(8, 30);
+		LocalTime timmyTime = LocalTime.of(8, 15); // thus is the time that timmy comes to work
+		
+		
+		
+		if(timmyTime.isAfter(startTime)) {
+			System.out.println("Timmy is late");
+		}else {
+			System.out.println("Timmy is on time");
+		}
+		
+		
+		if(timmyTime.isBefore(startTime)|| timmyTime.equals(startTime)) { //arrives before 8:30 or at 8:30
+			System.out.println("timmy is on time");
+		}else {
+			System.out.println("Timmy is late");
+		}
+		
+		
+		
 	}
 	
 	
+	
+	static void ex4() {
+		
+		//LOCAL DATE TIME
+		
+	}
 	
 }
