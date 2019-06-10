@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
+import java.time.Period;
 
 public class Examples {
 	/*
@@ -351,7 +352,57 @@ public class Examples {
 	
 	static void ex4() {
 		
-		//LOCAL DATE TIME
+		//LOCAL DATE TIME - combination of LocalDate & LocalTime
+		
+		LocalDateTime dateTime1 = LocalDateTime.of
+				/*
+				 * year 2212
+				 * month april
+				 * day 20
+				 * hour 23
+				 * minute 15
+				 * second 50
+				 * nano sec 675
+				 */
+				
+				(2212,Month.APRIL,20,23,15,50,675);
+		
+		LocalDateTime rightNow = LocalDateTime.now();
+		System.out.println(rightNow);
+		
+		LocalDate today = LocalDate.now();//todays date
+		
+		LocalTime now = LocalTime.now(); //todays time
+		
+		//the combination of the above is the LocalDateTime:
+		rightNow = LocalDateTime.of(today, now);
+		
+		//All the methods from the LocalDate & LocalTime classes are available to this.
+	
+	}
+	
+	
+	static void ex5() {
+		
+		/*To measure a length of time for dates you have what are called PERIODS.
+		 * For times you have what is called DURATIONS.
+		 * 
+		 * You can have a period of days, weeks, months, years, epoch, era or a combination of them all.
+		 */
+		
+		//PERIOD
+		
+		Period yearPeriod = Period.ofYears(6); //6 year period
+		Period monthPeriod = Period.ofMonths(11); //11 month period
+		Period weekPeriod = Period.ofWeeks(17); //17 week period
+		Period dayPeriod = Period.ofDays(99); //99 day period
+		
+		LocalDate today = LocalDate.now();
+		System.out.println(today.plus(weekPeriod)); //17 weeks from today
+		
+		Period per1 = Period.of(2, 9, 17); //2 year, 9 months & 17 days.
+		System.out.println(today.plus(per1)); //17 weeks from today
+		
 		
 	}
 	
