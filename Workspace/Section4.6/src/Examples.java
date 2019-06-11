@@ -1,3 +1,4 @@
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -419,6 +420,51 @@ public class Examples {
 		System.out.println("betweenDates.getMonths: " + betweenDates.getMonths());
 		System.out.println("betweenDates.getYears: " + betweenDates.getYears());
 		
+		//===================
+		
+		//DURATIONS
+		
+		/*
+		 * Durations can work for time & also dates & dateeTimes
+		 */
+		
+		Duration dur1 = Duration.ofHours(2).ofMinutes(5).ofSeconds(15);
+		System.out.println(dur1);
+		
 	}
+	
+	
+	
+	static void ex6() {
+		
+		//date a film started showing in local cinema:
+		LocalDate filmOpening=LocalDate.of(2018, 12, 3);
+		//date a film stopped showing in local cinema:
+		LocalDate filmClosing=LocalDate.of(2019, 2, 14);
+		
+		//this is the time period the film is showing for:
+		Period filmTime=Period.between(filmOpening, filmClosing);
+		System.out.println("film plays for: " + filmTime);
+		
+		//better way of formatting:
+		System.out.println("film plays for: " + filmTime.getMonths() + " months & " + filmTime.getDays() + " days");
+		
+		//------
+		
+		LocalDate today = LocalDate.now();
+		LocalDate century = today.plusYears(100);
+		System.out.println(century);
+		LocalDate finishTime = today.plus(filmTime); //today + filmTime
+		
+		while(finishTime.isBefore(century)) {
+			System.out.println("film finishes in " + finishTime);
+			System.out.println("next film starts in "+ finishTime.plusDays(1));
+			finishTime=finishTime.plus(filmTime);
+		}
+		
+	}
+	
+	
+	
 	
 }
