@@ -397,12 +397,27 @@ public class Examples {
 		Period weekPeriod = Period.ofWeeks(17); //17 week period
 		Period dayPeriod = Period.ofDays(99); //99 day period
 		
+		///You can add a period to a date:
 		LocalDate today = LocalDate.now();
 		System.out.println(today.plus(weekPeriod)); //17 weeks from today
 		
 		Period per1 = Period.of(2, 9, 17); //2 year, 9 months & 17 days.
 		System.out.println(today.plus(per1)); //17 weeks from today
 		
+		//====================
+		
+		//BETWEEN()
+		
+		LocalDate date1 = LocalDate.of(2010, 2, 12);
+		LocalDate date2 = LocalDate.of(2019, Month.APRIL, 1);
+		
+		Period betweenDates = Period.between(date1, date2);
+		
+		System.out.println(betweenDates); //Prints 'P9Y1M20D' - Period of 9 years, 1 month, 20 days.
+		
+		System.out.println("betweenDates.getDays: " + betweenDates.getDays());
+		System.out.println("betweenDates.getMonths: " + betweenDates.getMonths());
+		System.out.println("betweenDates.getYears: " + betweenDates.getYears());
 		
 	}
 	
