@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.time.temporal.ChronoUnit;
 
 public class Examples {
@@ -615,6 +617,93 @@ public class Examples {
 		
 		//default format is: YYYY-mm-dd
 		System.out.println("Default format is " + today);
+		
+		/*
+		 * Creating a dateTimeFormatter for our dates & times in localised format
+		 * Which is the format that is used for dates & times on this machine.
+		 * For us, localised date will be set to western european format.
+		 *  When creating formats for LocalDate, LocalTime and LocalDateTime there are formatters for each type.
+		 *  LocalisedDate for localDate
+		 *  LocalisedDateTime for localDateTime
+		 *  LocalisedTime for LocalTime
+		 */
+		
+		//takes the format for dates, equal to the date format given by our machine:
+		DateTimeFormatter shortDate = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT); //creating a formatter obj called shortDate
+		
+		//This prints: 12/06/19
+		System.out.println("today's date in short European format: " + today.format(shortDate)); //passing the dateTimeFormatter obj into the 'today' dates .format(). 
+		
+		//--
+		
+		DateTimeFormatter mediumDate = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM); //creating a formatter obj called shortDate
+		System.out.println("today's date in medium European format: " + today.format(mediumDate)); //passing the dateTimeFormatter obj into the 'today' dates .format(). 
+		
+		//--
+		
+		DateTimeFormatter fullDate = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL); //creating a formatter obj called shortDate
+		System.out.println("today's date in full European format: " + today.format(fullDate)); //passing the dateTimeFormatter obj into the 'today' dates .format(). 
+		
+		//===========================
+		
+		//ISO formatters:
+		
+		/*
+		 * There are a number of standard ISO formatters.
+		 * The default formatter is: ISO_LOCAL_DATE, ISO_LOCAL_TIME, ISO_LOCAL_DATE_TIME 
+		 */
+		
+		DateTimeFormatter isoFormatter1 = DateTimeFormatter.BASIC_ISO_DATE;
+		System.out.println("basic iso formatter is: " + today.format(isoFormatter1));
+		
+		DateTimeFormatter isoFormatter2 = DateTimeFormatter.ISO_LOCAL_DATE;
+		System.out.println("default iso formatter is: " + today.format(isoFormatter2));
+		
+		//-----
+		
+		LocalTime rightNow = LocalTime.now();
+		System.out.println(rightNow);
+		
+		DateTimeFormatter timeFormatter1 = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT); //no secs
+		
+		DateTimeFormatter timeFormatter2 = DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM); //this has secs
+		
+		System.out.println(rightNow.format(timeFormatter1));
+		
+		//default formatter for time:
+		DateTimeFormatter defaultTimeFormatter = DateTimeFormatter.ISO_LOCAL_TIME;
+		
+		//default formatter for datetime:
+		DateTimeFormatter defaultDateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+		
+		/*
+		 * each time type has to have its own formatter, 
+		 * IE you CANT use a localDate formatter for a localTime.
+		 */
+		
+	}
+	
+	static void ex10() {
+		/*
+		 * PERIOD PARSERS 
+		 * 
+		 * Strings that contain a period, and then we can convert to periods
+		 */
+		
+		Period p5 = Period.parse("p5y"); //NOT CASE SENSITIVE
+		System.out.println(LocalDate.now().plus(p5));
+		
+		Period multiParse = Period.parse("P5Y1M21D");
+		System.out.println(LocalDate.now().plus(multiParse)); //period of 5 years, 1 month & 21days added to today's date.
+		
+		
+		//------------------------------
+		
+		//OUR OWN FORMATTERS:
+		
+		LocalDate today=LocalDate.now();
+		
+		//LocalDate today=LocalDate.now();
 		
 		
 		
