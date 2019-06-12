@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class Examples {
 	/*
@@ -420,6 +421,10 @@ public class Examples {
 		System.out.println("betweenDates.getMonths: " + betweenDates.getMonths());
 		System.out.println("betweenDates.getYears: " + betweenDates.getYears());
 		
+		//+++++++++++++++++++++++++++++++++++++++++++++++++Below:
+		Period p1 = Period.ofYears(2).ofMonths(6); //this DOESNT create a period of 2 yrs & 6 mnths - as these methods CANT be changed. The 'ofYears' is disregarded!
+		System.out.println("some time in the future: " + LocalDate.now().plus(p1));
+		
 		//===================
 		
 		//DURATIONS
@@ -428,8 +433,10 @@ public class Examples {
 		 * Durations can work for time & also dates & dateeTimes
 		 */
 		
-		Duration dur1 = Duration.ofHours(2).ofMinutes(5).ofSeconds(15);
-		System.out.println(dur1);
+		//+++++++++++++++++++++++++++++++++++++++++++++++++Below:
+		Duration dur1 = Duration.ofHours(2).ofMinutes(5).ofSeconds(15); //this DOESNT create a period of 2 hrs,5 mnts & 15 secs - as these methods CANT be changed. The final 2 are disregarded!
+		System.out.println(LocalTime.now().plus(dur1));
+		//System.out.println(dur1);
 		
 	}
 	
@@ -462,6 +469,29 @@ public class Examples {
 			finishTime=finishTime.plus(filmTime);
 		}
 		
+	}
+	
+	
+	
+	static void ex7() {
+		
+		/*
+		 * You CANT compare periods DIRECTLY,
+		 * as 2 months could mean 62 days (july or august) or 61 days (march or april)
+		 * and what about leap years (feb can be 28 or 29 days)
+		 * So we use CHRONOUNIT to get the amount of days & weeks in a date in relation to a fixed point. (NOT years or months)
+		 * I.E by using a chronoUnit, two months starting in 01-01-2019 will give us a days amount of 59 & not a leap year
+		 * in 2020 this same time period will be 60 as this is a leap year.
+		 */
+		
+		LocalDate today = LocalDate.now(); //todays date
+		LocalDate xmas = LocalDate.of(2019, Month.DECEMBER, 25); //date of xmas
+		
+		Period period1 = Period.between(today, xmas); //amount of time inbetween
+		System.out.println(period1);
+		
+		long period2 = ChronoUnit.DAYS.between(xmas, today);  //find exact amount of time in DAYS (can't be done with period)
+		System.out.println(period2);
 	}
 	
 	
