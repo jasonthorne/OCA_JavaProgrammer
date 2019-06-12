@@ -437,6 +437,9 @@ public class Examples {
 		Duration dur1 = Duration.ofHours(2).ofMinutes(5).ofSeconds(15); //this DOESNT create a period of 2 hrs,5 mnts & 15 secs - as these methods CANT be changed. The final 2 are disregarded!
 		System.out.println(LocalTime.now().plus(dur1));
 		//System.out.println(dur1);
+		Duration dur2 = Duration.ofHours(2);
+		System.out.println(LocalTime.now().plus(dur2));
+		
 		
 	}
 	
@@ -475,6 +478,8 @@ public class Examples {
 	
 	static void ex7() {
 		
+		//CHRONOUNITS
+		
 		/*
 		 * You CANT compare periods DIRECTLY,
 		 * as 2 months could mean 62 days (july or august) or 61 days (march or april)
@@ -484,14 +489,88 @@ public class Examples {
 		 * in 2020 this same time period will be 60 as this is a leap year.
 		 */
 		
+		//dates:
+		
 		LocalDate today = LocalDate.now(); //todays date
 		LocalDate xmas = LocalDate.of(2019, Month.DECEMBER, 25); //date of xmas
 		
-		Period period1 = Period.between(today, xmas); //amount of time inbetween
+		Period period1 = Period.between(today, xmas); //amount of time between today & xmas
 		System.out.println(period1);
 		
 		long period2 = ChronoUnit.DAYS.between(xmas, today);  //find exact amount of time in DAYS (can't be done with period)
 		System.out.println(period2);
+		
+		//--
+		
+		LocalDate paddys = LocalDate.of(2019, Month.MARCH, 17);
+		long period3 = ChronoUnit.DAYS.between(paddys, xmas); //you can comparee these 2 chronoUnits
+		
+		System.out.println("paddies day is "+period3+" days from xmas");
+		System.out.println(period2 > period3); //is the amount of days between today & xmas greater than the amount of time between paddies day & xmas.
+		
+		
+		//==========================
+		
+		//time:
+		
+		LocalTime rightNow = LocalTime.now();
+		LocalTime noon = LocalTime.NOON;
+		
+		long minsFromNoon=ChronoUnit.MINUTES.between(rightNow, noon); //amount of time in MINUTES betwwen now and noon
+		System.out.println("Minutes to noon is: " + minsFromNoon + " mins.");
+		
+		//midnight is the very first nano sec of the day: 00:00:00.000000000
+		LocalTime midnight = LocalTime.MIDNIGHT;
+		
+		long minsFromMid=ChronoUnit.MINUTES.between(rightNow, midnight);
+		System.out.println("Minutes from midnight is: " + minsFromMid + " mins.");
+		
+		period1 = Period.of(1000, 799, 40_000); //y,m,d 
+		LocalDate futuredate = today.plus(period1); //todays date + 1000 years, 799, months & 40,000 days
+		System.out.println(futuredate);
+		
+		long futureDays = ChronoUnit.DAYS.between(today, futuredate); //amount of EXACT days between today & futureDate
+		System.out.println(futureDays);
+			
+		
+	}
+	
+	static void ex8() {
+		
+		//adding periods: 
+		
+		Period rightp = Period.of(2, 4, 24);
+		
+		//adding periods:
+		
+		Period p1 = Period.of(1, 2, 10);
+		Period p2 = Period.of(2, 4, 4);
+		
+		Period addPs = p1.plus(p2);
+		System.out.println(addPs);
+		
+		//-------------
+		//multiplying periods:
+		
+		/*
+		 * You can ONLY multiply a period by a number, not by another period
+		 */
+		
+		System.out.println(addPs.multipliedBy(2));
+		
+		//---------
+		
+		//minusing periods
+		
+		/*
+		 * minus is the same way as a plus:
+		 * you minus the years
+		 * you minus the months
+		 * you minus the days
+		 * 
+		 */
+		
+		System.out.println("p2-p1: " + p2.minus(p1));
 	}
 	
 	
