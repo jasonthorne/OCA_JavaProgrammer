@@ -571,9 +571,54 @@ public class Examples {
 		 */
 		
 		System.out.println("p2-p1: " + p2.minus(p1));
+		
+		
+		//IsZero:
+		
+		/*
+		 * this returns true if year, month & date are all Zero
+		 */
+		
+		p1 = Period.of(0, 0, 1);
+		System.out.println("p1 is zero? - " + p1.isZero()); //false
+		p1 = Period.of(0, 0, 0);
+		System.out.println("p1 is zero? - " + p1.isZero()); //true
+		
+		
+		//using minuses:
+		
+		p1 = Period.of(4, 5, -10); //4 years & 5 months ADDED & 10 days REMOVED from this period
+		
+		LocalDate startYear = LocalDate.of(2019, Month.JANUARY, 1);
+		System.out.println(startYear.plusMonths(5));
+		System.out.println(startYear.plus(p1)); 
+		
+		//isNegitive:
+		
+		//isNegitive returns true if a year or month or day are negative:
+		System.out.println("p1 is negative? - " + p1.isNegative());
+		
 	}
 	
 	
+	
+	static void ex9() {
+		/*
+		 * DATE & TIME FORMATTERS
+		 * 
+		 * Allow us ot format dates & times in whatever format we want.
+		 * In our case, in Western European format:
+		 * DD=MM-YYYY
+		 */
+		
+		LocalDate today = LocalDate.now();
+		
+		//default format is: YYYY-mm-dd
+		System.out.println("Default format is " + today);
+		
+		
+		
+	}
 	
 	
 }
