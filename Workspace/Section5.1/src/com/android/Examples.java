@@ -33,7 +33,7 @@ public class Examples {
 		
 		
 		
-		//You cant have an else OR else-if by itself. it has to belong to an if:
+		//You can't have an else OR else-if by itself. it has to belong to an if:
 		/*
 		else {
 			
@@ -62,7 +62,7 @@ public class Examples {
 		
 		
 		
-		 //any equals method of any object will return a boolean, so can be used in an if statement:
+		//any equals method of any object will return a boolean, so can be used in an if statement:
 		
 		String myString = "hello";
 		String myString2 = new String("hello");
@@ -101,15 +101,51 @@ public class Examples {
 		if(test=false) {
 			System.out.println("yo");
 		}
-
-		
 	}
 	
 	
 	static void ex2() {
 		
+		int age=18;
+		if(age>=17); //dont have to have a BODY, but need a semicolon sfter closing brace if so.
 		
+		if(returnMe());	
+	}
+	
+	
+	static boolean returnMe() {
+		System.out.println("ill dissapear after execution!");
+		return true;
+	}
+	
+	
+	static void ex3() {
+		
+		/*
+		 * If no curly brackets, the body of your if, else & else-if can only have one line of code.
+		 */
+		
+		String name = "lion";
+		
+		//if(name=="lion") //should not use this
+		
+		String name2 = new String("lion");
+		
+		System.out.println(name==name2); //checks if they're pointing to the same address (which they arent)
+
+		System.out.println(name.equals(name2)); //correct way of comparing values
+		
+		//------
+		
+		if(name.equalsIgnoreCase("LION")) //no braces as only one statement
+			System.out.println("a lion");
+		else if(name.equalsIgnoreCase("horse")){
+			System.out.println("a horse");
+		}
 		
 	}
+	
 
+	
+	
 }

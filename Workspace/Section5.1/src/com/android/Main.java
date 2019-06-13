@@ -13,6 +13,8 @@ public class Main {
 		Examples.ex1();
 		
 		Examples.ex2();
+		
+		Examples.ex3();
 
 	}
 
