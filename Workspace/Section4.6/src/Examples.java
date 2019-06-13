@@ -687,7 +687,9 @@ public class Examples {
 		/*
 		 * PERIOD PARSERS 
 		 * 
-		 * Strings that contain a period, and then we can convert to periods
+		 * Strings that contain a period, and then we can convert to periods (parses a string into a period
+		 * 
+		 * )
 		 */
 		
 		Period p5 = Period.parse("p5y"); //NOT CASE SENSITIVE
@@ -702,10 +704,61 @@ public class Examples {
 		//OUR OWN FORMATTERS:
 		
 		LocalDate today=LocalDate.now();
+	
+		LocalTime rightNow=LocalTime.now();
+		LocalDateTime nowDateTime = LocalDateTime.now();
 		
-		//LocalDate today=LocalDate.now();
+		System.out.println(today); //todays date
+		System.out.println(rightNow); //current time
+		System.out.println(nowDateTime); //current time & date
+		
+		/*
+		 * D is day of the year
+		 * e is the day of the week (in java monday is the first day of the week)
+		 * dd is day of the month
+		 * EEEE is named day of the week (ie Tuesday)
+		 * EE is the shortened version (Tue)
+		 * MMMM is the full name of the month (feburary)
+		 * M gives us 2 for feburary
+		 * MM gives us 02  for feburary
+		 * MMM gives us feb  for feburary
+		 * YYYY is the year (2019)
+		 * YY gives us 19
+		 * hh gives us 12 hour clock
+		 * HH gives us 24 hour clock
+		 * mm gives us minutes
+		 * ss gives us seconds
+		 * SS gives us nanoseconds
+		 * a gives us "am" or "pm"
+		 * To put text in a dateFormatter, you use single quotes.
+		 * need to put spaces between the values into your string.
+		 */
 		
 		
+		//our own LocalDateTime formatter:
+		DateTimeFormatter eurDateTime = DateTimeFormatter.ofPattern("D e dd EEEE MMMM YYYY hh:mm:ss:SS a");
+		
+		System.out.println("\ntoday's current dateTime in european format:");
+		System.out.println(nowDateTime.format(eurDateTime));
+		
+		//our own LocalDate formatter:
+		DateTimeFormatter eurDate = DateTimeFormatter.ofPattern("EEEE dd MMMM YYYY");
+		
+		System.out.println("\ntoday's date in european format:");
+		System.out.println(today.format(eurDate));
+
+		//our own Time formatter:
+		DateTimeFormatter eurTime = DateTimeFormatter.ofPattern("hh:mm a");
+		
+		System.out.println("\ncurrent time is:");
+		System.out.println(rightNow.format(eurTime));
+		
+		
+		/*
+		//formatting a date as were creating it: ++++++++++++++++++++++++++++++++++++++
+		LocalDate todayEur = LocalDate.parse("2020 01 16", eurDate); //parse this date in our own format during creation.
+		System.out.println(todayEur);
+		*/
 		
 	}
 	
