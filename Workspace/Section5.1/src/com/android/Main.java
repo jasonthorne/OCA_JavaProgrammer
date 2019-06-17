@@ -15,6 +15,10 @@ public class Main {
 		Examples.ex2();
 		
 		Examples.ex3();
+		
+		Examples.ex4();
+		
+		Examples.ex5();
 
 	}
 
