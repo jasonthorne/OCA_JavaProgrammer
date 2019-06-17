@@ -152,8 +152,72 @@ public class Examples {
 		
 		}*/
 		
+		//-----------------------------------
 		
+		//values can change by switches:
+		
+		int age=3, age2=40;
+		
+		//final int x = 6;
+		
+		switch(age) {
+		case 12: //if age is 12, add 10 to age & 50 to age2
+			age+=10;
+			age2+=50;
+			System.out.println("age is" +age);
+			System.out.println("age2 is" +age2);
+			break;
+		case 3: 
+			//if age is 3, both ages stay the same
+			System.out.println("age is" +age);
+			System.out.println("age2 is" +age2);
+			break;
+		//case x: //vars can be used in cases, IF FINAL (otherwise you can't as the value could change)
+			//break;
+		default: 
+			age*=2;
+			age2*=2;
+			break;
+		}
+		
+		System.out.println("final age is: " +age);
+		System.out.println("final age2 is: " +age2);
+		
+		//-----------------------------------
+		
+		//cant do this for 2 reasons: age > 18 evaluates to a boolean, and booleans are not allowed in cae statements.
+		/*
+		switch(age) {
+		case age>18:
+		}*/
+		
+		//as said above, finals can be used in cases (but no non final vars can be)
+		//Their datatypes can be mixed 
+
+		final byte x1 = 3;
+		final int x2 = 33;
+		
+		//you can't use a final var that's declared over two lines of code though:
+		final int x3;
+		x3 = 333;
+	
+		switch(age) {
+		case x1:  //byte
+			System.out.println("final x1 is: " +x1);
+			break;
+		case x2: //int
+			System.out.println("final x2 is: " +x2);
+			break;
+		case x1 + x2: //int + byte
+			System.out.println("final x2 + x3 is: " + (x2 + x3));
+			break;
+		//case x3: //wont work as final is initilised on a different line that where it's declared.
+		//case null: //cant have null in case.
+		//case method.call(): //cant have a method call	
+		}
 		
 	}
+	
+	
 
 }
