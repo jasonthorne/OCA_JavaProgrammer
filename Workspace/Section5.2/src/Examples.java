@@ -112,5 +112,48 @@ public class Examples {
 		}
 		
 	}
+	
+
+	static void ex3() {
+		
+		//what can be put into the "switch" part of a switch.
+		
+		int score = 10, num = 10;
+		
+		//You can put a mathamatical calculation in the switch part of a switch. but vars HAVE TO BE initialised (or it wont compile)
+		
+		switch(score+num) {
+		case 10: //if marks is 10
+			System.out.println("mark is 10");
+			break;
+		case 30: //if marks is 10
+			System.out.println("mark is 30");
+			break;
+		default: 
+			System.out.println("number unkown");
+			break;
+		}
+		
+		score = 12;
+		
+		//this is checking for the number 12: (AND IS VALID CODE!!!)
+		switch(score++) {
+		}
+		
+		
+		double dNum = 1.2;
+		/*
+		 * can't a double as there is an infinite amount of numbers between two whole numbers ie 1 & 2.
+		 */
+		
+		Dog spot = new Dog();
+		/*
+		switch(spot) { //cant use objects
+		
+		}*/
+		
+		
+		
+	}
 
 }
