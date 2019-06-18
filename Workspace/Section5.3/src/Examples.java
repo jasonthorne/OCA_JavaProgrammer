@@ -83,11 +83,36 @@ public class Examples {
 		System.out.println("k outside the loop is: " + k);
 		//---------------------------------
 		
+	}
+	
+	static void ex2(){
 		
+		//NESTED FOR LOOPS
 		
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<4;j++) {
+				System.out.println("I is: " + i + " j is: " + j);
+			}
+		}
 		
+		//------
 		
+		String[]names1 = {"harry", "george", "mary"};
+		String[]names2 = {"laura", "michelle", "colm"};
+		String[]names3 = {"patsy", "jack", "mick"};
 		
+		//a 2dim array, which is an array of 1 dim arrays 
+		String[][]allNames = {names1, names2, names3};
+		
+		for(int i=0; i<allNames.length; i++) {
+			System.out.println("row: " + i);
+			
+			for(int j=0;j<allNames[i].length; j++) {
+				//System.out.println("col: " + j);
+				System.out.println("name is: " + allNames[i][j]);
+			}
+			
+		}
 		
 	}
 

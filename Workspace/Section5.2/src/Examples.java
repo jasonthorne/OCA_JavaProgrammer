@@ -191,6 +191,8 @@ public class Examples {
 		case age>18:
 		}*/
 		
+		boolean myBool = true;
+		
 		//as said above, finals can be used in cases (but no non final vars can be)
 		//Their datatypes can be mixed 
 
