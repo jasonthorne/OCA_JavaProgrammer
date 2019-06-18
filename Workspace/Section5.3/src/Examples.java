@@ -114,6 +114,24 @@ public class Examples {
 			
 		}
 		
+		//--------------------------
+		//NESTED ENHANCED FOR-LOOP
+		
+		String[]name1 = {"harry", "george", "mary"};
+		String[]name2 = {"laura", "michelle", "colm"};
+		String[]name3 = {"patsy", "jack", "mick"};
+		
+		
+		String[][]twoDName = {name1,name2,name3};
+		System.out.println();
+		for(String[]nameArr: twoDName) { //iterating through each string array element in the 2d array
+			System.out.println();
+			for(String name: nameArr) { //iterating through each string element in the targeted array
+				System.out.println(name);
+			}
+		}
+		
+		
 	}
 
 }
