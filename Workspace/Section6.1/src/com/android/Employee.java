@@ -73,6 +73,12 @@ public class Employee {
 		System.out.println("Employee protectMethod");
 	}
 	
+	public Employee sendInvitation(Employee emp) { //this can accept &/or return the stated object type or a subclass of that stated object ++++++++++++++++++++++++
+		System.out.println(emp.getClass().getSimpleName()); //print the name of the class that was passed
+		System.out.println("imvitation sent");
+		return new Fireman();
+	}
+	
 
 }
 
@@ -96,8 +102,33 @@ class Secetary extends Employee{
 		System.out.println("email is: " + email); //email is PROTECTED so this class has access 
 		System.out.println("pps is: " + pps); //pps is PROTECTED so this class has access
 		
-		
+		earn();
+		someMethod();
+		protectMethod();
+		//privateMethod(); //private
 		
 	}
 }
 
+
+class Fireman extends Employee{
+	String safetyQualifications;
+	
+	void rescue() {
+		System.out.println("Fireman rescue");
+	}
+	
+	void extinguish() {
+		System.out.println("Fireman extinguish fire");
+	}
+}
+
+
+class OilRigFireman extends Fireman{
+	
+	//You can specialise as much as you want
+	
+	void swim() {
+		System.out.println("OilRigFireman swim");
+	}
+}

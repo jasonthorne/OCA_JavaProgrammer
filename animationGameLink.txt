@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/29743592/call-a-function-each-x-second-in-requestanimationframe
+
+https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame

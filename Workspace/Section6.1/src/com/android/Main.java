@@ -25,6 +25,12 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		Employee eddie = new Employee();
+		Employee ethna = new Employee();
+		Fireman sam = new Fireman();
+		OilRigFireman olivia = new OilRigFireman();
+		Secetary sean = new Secetary();
+		
 	}
 
 }
