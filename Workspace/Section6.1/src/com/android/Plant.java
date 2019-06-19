@@ -35,14 +35,21 @@ class EnglishRose extends Rose{
 
 	@Override
 	void sniff() {
-		// TODO Auto-generated method stub
+		System.out.println("EnglishRose sniff");
 		
 	}
 
 	@Override
 	void pollinate() {
-		// TODO Auto-generated method stub
+		System.out.println("EnglishRose pollinate");
 		
 	}
+	
+	void englishRoseMethod() {
+		System.out.println("EnglishRose method");
+	}
+	
+	
+	
 	
 }

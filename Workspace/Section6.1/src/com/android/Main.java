@@ -59,8 +59,20 @@ public class Main {
 		eddie.sendInvitation(olivia); //oilrigfireman pbject sent to method
 		eddie.sendInvitation(andy);  //accountant pbject sent to method
 		
+		Rose myRose = new EnglishRose(); //An abstract superclass reference to a concrete subclass object.+++++++++++
 		
-			
+		//myRose ONLY has access to methods from its parents or their parents. NOT any unique to EnglishRose. ++++++++++
+		myRose.shed();
+		
+		
+		Plant plantRose = new EnglishRose();
+		plantRose.shed();
+		plantRose.grow();
+		//plantRose.pollinate(); //no access to Pollinate
+		
+		//Rose rose2 = new Rose(); //wont compile as you cant instantiate an abstract class.
+		
+	
 	}
 	
 	
