@@ -76,7 +76,9 @@ public class Employee {
 	public Employee sendInvitation(Employee emp) { //this can accept &/or return the stated object type or a subclass of that stated object ++++++++++++++++++++++++
 		System.out.println(emp.getClass().getSimpleName()); //print the name of the class that was passed
 		System.out.println("imvitation sent");
-		return new Fireman();
+		
+		
+		return new Fireman(); //returns ONLY AN EMPLOYEE (public *Employee* sendInvitation)
 	}
 	
 
