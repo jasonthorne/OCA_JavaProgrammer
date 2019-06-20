@@ -30,6 +30,9 @@ public class Examples {
 		Behaviour behaveDog; 
 		behaveDog = new Dog(); //a superclass interface reference to a subclass object. this ONLY has access to the behaviours inherited from the interface. 
 		
+		
+		Animal aDog = new Dog(); //a superclass reference to a subclass object
+		
 	}
 
 }
