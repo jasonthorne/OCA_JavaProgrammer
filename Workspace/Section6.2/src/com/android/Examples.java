@@ -52,6 +52,20 @@ public class Examples {
 	
 	static void ex2() {
 		
+		//Go to duck class to see multiple implementation of interfaces.+++++++++
+		
+		Duck daffy = new Duck();
+		daffy.findWater();
+		daffy.paddle();
+		daffy.launch();
+		daffy.glide();
+		daffy.land();
+		
+		
+		Swim swimDaffy = daffy; //an interace superclass reference to a subclass object.
+		
+		swimDaffy.findWater(); //only gives access to THAT superclass refrence behaviour.
+		
 	}
 
 }
