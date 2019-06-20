@@ -67,5 +67,38 @@ public class Examples {
 		swimDaffy.findWater(); //only gives access to THAT superclass refrence behaviour.
 		
 	}
+	
+	
+	
+	static void ex3() {
+		
+		Deer bambi = new Deer();
+		
+		bambi.landBased(); //from 'Move' interface
+		bambi.runSpeed(); //from 'Run' interface
+		
+		//accessing static interface vars in a non static way: (NOT RECOMMENDED)
+		System.out.println(bambi.finalInt);
+		
+		//accessing the variable in a static way: (RECOMMENDED WAY)
+		System.out.println(Run.finalInt);
+		
+		//accessing a static variable of an interface through an object (NOT RECOMMENDED) that implements that interface:
+		System.out.println(Deer.finalInt); //Deer implements Move. Move contains the variable finalInt.
+		
+		
+		//-----------
+		
+		/*
+		 * we have a static method (race) in the Run interface. 
+		 * THere is only ONE way to access a static method in an interface that is the name of the interface,
+		 * followed by the name of the method:
+		 */
+		
+		Run.race();
+		//Deer.race(); //WONT WORK
+		//bami.race(); //WONT WORK
+		
+	}
 
 }
