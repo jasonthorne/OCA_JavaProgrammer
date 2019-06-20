@@ -25,13 +25,32 @@ public class Examples {
 		tibbles.mad(); //default in behaviour interface, hosen to override. 
 		
 		//-------
+		//SUPERCLASS REFERENCES TO SUBCLASS OBJECTS ++++++++++++++++++++++++++++++++++++
+		
 		
 		//you CAN have a behaviour reference. You CANT have a behaviour object, because this is an interface, & an interface is an abstract class.
 		Behaviour behaveDog; 
 		behaveDog = new Dog(); //a superclass interface reference to a subclass object. this ONLY has access to the behaviours inherited from the interface. 
 		
 		
-		Animal aDog = new Dog(); //a superclass reference to a subclass object
+		Animal aCat = new Cat(); //a superclass reference to a subclass object
+		//ONLY has acccess to behaviours from the superclass
+		aCat.breed();
+		aCat.drink();
+		aCat.eat();
+		
+		//-------
+		
+		 //superclass reference to a subclass object:
+		Employee empFire = new Fireman();
+		
+		//subclass reference to a superclass object:
+		//Fireman fireEmp = new Employee(); //WONT compile. This gives a "ClassCastException"
+		
+		
+	}
+	
+	static void ex2() {
 		
 	}
 
