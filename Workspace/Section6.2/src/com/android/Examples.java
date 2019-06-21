@@ -100,5 +100,47 @@ public class Examples {
 		//bami.race(); //WONT WORK
 		
 	}
+	
+	static void ex4() {
+		
+		Ape magilla = new Ape();
+		Human harry = new Human();
+		
+		Test testy = new Test(); 
+		
+		//this method can take an ape or a human:
+		testy.takeApe(magilla);
+		testy.takeApe(harry);
+		
+		//this method can ALSO take an ape or a human:
+		testy.returnApe(magilla);
+		testy.returnApe(harry);
+		
+		
+		//this can ONLY take a Human REFERENCED object:
+		testy.returnHuman(harry);
+		//testy.returnHuman(magilla); //can only take a human.
+		
+		///This CANT b passed to returnHuman as it has an ape REFERENCE. Reference is what determins if a method can take a cetain object or not.
+		Ape humApe = new Human();//Superclass reference to a subclass Object
+		
+		/*
+		 * Casting is changing the REFERENCE of an object. It only works for compatible objects.
+		 * IE humApe is an APe reference to a Human object. 
+		 * Which means we can cast this object to be a Human reference.
+		 */
+		
+		//casting humApe to be a reference type Human:
+		//humApe=(Human)humApe;
+		
+		testy.returnHuman((Human)humApe);
+		
+		//creating a new Human object and assigning it the value of a human reference cast humApe.
+		Human newHuman = (Human)humApe;
+		
+		testy.returnHuman(newHuman);
+		
+		
+	}
 
 }
