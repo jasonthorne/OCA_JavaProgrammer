@@ -10,6 +10,9 @@ public class Main {
 		Zebra zed = new Zebra();
 		zed.happy();
 		
+		Bird tweety = new Bird();
+		tweety.pickMe();
+		
 	}
 	
 }
