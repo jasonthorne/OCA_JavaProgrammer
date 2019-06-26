@@ -32,6 +32,10 @@ class Cow extends Animal{
 	
 }
 
+class Fresian extends Cow{
+	
+}
+
 
 class Sheep extends Animal{
 	
