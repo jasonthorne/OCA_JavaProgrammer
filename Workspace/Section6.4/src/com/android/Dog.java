@@ -1,6 +1,8 @@
 package com.android;
 
 public class Dog  implements Behaviour{
+	
+	int age;
 
 	@Override
 	public void angry() {

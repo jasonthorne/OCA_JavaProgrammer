@@ -161,6 +161,59 @@ public class Main {
 		andy = (Animal)daisy;
 		
 		
+		//-------------------------
+		
+		spot.angry();
+		Cat tibbles=new Cat(); 
+		tibbles.sad(); //Behaviour interface method
+		
+		//this is asking, "is the object spot implementing the behaviour interface":
+		System.out.println(spot instanceof Behaviour); //returns true, a spot does implement the Behaviour Interface.
+		
+		daisy = new Cow();
+		
+		//We can check any object to see if it implements any interface:
+		System.out.println(daisy instanceof Behaviour); //returns false
+		
+		/*
+		 * You cant create an interface object. You CAN create an interface reference to a object that implements the interface. +++++++++++++++++++++++++++++
+		 */
+		
+		//These objects only have access to the methods implemented from the Behaviour interface: ++++++++++++++++++++++++++++++
+		Behaviour behaveDog = spot; //Behaviour interface reference to a Dog object
+		Behaviour behaveCat = tibbles; //Behaviour interface reference to a Cat object
+		
+		behaveDog.angry();
+		behaveDog.sad();
+		
+		behaveCat.angry();
+		behaveCat.sad();
+		
+		//casting the Behaviour REFERENCE to a Dog reference and assigning it to the rex  Dog object.
+		Dog rex = (Dog)behaveDog;
+		
+		
+		behaveDog=spot;
+	
+		//This is still a behaviour reference to a Dog object, but this is a new Dog object. It's not spot:
+		behaveDog=new Dog(); 
+		
+		//System.out.println(behaveDog.age);
+		
+		rex=(Dog)behaveDog;
+		System.out.println(rex.age);
+		
+		System.out.println("using casting to access age of Dog " + ((Dog)behaveDog).age);
+		
+		((Dog)behaveDog).pants();
+		
+		//----------
+		
+		//Anything that implements the Behaviour interface can go in this array, which in our case is Cats & Dogs.
+		Behaviour[]behaveArray = {
+				spot,tibbles,new Dog(), new Cat()
+		};
+	
 		
 	}
 
