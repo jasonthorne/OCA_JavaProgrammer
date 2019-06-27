@@ -3,7 +3,12 @@ package com.android;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+		
+		Employee eddie = new Employee();
+		Employee ethna = new Employee(53, "ethna");
+		
+		ethna.duties();
 
 	}
 

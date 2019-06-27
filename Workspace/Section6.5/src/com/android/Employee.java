@@ -27,5 +27,30 @@ public class Employee {
 		System.out.println("Employee constructor that takes an int");
 		
 	}
+	
+	void earn() {
+		System.out.println("Employees earn money");
+	}
+	
+	void duties() {
+		System.out.println("duties method called");
+		
+		/*
+		 * When calling a method from insid a class, 'this' is implicently before every method call
+		 */
+		earn();
+		//OR
+		this.earn();
+		
+		System.out.println("age is"+age);
+		System.out.println("age is"+this.age);
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [age=" + age + ", name=" + name + "]";
+	}
+	
+	
 
 }
