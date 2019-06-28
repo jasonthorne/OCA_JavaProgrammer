@@ -15,8 +15,6 @@ public interface Behaviour {
 	//can only be accessed by "Behaviour.statMethod" ++++++++++++++++++++++++++++
 	static void statMethod() {
 		System.out.println("statMethod called");
-		
-		
 	}
 	
 	
@@ -37,12 +35,11 @@ public interface Behaviour {
 		//OR:
 		angry();
 		
-		
+		sad();
 		this.angry();
 		
 		//this refers to the object calling this method, which will be eddie the employee:
 		System.out.println(this);
-		
 		
 		statMethod(); //you can call a static method inside an ordinary method.
 	}
