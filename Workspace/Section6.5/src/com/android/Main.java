@@ -45,6 +45,15 @@ public class Main {
 		ann.callThis();
 		
 		ann.statMethod();
+		
+		System.out.println("\nterry the Terrier:");
+		Terrier terry = new Terrier();
+		terry.accessSuper();
+		
+		
+		//-------------------
+		
+		LuxuryLiner titanic = new LuxuryLiner();
 
 	}
 	
