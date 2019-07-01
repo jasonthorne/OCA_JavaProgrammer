@@ -13,8 +13,12 @@ public class Main {
 		ArrayList<Integer>intList = new ArrayList<>(); //arraylist of Ints 
 		ArrayList<Bird>birdList = new ArrayList<>(); //arraylist of Birds 
 		
-		Box<Dog>dogBox;
-		Box<Cat>catBox;
+		Box<Dog>dogBox; //Box class reference accepting a Dog obj 
+		Box<Cat>catBox = new Box<>(); //instantiated BOx obj, that takes Cat Objs
+		
+		Box<Dog>dogBox2 = new Box<>(); //Box class reference accepting a Dog obj 
+		
+		
 
 	}
 
