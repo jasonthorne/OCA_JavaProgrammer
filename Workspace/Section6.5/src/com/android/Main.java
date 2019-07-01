@@ -54,6 +54,24 @@ public class Main {
 		//-------------------
 		
 		LuxuryLiner titanic = new LuxuryLiner();
+		Boat myBoat = new Boat();
+		CruiseShip myShip = new CruiseShip();
+		Vehicle myVehichle = new Vehicle();
+		
+		System.out.println("Ammount of Vehicles: " + Vehicle.VehicleCounter);
+		
+		//--------------------
+		
+		System.out.println("");
+		SingleStory mySingleStory = new SingleStory();
+		
+		Building myBuilding = new Building(2.3);
+		System.out.println("creating a building with a string"); 
+		
+		System.out.println("");
+		Building buildingAddress = new Building("Dublin");
+		
+		
 
 	}
 	
