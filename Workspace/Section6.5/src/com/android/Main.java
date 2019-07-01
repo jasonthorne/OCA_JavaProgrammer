@@ -71,6 +71,10 @@ public class Main {
 		System.out.println("");
 		Building buildingAddress = new Building("Dublin");
 		
+		//-----------------
+		System.out.println("");
+		House myHouse = new House(100.02);
+		
 		
 
 	}
