@@ -114,7 +114,7 @@ public class Main {
 		
 		//=============================
 		//ed has an attribute called myBehave which is accessed by: ed.myBehave
-		Employee ed = new Employee(40, "Ed", 7, b1); //passing the lambda (to be received in the Behaviour reference)
+		Employee ed = new Employee(40, "Ed", 4, b1); //passing the lambda (to be received in the Behaviour reference)
 		
 		//edel has an attribute called myBehave which is accessed by: edel.myBehave
 		Employee edel = new Employee(40, "Edel", 7, new Dog()); //passing a Dog object (which implements Behaviour)
@@ -123,6 +123,65 @@ public class Main {
 		ed.myBehave.lambda1(7, 8); //accessing eds lambda function
 		System.out.println(ed.myBehave.lambda1(7, 8));
 		
+		
+		//=============================++++++++++++++++++++++++++++++++++++++
+		
+		//3 emotion lambdas:
+		//each one is overriding the sad method in the Behaviour Interface
+		
+		Emotion e1 =()-> {
+			System.out.println("Sad Emotion e1 called");
+		};
+		
+
+		Emotion e2 =()-> {
+			System.out.println("Sad Emotion e2 called");
+		};
+		
+
+		Emotion e3 =()-> {
+			System.out.println("Sad Emotion e3 called");
+		};
+		
+		
+		e1.sad();
+		e2.sad();
+		e3.sad();
+		
+		//======================boolean check(Employee emp);=================================
+		
+		System.out.println("\nlong form validatePerformance:");
+		Validate validatePerformance1 = (Employee emp) -> {
+			if (emp.getRating()>5) {
+				return true;
+			}else {
+				return false;
+			}
+		};
+		
+		
+		System.out.println("short form validatePerformance:");
+		Validate validatePerformance2 = (emp) -> emp.getRating()>5;
+		
+		
+		System.out.println("Does ed make the standard? (of 5)");
+		System.out.println(validatePerformance1.check(ed));
+		
+		System.out.println("Does edel make the standard? (of 5)");
+		System.out.println(validatePerformance2.check(edel));
+		
+		//=+++++++++++++++++++++++++++
+		
+		//Manners interface
+		
+		Manners<Employee>myMood=(Employee emp) ->{
+			System.out.println("lambda of the test function in Manners");
+			System.out.println("in the Manners interface that has a generic type T");
+			return emp.getRating()>5;
+		};
+		
+		
+		System.out.println(myMood.test(ed));
 	}
 	
 	/*
@@ -131,7 +190,6 @@ public class Main {
 	 * + A lambda that directly implements the abstract method in the behaviour (b1,b2,b3,b4,b6)
 	 * + Or a behaviour reference to an object that implements the behaviour interface.
 	 */
-	
 	
 	static void takeLam(int num, String str, Behaviour myB) {
 		System.out.println("String is: " + str);
