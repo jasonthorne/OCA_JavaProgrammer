@@ -57,6 +57,7 @@ public class Main {
 		
 		
 		//Longway: 
+		
 		Behaviour b1 = (int a, int b) -> {
 			System.out.println("b1 behaviour lambda1 called");
 			int sum=a*b;
@@ -66,9 +67,76 @@ public class Main {
 		System.out.println("b1.lambda1(45,20)" + b1.lambda1(45, 20));
 		
 		//Short way:
-		Behaviour b2 = (a,b) -> a*b;
+		Behaviour b2 = (a,b) -> a+b;
 		
 		System.out.println("b2.lambda1(45,20)" + b2.lambda1(45, 20));
+		
+	
+		//one arg:
+		//Behaviour b3 = a -> a*2;
+		
+		
+		/*
+		 * if you have more than one line of code in the lambda body, then you need curly brackets.
+		 * 
+		 */
+		
+		Behaviour b4 = (a,b) -> {
+			System.out.println("More than one line of code");
+			int sum= a*b;
+			return sum;
+		};
+		
+		//---------
+		/*
+		 * You can also use this object to access the default methods of the Behaviour interface (But not recommended)
+		 */
+		b4.method1(); // not recommended (just use the lambda var for it's own lambda function)
+		b4.method2(); // not recommended (just use the lambda var for it's own lambda function)
+		
+		//Wont compile as if you have curly brackets you NEED the "return" keyword 
+		//Behaviour b5 = (a,b) -> {a*b;};
+		
+		//does work:
+		Behaviour b5 = (a,b) -> {return a*b;};
+		
+		
+		
+		//==============================
+		System.out.println("");
+		takeLam(2,"yo", b1);
+		takeLam(2,"dawg", b2);
+		takeLam(2,"woo", new Dog());
+		takeLam(2,"woo", new Dog());
+		Behaviour behaveDog=new Dog();
+		takeLam(99,"woo", behaveDog);
+		
+		
+		//=============================
+		//ed has an attribute called myBehave which is accessed by: ed.myBehave
+		Employee ed = new Employee(40, "Ed", 7, b1); //passing the lambda (to be received in the Behaviour reference)
+		
+		//edel has an attribute called myBehave which is accessed by: edel.myBehave
+		Employee edel = new Employee(40, "Edel", 7, new Dog()); //passing a Dog object (which implements Behaviour)
+		
+		
+		ed.myBehave.lambda1(7, 8); //accessing eds lambda function
+		System.out.println(ed.myBehave.lambda1(7, 8));
+		
+	}
+	
+	/*
+	 * This is a method that takes an int, String and an object with a Behaviour reference. Which can be:
+	 * + An object of a class that implements the Behaviour interface (a Dog)
+	 * + A lambda that directly implements the abstract method in the behaviour (b1,b2,b3,b4,b6)
+	 * + Or a behaviour reference to an object that implements the behaviour interface.
+	 */
+	
+	
+	static void takeLam(int num, String str, Behaviour myB) {
+		System.out.println("String is: " + str);
+		System.out.println("number is: " + num);
+		System.out.println("product of lambda is: " + myB.lambda1(num, num));
 	}
 	
 	
