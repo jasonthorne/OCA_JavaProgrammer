@@ -1,6 +1,7 @@
 package com.android;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 /**
  * 
@@ -170,7 +171,7 @@ public class Main {
 		System.out.println("Does edel make the standard? (of 5)");
 		System.out.println(validatePerformance2.check(edel));
 		
-		//=+++++++++++++++++++++++++++
+		//=======================================
 		
 		//Manners interface
 		
@@ -182,6 +183,29 @@ public class Main {
 		
 		
 		System.out.println(myMood.test(ed));
+		System.out.println(myMood.test(edel));
+		
+		
+		Manners<String>myMood2 = (str) -> str.length()>6;
+		String myStr = "dfdfdfsfdsfdsfdf";
+		System.out.println("string larger than 6? " + myMood2.test(myStr));
+		
+		
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		/*
+		 * This is a lambda that uses a string to implement the Test method in the Manners interface. 
+		 * THis is the shortened version with only 1 arg, so dont need brackets: 
+		 */
+		
+		Predicate<Employee>predEmployee = (Employee emp) ->{
+			System.out.println("Predicate with Employee data tye");
+			return emp.getRating()>5;
+		};
+		
+		System.out.println("");
+		System.out.println(predEmployee.test(ed));
+		System.out.println(predEmployee.test(edel));
+		
 	}
 	
 	/*
