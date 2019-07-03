@@ -1,4 +1,5 @@
 
+
 public class Main {
 	
 	/**
@@ -19,6 +20,9 @@ public class Main {
 		 * Errors are NOT a subclass of exception and should NOt be dealt with in a try/catch. 
 		 * An error is something usually you cant do ANYTHING about. IE hardware error
 		 */
+		
+		Checked checked = new Checked();
+		checked.checked1();
 	
 	}
 
