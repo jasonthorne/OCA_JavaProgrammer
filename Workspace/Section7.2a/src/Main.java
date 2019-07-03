@@ -21,8 +21,25 @@ public class Main {
 		 * An error is something usually you cant do ANYTHING about. IE hardware error
 		 */
 		
-		Checked checked = new Checked();
-		checked.checked1();
+		Checked check = new Checked();
+		check.checked1();
+		
+		/*
+		//try catch added here, due to the throws being checked2
+		try {
+			check.checked2();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		*/
+		
+			try {
+				check.checked3();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
 	
 	}
 
