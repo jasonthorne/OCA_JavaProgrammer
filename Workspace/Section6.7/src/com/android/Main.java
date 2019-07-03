@@ -194,7 +194,7 @@ public class Main {
 		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		/*
 		 * This is a lambda that uses a string to implement the Test method in the Manners interface. 
-		 * THis is the shortened version with only 1 arg, so dont need brackets: 
+		 * This is the shortened version with only 1 arg, so dont need brackets: 
 		 */
 		
 		Predicate<Employee>predEmployee = (Employee emp) ->{
