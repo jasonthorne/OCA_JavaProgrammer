@@ -22,7 +22,6 @@ public class Main {
 			System.out.println("Exception for readFile in main is + e");
 		}
 
-		
 		try {
 			throwMe.throwRunTime();
 		}catch(Exception e) {
@@ -33,6 +32,29 @@ public class Main {
 		throwMe.method1(); //no error produced here
 		throwMe.method2(); //no error produced here
 		
+		
+		try {
+			throwMe.method3();
+			throwMe.method6(); 
+			throwMe.method7(); 
+			
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		
+			
+		try {
+			throwMe.method8();
+		} catch (Exception e) {
+			//e.printStackTrace();
+			
+			//print full exception:
+			System.out.println("full exception is: " + e.toString());
+			
+			//print exception messge:
+			System.out.println("exception message is: " + e.getMessage());
+			
+		}
 		
 		
 	}
