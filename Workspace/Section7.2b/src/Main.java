@@ -11,9 +11,19 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Runtime runner = new Runtime();
-		runner.run1();
 		
-
+		try {
+			runner.run1();
+		}
+		catch(Exception e) {
+			System.out.println("Exception "+e+" has been caught");
+		}
+		
+		runner.run2();
+		
+		
+		//this will compile, but will crash as 
+		runner.run3();
 	}
 
 }
