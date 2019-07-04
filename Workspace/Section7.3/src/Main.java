@@ -57,6 +57,16 @@ public class Main {
 		}
 		
 		
+		
+		//=========================================
+		
+		//Throws2:
+		System.out.println("");
+		
+		Throws2 throwy = new Throws2();
+		throwy.trys();
+		
+		
 	}
 
 
