@@ -31,6 +31,33 @@ public class Main {
 		} catch (FallInRiverException e) {
 			//System.out.println("Exception is: " + e); //calling the toStringMethod NOT printing the "get out of the water" msg. That's in the "FallInRiverException" constructor.
 		}
+		
+		
+		//testing the row method:
+		raft.row("happy");
+		raft.row("nervous");
+		
+		
+		//-------------
+		
+		System.out.println("using both custom exception classes:");
+		
+		try {
+			raft.crossRapid(12); //prevents "FallInRiverException" error as this COULD cause that exception 
+			raft.row2("happy"); //prevents "DropOarException" error as this COULD cause that exception 
+		}
+		catch(FallInRiverException e) { 
+			e.printStackTrace();
+			System.out.println("get back in the raft");
+		}
+		catch(DropOarException f) {
+			f.printStackTrace();
+			System.out.println("dont panic");
+		}
+		finally { //this will always execute regardless of whether any exceptions are produced. Finally always runs except in one particular case.
+			System.out.println("hope you had a nice day rafting");
+		}
+		
 	}
 
 }
