@@ -160,9 +160,40 @@ public class Questions {
 		}
 		
 	}
-
+	
+	static Dog q7(Dog spot) {
+		
+		try {
+			throw new Exception();
+		}
+		catch(Exception e) {
+			System.out.println("exception in q7 is: " + e);
+			return spot;
+		}
+		finally {
+			spot.age=100; //changes age of Dog before return
+		}
+	}
 	
 	
+	static void q8() throws Exception{ //throws needed to deal with the checked exception in the try
+		/*
+		 * You can have a try block with JUST a finally.
+		 * If an exception is generated in the try block, the finally does not deal with it.
+		 * If we just have a try and a finally, any exception generated in the try block is NOT DEALT WITH. As finally cant catch an exception.
+		 */
+		
+		try {
+			FileInputStream fis = new FileInputStream("myText.txt");
+		}
+		/*
+		 * a finally block CANT catch an exception.
+		 */
+		finally {
+			System.out.println("finally always runs");
+			
+		}
+	}
 	
 	
 	
