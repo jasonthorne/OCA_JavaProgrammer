@@ -130,14 +130,54 @@ public class Questions {
 			
 		}catch(Exception e){
 			System.out.println("exception in catch block caught");
-			return 10;
+			return 10; //++++++++++++++++++++++++++++++++++++++++++++++++++++++even though this catch triggers, the FINALLY is checked before this return triggers, returning 100 instead
 		}
 		finally {
-			System.out.println("fianlly always runs");
+			System.out.println("finally always runs");
 			return 100;
 		}
 		
 		//return 200; //unreachable code
 	}
+	
+	static int q6() {
+		int num=45;
+		
+		try {
+			int[]numbers = {45, 67};
+			System.out.println(numbers[5]);
+		}
+		catch(Exception e) {
+			num++;
+			System.out.println(e);
+			System.out.println("inside catch, num is:  " + num);
+			return num;
+		}
+		finally{
+			num+=45;
+			System.out.println("inside finally, num is: " + num);
+			return num;
+		}
+		
+	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
