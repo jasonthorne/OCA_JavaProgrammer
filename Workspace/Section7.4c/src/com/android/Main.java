@@ -33,6 +33,28 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		
+		
+		try {
+			Ferrari myCar = new Ferrari();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		//This doesn't need a try/catch as it's throwing a runtime exception. (Which is automatically caught on trigger)
+		Car myCar = new Car();
+		
+		
+		try {
+			Midwife mary = new Midwife();
+		} catch (Throwable e) { //Needs to catch a THROWABLE, as that's whats being thrown. NOT an Exception which is a sub class of Throwable.
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

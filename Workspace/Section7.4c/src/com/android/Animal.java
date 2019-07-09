@@ -2,6 +2,11 @@ package com.android;
 
 public class Animal {
 	
+	/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	if overriding a METHOD (not constructor - that's explained in Person class) that throws an exception, 
+	you can have that method throw the SAME LEVEL of exception, OR a SUBclass of that exception.
+	*/
+	
 	Animal(){
 		System.out.println("Animal constructor");
 	}
