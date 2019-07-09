@@ -110,6 +110,51 @@ public class Questions {
 		//so 0.04 becomes 0
 		System.out.println(4/5);
 		
+		
+		String wrongNum= "banana";
+		
+		int num = 0xfff;
+		
+		System.out.println(num);
+		
+		//String hexNumber = fff;
+		
+		/*
+		 * this will also produce a numberFormatException as we have to tell the parsers that this string contains not a decimal but a Hex number (base 16):
+		 */
+		//num=Integer.parseInt(hexNumber);
+		
+		
+		//this will parse out the string which contains a hex number to be an int.
+		//We have to tell the parser that this number to be parsed is in base 16.
+		//num=Integer.parseInt(hexNumber, 16);
+		System.out.println(num);
+		
+		//PARSE A BINARY NUMBER:
+		
+		String binaryNum = "1001011";
+		
+		/*
+		 * this will print out 75, as this is a base 2 number.
+		 */
+		num=Integer.parseInt(binaryNum, 2);
+		System.out.println(num);
+		
+		
+		//------------------------
+		
+		String number2 = "123febabg";
+		
+		////num=Integer.parseInt(number2, 16); //number format exception, as 'g' is outside of base 16
+		
+		//num=Integer.parseInt(number2, 17); //this wil work however, as it fits into base 17
+	}
+	
+	
+	static void ExceptionInitializerError() {
+		Statics myStatics = new Statics();
+		
+		Statics myStatics2 = new Statics();
 	}
 
 }
