@@ -65,6 +65,7 @@ public class ReThrow {
 		}
 		finally {
 			throw new IOException(); //this produces its own checked exception, which HAS TO BE dealt with (which is in the "throws Exception" in the method sig).
+			//a try/catch for this checked exception here would work too
 		}
 	}
 	

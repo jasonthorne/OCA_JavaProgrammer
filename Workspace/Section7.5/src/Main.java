@@ -22,5 +22,7 @@ public class Main {
 		} //this is in a try/catch as it throws a runtime exception. It doesnt NEED to be. but will crash the program if isnt.
 		
 		
+		
+		Nested.nested1();
 	}
 }
