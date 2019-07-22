@@ -125,10 +125,26 @@ public class Main {
 		System.out.println(num==iNumber);
 		System.out.println(iNumber==num);
 		
+		
+		//----
 		dNumber = 56.0;
 		iNumber = 56;
 		
-		//System.out.println(dNumber.intValue()==iNumber.intValue());
+		//System.out.println(dNumber==iNumber); //CANT compare as they're different 
+		System.out.println(dNumber.intValue()==iNumber); //this will work as it compares the int value of 56.o against the wrapper iNumber containing the int 56.
+		
+		//System.out.println(dNumber.intValue().equals); //CANT call the .equals method as dNumber.intValue returns a int and an int is not an object.
+		
+		
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		
+		number = new Integer(34);
+		number2 = new Integer(34);
+		System.out.println(number == number2); //this is comparing references
+		System.out.println("wrappers equal: " + number.equals(number2));
+		
+		
+		
 		
 	}
 
