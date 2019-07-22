@@ -1,5 +1,7 @@
 package com.android;
 
+import java.util.function.Predicate;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -81,6 +83,51 @@ public class Main {
 		
 		Box <Integer>boxInt = new Box(3); //a Box reference which takes Dogs (passed string is AUTOBOXED into an INTEGER)
 		System.out.println(boxInt.myT.getClass().getSimpleName()); //check object type of boxDog
+		
+		//++++++++++++++++++++++++++++++++++++++++++++++
+		
+		//Here we are overriding the test() method in the Actions interface that takes a type t, and returns a boolean.
+		//"Actions<String>" determins type T to be a String:
+		
+		int age = 15;
+		String myStr = "yo";
+		Actions<String>strAction=(String str)->{
+			System.out.println("strAction lamda test method");
+			boolean test=age>18;
+			return test;
+		};
+		
+		
+		System.out.println(strAction.test(myStr));
+		
+		//=======
+		
+		//this is the simplest lambda you can have for the test method.
+		//this takes a Dog object, and returns true.
+		Actions<Dog>dogAction=spot->true;
+		
+		
+		Actions<Dog>dogAction2=spot->age>18; //sending a Dog, and returning whether age is > 18
+		
+		System.out.println(dogAction2.test(new Dog()));
+		
+		//========
+		
+		//predicates:
+		
+		Predicate<String> strPred = (String str) ->{
+			System.out.println("predicate test method strPred with string");
+			return false;
+		};
+		
+		
+		Predicate<Dog>dogPred=spot->{
+			System.out.println("predicate test method dogPred with Dog");
+			return true;
+		};
+		
+		//takes a num and returns if age < 18
+		Predicate<Integer>intPred=num->age<18;
 		
 		
 	}
