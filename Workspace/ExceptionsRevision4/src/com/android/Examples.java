@@ -49,21 +49,52 @@ public class Examples {
 			System.out.println(e);
 			return "catch block";
 		}
+		finally {
+			return "finally block";
+		}
 		
 		
 		//return null; //unreachable code ++++++++++++++++
 		
 		
-		/*
+		/* WITH NO FINALLY BLOCK:
 		 * If our code generates no exception, then this will return the string "try block",
 		 *  If our code generates AN exception, then this will return the string "catch block".
 		 *  The "return null" is therefore unreachable.
+		 *  
+		 *  WITH THE FINALLY BLOCK INCLUDED:
+		 *   it will ALWAYS return "finally block".
 		 */
 		
 	}
 	
 	
+	//------------------------------
 	
+	static void ex3() {
+		
+		try {
+			
+			File myFile = new File("c:/MyFile.txt");
+			myFile.createNewFile();
+		}
+		catch(Exception e) {
+			System.out.println("exception is:" + e);
+			try {
+				File myFile = new File("MyFile.txt");
+				myFile.createNewFile();
+			}
+			catch(Exception i) {
+				System.out.println("exception is:" + i);
+			}
+			
+		}
+		finally {
+			System.out.println("file successfully created");
+		}
+		
+		
+	}
 	
 
 }
