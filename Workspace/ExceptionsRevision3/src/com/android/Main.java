@@ -37,9 +37,25 @@ public class Main {
 			System.out.println("exception is: " + e);
 		}
 		
+		//===========================
+		
+		
+		System.out.println("");
+		
+		try {
+			
+			
+			ForensicAccountant freddie = new ForensicAccountant();
+			System.out.println("");
+			Accountant andy = new Accountant();
+			
+		}catch(Throwable e) { //catching throwable (Super of exception) because ForensicAccountant throws this.
+			
+		}
 		
 		
 		
+		Employee eddie = new Employee(); //NO try/catch needed as this throws a runtime exception.
 
 		
 	}

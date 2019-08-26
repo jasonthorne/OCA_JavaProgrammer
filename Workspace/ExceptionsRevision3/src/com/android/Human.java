@@ -2,6 +2,15 @@ package com.android;
 
 public class Human {
 	
+	
+	
+	//constructor:
+	Human() throws IndexOutOfBoundsException{
+		System.out.println("Human created");
+	}
+	
+	
+	
 	//if this method is called, its "throws Exception" sig MUST be handled
 	void walk() throws Exception {
 		System.out.println("Human walk method");
@@ -21,11 +30,20 @@ public class Human {
 	void breath() throws RuntimeException{
 		
 	}
+	
+	
+	
 
 }
 
 
 class Employee extends Human{
+	
+	
+	//constructor:
+	Employee() throws RuntimeException {
+			System.out.println("Employee created");
+	}
 	
 	/*
 	 * When you are overriding a method that throws some exception, the overriding method can only throw the SAME exception, or a subclass of THAT exception
@@ -56,10 +74,20 @@ class Employee extends Human{
 
 class Accountant extends Employee{
 	
+	//constructor:
+	Accountant() throws Exception{
+			System.out.println("Accountant created");
+	}
+	
 }
 
 
 
 class ForensicAccountant extends Accountant{
+	
+	//constructor:
+	ForensicAccountant() throws Throwable{
+			System.out.println("ForensicAccountant created");
+	}
 	
 }
