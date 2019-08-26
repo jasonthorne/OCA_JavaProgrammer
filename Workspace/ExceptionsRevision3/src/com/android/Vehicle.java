@@ -10,7 +10,7 @@ public class Vehicle {
 	}
 	
 	
-	//++++++++++++++++++++++++++++++++++++++++method with a throws (which obviously then needs handled)
+	//method with a throws (which obviously then needs handled)
 	void drive() throws Exception{ 
 		System.out.println("Vehicle driving");
 	}
@@ -19,5 +19,7 @@ public class Vehicle {
 		File myFile=new File("c:/myFile.txt"); ///this COULD generate a checked exception. 
 		FileWriter fw = new FileWriter(myFile); //This WILL generated a checked exception. (both obv need handled)
 	}
+	
+	
 
 }
