@@ -54,7 +54,40 @@ public class Examples {
 	
 	static void threeD() {
 		
+		//36 number in this. 4x3x3
+		int threeD1[][][] = new int[4][3][3]; //3 dim array - DEPTH, ROW, COL
 		
+		
+		int twoD[][]= {{45,66,88},{100,102,103}};
+		
+		int threeD2[][][] = {twoD, twoD, twoD};
+		
+		int array1[] = {88,99,10001};
+		
+		int threeD3[][][] = {
+				twoD,
+				{array1, array1, array1}, //an array of arrays (ie a 2 dim array) ++++++
+				{{999,998,997},{996,995,994}} //another array of arrays
+		};
+		
+		
+		//--------
+		
+		//looping through rows in multi dim array:
+		for (int i=0;i<threeD3.length; i++){
+			
+			//loop through cols in multi dim array
+			for (int j=0;j<threeD3[i].length; j++){
+				
+				for (int k=0;k<threeD3[i][j].length; k++){
+					
+					System.out.print(threeD3[i][j][k] + ",");
+				}
+				
+				System.out.println("");
+			}
+			
+		}
 		
 		
 	}
