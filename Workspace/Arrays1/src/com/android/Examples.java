@@ -87,10 +87,23 @@ public class Examples {
 		
 		System.out.println("----------------------------------------------");
 		
-		int[][]noSecondSize=new int[3][];
+		int[][]noSecondSize=new int[3][2]; //having a value in the second row makes no difference (could be [3][1]) other than it fills the array with 0's according to row num. 
+		//you can assign arrays of differing sizes to this, AS LONG AS the new values have been instantiated.
 		noSecondSize[0]=new int[] {5,6};
 		noSecondSize[1]=new int[] {5,6, 34, 666, 67};
-		noSecondSize[2]= num1;
+		noSecondSize[2]= num1; //OVERRIDING the size of [2] (which holds 2 0's) with another pre-existing array.
+		//noSecondSize[2]= {5,6}; //CANT BE DONE as were trying to change the value of the already instantiated array. 
+		
+		/*array is now:
+		 * 
+		{5,6}
+		{5,6, 34, 666, 67}
+	 	{600,700,800}
+		 
+		*/
+		
+		
+		int[][]nullArrayObjs=new int[3][]; //this is 3 1 dimensional null array objects +++++++++++++++++
 		
 		
 		
@@ -106,11 +119,43 @@ public class Examples {
 		int threeD1[][][] = new int[4][3][3]; //3 dim array - DEPTH, ROW, COL
 		
 		
+		
+		
 		int twoD[][]= {{45,66,88},{100,102,103}};
 		
 		int threeD2[][][] = {twoD, twoD, twoD};
 		
 		int array1[] = {88,99,10001};
+		
+		int another3DArray[][][] = new int[3][][]; //this holds nums in the empty brackets +++++++++++++++++++++++++++++++++++++++++++++++
+		//another3DArray = new int[3][][3]; //CANT BE DONE. (assignment chain cant be broken)
+		another3DArray = new int[3][3][]; //CANE DONE (chain not broken)
+		another3DArray = new int[0][0][3]; //CANE DONE (chain not broken - as 0's are obviously values!)
+		
+		
+		//--------------
+		int[]nums1 = {56,78,99};
+		int[]nums2 = {100,200,300};
+		int[]nums3 = {1000,2000,3000};
+		
+		twoD = new int[][] {nums1, nums2, nums3};
+		
+		//assigning values to 3d array:
+		int[][][] new3DArray = {
+				twoD, //first 2d array
+				{nums1, nums2, nums3},  //2nd 2d array
+				{{67,12,80},{277,268,226}} //3rd 2d array
+
+		};
+		
+		//Targeting arrays in 3d array:
+		int[][] first2D = new3DArray[0]; //gets the first 1d array
+		int[] oneD = new3DArray[0][0]; //gets the first 1d array 
+		int num = new3DArray[0][0][0]; //grabs the 1st element in the 1st 2d array at the 1st depth.
+		
+		
+		//--------------
+		
 		
 		int threeD3[][][] = {
 				twoD,
