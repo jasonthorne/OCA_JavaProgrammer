@@ -14,11 +14,23 @@ public class Examples {
 		
 		//------------
 		
-		int[][]twoD1 = new int[2][3]; //x2 1 dim arrays of length 3 (or 2 rows 3 cols).
+		int[][]twoD1 = new int[2][3]; //x2 1 dim arrays of length 3 (or 2 rows 3 cols). ++++++++all holding 0's+++++++++++++ 
 		
 		int[][]twoD2 = {
-					{56, 77, 99}, //1st row of length 3
+					{56, 77, 100}, //1st row of length 3
 					{100, 345, 88} //2nd row of length 3
+		};
+		
+		//Asymmetric multidim array:
+		int[][]asyArray = {
+				{12,24,56,88}, //1st row of length 4
+				{2} //1st row of length 1
+				
+				/*
+				 * locations of elements:
+				 * asyArray[0][0], [0][1], [0][2], [0][3]
+				 * asyArray[1][0]
+				 */
 		};
 		
 		//print array values:
@@ -44,6 +56,42 @@ public class Examples {
 			}
 			
 		}
+		
+		////////////////////////////////////////////////
+		
+		int[] num1 = new int[] {600,700,800};
+		int[] num2 = new int[] {222,333,444};
+		
+		int[][]new2dArray = {num1, num2};
+		
+		/*
+		 * new2dArray is made of two 1 dim arrays. which we can access by going:
+		 * 
+		 */
+		
+		int[]firstRow = new2dArray[0];
+		int[]secondRow = new2dArray[0];
+		
+		System.out.println("\new2dArray: " + new2dArray[0][0]); //access 1st row 
+		
+		System.out.println("\n-------loop through new2dArray----------------");
+		
+		for (int i=0;i<new2dArray.length; i++){ //number of rows (arrays) inside the new2dArray
+			
+			for(int j=0; j<new2dArray[i].length; j++) { //loop through each element inside each inner array
+				System.out.println("new2dArray number is: " + new2dArray[i][j]);
+				
+			}
+			
+		}
+		
+		System.out.println("----------------------------------------------");
+		
+		int[][]noSecondSize=new int[3][];
+		noSecondSize[0]=new int[] {5,6};
+		noSecondSize[1]=new int[] {5,6, 34, 666, 67};
+		noSecondSize[2]= num1;
+		
 		
 		
 	}
@@ -72,7 +120,7 @@ public class Examples {
 		
 		
 		//--------
-		
+		System.out.println();
 		//looping through rows in multi dim array:
 		for (int i=0;i<threeD3.length; i++){
 			
