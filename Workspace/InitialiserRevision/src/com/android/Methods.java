@@ -40,7 +40,6 @@ public class Methods {
 		//NON static initialisers can access bboth static and NON static vars: +++++++++++++++++++++++++++++
 		System.out.println("accessing static: " + statCounter);
 		System.out.println("accessing NON static: " + num);
-		
 	}
 	
 	
