@@ -24,8 +24,23 @@ public class Methods {
 	}
 	
 	
+	
+	static int statCounter = 0;
+	int num = 12;
 	static {
 		System.out.println("static initialiser2 has run.");
+		statCounter++; //a static initialiser can access static variables but it CANT directly access NON static variables +++++++++++++++++++++++++
+		//System.out.println(num); //doesnt work, as NON static, so unable to access.
+	}
+	
+	
+	
+	{
+		System.out.println("you can put any code you like inside an initialiser");
+		//NON static initialisers can access bboth static and NON static vars: +++++++++++++++++++++++++++++
+		System.out.println("accessing static: " + statCounter);
+		System.out.println("accessing NON static: " + num);
+		
 	}
 	
 	
@@ -36,6 +51,12 @@ public class Methods {
 	
 	void myMethod() {
 		System.out.println("myMethod called");
+	}
+	
+	
+	//Constructors are run AFTER all initialisers:
+	Methods(){
+		System.out.println("constructor");
 	}
 
 	
