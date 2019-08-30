@@ -1,5 +1,9 @@
 package com.android;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Examples {
 	
 	
@@ -181,6 +185,28 @@ public class Examples {
 			}
 			
 		}
+		
+		
+		//=======================.asList +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		System.out.println("\n.asList:");
+		
+		//this creates an ARRAY object with a list reference, that has all of these numbers:
+		List<Integer>intList=Arrays.asList(45,78,99,100,102);
+		
+		//intList.add(45); //CANT BE DONE AS intList is an ARRAY object 
+		//intList.remove(0); //CANT BE DONE AS intList is an ARRAY object
+		
+		System.out.println(intList);
+		intList.set(0, 1000);
+		System.out.println(intList);
+		
+		
+		//----------
+		
+		List<Integer>numbers = new ArrayList<>();
+		numbers.addAll(Arrays.asList(12,45,788,999,1000,3,45));
+		numbers.addAll(numbers);
+		System.out.println(numbers);
 		
 		
 	}
