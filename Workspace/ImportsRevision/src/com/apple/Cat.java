@@ -49,11 +49,15 @@ public class Cat {
 		System.out.println("static cat 'fight' called");
 	}
 	
+	//package level access. NOT available to the 'com.apple' package
+	void drink() {
+		System.out.println("package level 'drink' called");
+	}
 	
-	
-	
-	
-	
+	//package level access. NOT available to the 'com.apple' package
+	static void attack() {
+		System.out.println("cat's attacking");
+	}
 	
 	
 	
