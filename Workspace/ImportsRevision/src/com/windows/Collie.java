@@ -15,7 +15,7 @@ public class Collie extends Dog {
 	}
 	
 
-	Collie(String name){
+	public Collie(String name){
 		/*
 		 * This is calling the construvtor in the super class that takes a String
 		 * the Dog class is the super of the collie class and there is a constructor in the Dog class that has the following sig:

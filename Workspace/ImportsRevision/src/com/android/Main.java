@@ -32,6 +32,13 @@ public class Main {
 		System.out.println(Daisy.daisyCounter); //this WILL RUN the static initialisers! 
 		//If you access the static var of a class, all of the static initialisers will then run. (they only run ONCE each session).
 		System.out.println(Daisy.daisyCounter); //static initialisers WONT be called here, as they already were above. 
+		
+		
+		
+		
+		Collie colm = new Collie("colm");
+		
+		
 
 	}
 
