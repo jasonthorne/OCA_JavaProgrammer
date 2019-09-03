@@ -2,6 +2,8 @@ package com.windows;
 
 import com.apple.Dog; //This imports all of the public and protected members of the Dog class (as this is a SUBCLASS of Dog).
 
+import com.apple.*; //imports ALL of the public members from com.apple
+
 public class Collie extends Dog {
 	
 	//Dog myDog= new Dog();

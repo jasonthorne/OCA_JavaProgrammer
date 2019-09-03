@@ -6,12 +6,27 @@ import com.apple.Cat; //Imports both STATICS and non statics +++++++++++++
 
 import com.windows.*; //Imports all of the public members of the com.windows package (from ALL classes in that package)
 
+//import com.apple.Cat.name; //CANT import an instance member of a class (method or var) 
 
+import static com.windows.microsoft.Tower.floorNumber; //you CAN import a static member though! ++++++++++++++++++++++++++++
+import com.windows.microsoft.Bungalow; // a NON STATIC import.
+
+import static com.unix.Ape.*; //importing all of the STATICS from the ape class. NONE of the non statics though!! ++++++++++++++++++++++
 
 
 public class Main {
 
 	public static void main(String[] args) {
+		
+		System.out.println(apeCounter); //accessing the static var due to the import above which imports ALL statics. 
+		//System.out.println(Ape.apeCounter);
+		
+		//Ape myApe = new Ape();
+		
+		System.out.println("tower loor is: " + floorNumber); //print a static import member (from import above)+++++++++++++++++++++++++++++
+		
+		//System.out.println("bungalow number is: " + bungalowNumber); //cant be targeted this way with the regular import above
+		System.out.println("bungalow number is: " + Bungalow.bungalowNumber); //MUST be targeted this way
 		
 		Cat myCat = new Cat(); //accessing the public Cat constructor
 		
