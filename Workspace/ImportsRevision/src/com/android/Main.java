@@ -14,6 +14,11 @@ import com.windows.microsoft.Bungalow; // a NON STATIC import.
 import static com.unix.Ape.*; //importing all of the STATICS from the ape class. NONE of the non statics though!! ++++++++++++++++++++++
 //import com.unix.*; 
 
+
+//import static com.unix.*;//you CANT import only ALL static members from a package +++++++++++++++++++
+
+import com.unix.*; //you CAN however import all public members +++++++++++++++++++++
+
 public class Main {
 
 	public static void main(String[] args) {
