@@ -12,7 +12,7 @@ import static com.windows.microsoft.Tower.floorNumber; //you CAN import a static
 import com.windows.microsoft.Bungalow; // a NON STATIC import.
 
 import static com.unix.Ape.*; //importing all of the STATICS from the ape class. NONE of the non statics though!! ++++++++++++++++++++++
-
+//import com.unix.*; 
 
 public class Main {
 
@@ -20,8 +20,10 @@ public class Main {
 		
 		System.out.println(apeCounter); //accessing the static var due to the import above which imports ALL statics. 
 		//System.out.println(Ape.apeCounter);
+		gather(); //this is a public static method in the Ape class.
 		
-		//Ape myApe = new Ape();
+		//Ape myApe = new Ape(); //You cannot create an Ape as the constructor is not static. You cant have a static constructor. 
+		//Ape.gather();//you can't access statics in this way when you use a static import
 		
 		System.out.println("tower loor is: " + floorNumber); //print a static import member (from import above)+++++++++++++++++++++++++++++
 		
@@ -35,7 +37,6 @@ public class Main {
 		myCat.eat();
 		Cat.fight(); //accessing the STATIC fight method in a static way
 		myCat.fight(); //accessing the STATIC fight method in a NON static way (not recommended!)
-		
 		
 		
 		

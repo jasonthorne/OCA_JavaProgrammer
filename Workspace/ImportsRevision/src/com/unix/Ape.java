@@ -20,6 +20,10 @@ public class Ape {
 		System.out.println("Ape eating");
 	}
 	
+	static void fight() { ///////////////////////////NOT public, so no access if you statically import this class.
+		System.out.println("Apes fighting");
+	}
+	
 	
 
 }
