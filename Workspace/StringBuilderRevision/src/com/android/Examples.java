@@ -123,15 +123,75 @@ public class Examples {
 		
 		
 		//DELETE - removes chars in a substring of the specified StringBuilder object.
+		System.out.println("\nDELETE:");
 		
 		fruit = new StringBuilder("pineapple");
 		fruit.delete(2, 5); //delete everything from 2 up to (but NOT INCLUDING) 5.
 		System.out.println(fruit);
 		
+		fruit.delete(3, 1000); //delete everything from 2 up to 1000. - 1000 obv doesn't exist, but this DOESNT CRASH +++++++++++++++++++++++++++
+		System.out.println(fruit);
+		
+		//DELETECHARAT: - remove a char at a given pos
+		
+		fruit.deleteCharAt(1);
+		System.out.println(fruit);
+		
+		//--------------------------------
+		
+		//REVERSE - reverses the order of characters in the StringBuilder, and does change the values in the StringBuilder object.
+		System.out.println("\nREVERSE:");
+		
+		fruit = new StringBuilder("pineapple");
+		fruit.reverse();
+		System.out.println(fruit);
+
+		//--------------------------------
+		
+		//REPLACE - replaces characters in the StringBuilder.
+		
+		fruit = new StringBuilder("pineapple");
+		fruit.replace(0, 4, "cherry"); //start, upto(but not including), string to add
+		System.out.println(fruit);
+		
+		
+		
 	}
 	
 	
 	static void ex4() {
+		
+		//METHODS OF STRINGBUILDER THAT ARE SHARED WITH STRING CLASS:
+		
+		//--------------
+		
+		//SUBSTRING:
+		
+		System.out.println("methods StringBuilder shares with String");
+		
+		StringBuilder fruit = new StringBuilder("pineapple");
+		
+		System.out.println(fruit.substring(1,4)); //this just prints, it DOESNT MODIFY the value inside the StringBuilder
+		System.out.println(fruit);
+		
+		//-------------
+		
+		//SETCHARAT -changes the char at given index - DOES MODIFY the value
+		
+		fruit.setCharAt(2,'u');
+		System.out.println(fruit);
+		
+		
+		//-------------
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 	
