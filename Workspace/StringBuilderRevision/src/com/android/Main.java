@@ -15,7 +15,11 @@ public class Main {
 		System.out.println(newStr);
 		 */
 		
-		Examples.ex1();
+		//Examples.ex1();
+		
+		Examples.ex2();
+		
+		Examples.ex3();
 	}
 
 }

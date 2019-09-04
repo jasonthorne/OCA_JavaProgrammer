@@ -57,5 +57,83 @@ public class Examples {
 		//+++++++++++++++++++++++++++++++++++++++++++++++
 		
 	}
+	
+	
+	static void ex2() {
+		
+		System.out.println("methods of the StringBuilder class");
+		
+		//APPEND - adding onto a StringBuilder obj (permanently, unlike concat)
+		
+		System.out.println("Append:");
+		StringBuilder fruit = new StringBuilder("Apple");
+		System.out.println(fruit.append("tree"));
+		
+		System.out.println(fruit);
+		
+		Dog spot = new Dog();
+		fruit.append(spot); //appending an object, appends the toString method of that class. ++++++++++++++++++++++++++
+		System.out.println(fruit);
+		
+		fruit.append(12);
+		System.out.println(fruit);
+		
+		//you CAN use the concat symbol with a stringbuilder and a string
+		
+		//concat doesnt work with 2 stringbuilders:
+		//System.out.println(fruit + fruit); //doesnt work
+		
+		//but DOES work with 1 stringbuilder and a string:
+		System.out.println(fruit + " hello"); //does work
+		
+		//----------------------
+		
+		
+	}
+	
+	
+	
+	static void ex3() {
+		
+		//INSERT - only available to StringBuilder - DOES CHANGE the value of the StringBuiklder object
+		
+		/*
+		 * Inserts text or any other primitive data type or object into certain locations in your StringBuilder object
+		 */
+		System.out.println("\nInsert:");
+		
+		
+		StringBuilder fruit = new StringBuilder("Apple");
+		
+		fruit.insert(1, 12); //at pos 1 insert 12
+		System.out.println(fruit);
+		
+		fruit.insert(2, "tree");
+		System.out.println(fruit);
+		
+		fruit.insert(4, new Dog()); //insert a new object
+		System.out.println(fruit);
+		
+		/* 
+		fruit.insert(100, "crash");
+		System.out.println(fruit); stringIndexOutofBounds
+		*/
+		
+		//-------------------------------
+		
+		
+		//DELETE - removes chars in a substring of the specified StringBuilder object.
+		
+		fruit = new StringBuilder("pineapple");
+		fruit.delete(2, 5); //delete everything from 2 up to (but NOT INCLUDING) 5.
+		System.out.println(fruit);
+		
+	}
+	
+	
+	static void ex4() {
+		
+	}
+	
 
 }
