@@ -1,3 +1,5 @@
-Coursework from GRETB Java Software Developer Course.
+Coursework from GRETB, Java Programmer course. 
+ 
+In preperation for [Oracle Certified Associate, Java SE 8 Programmer Certification](https://education.oracle.com/java-se-8-programmer-i/pexam_1Z0-808). 
 
-Working toward [Java SE 8 Oracle Certified Associate (OCA) Certification.](https://education.oracle.com/java-se-8-programmer-i/pexam_1Z0-808)
+Cetrification awarded on September 18, 2019.
