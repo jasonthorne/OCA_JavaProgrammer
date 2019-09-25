@@ -1,7 +1,7 @@
 
 <span align="center">
   <img src="https://github.com/jasonthorne/OCA_JavaProgrammer/blob/master/img/O_Java-SE-8-OCA-clr.bmp"><br />
-  <h1>TEST TEXT</h1>
+  
 </span>
 
 
