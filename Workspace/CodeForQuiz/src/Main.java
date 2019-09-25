@@ -199,7 +199,32 @@ public class Main {
 	
 	*/
 	
+	/*
+	//Q 461
 	
+	public static void main (String[] args) {
+		try {
+			int num = 10;
+			int div = 0;
+			int ans = num/div;
+		} catch (ArithmeticException ae) {
+			ans = 0; //line n1
+		} catch (Exception e) {
+			System.out.println("Invalid calculation");
+		}
+		System.out.println("Answer = " + ans); //line n2
+	}
+	*/
+	
+	/*
+	int n [][] = {{1,3}, {2,3}};
+	for (int i = n.length-1;I >=0; i--) {
+		for(int y: n[i]) {
+			System.out.print(y);
+		}
+	}
+	*/
+
 	
 	
 	
