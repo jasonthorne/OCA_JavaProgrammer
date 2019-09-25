@@ -1,7 +1,9 @@
 
-<p align="center">
+<h1 align="center">
   <img src="https://github.com/jasonthorne/OCA_JavaProgrammer/blob/master/img/O_Java-SE-8-OCA-clr.bmp"><br />
-</p>
+  TEST1<br />
+  TEST2<br />
+</h1>
 
 
 Coursework from GRETB Java Programmer course. 
