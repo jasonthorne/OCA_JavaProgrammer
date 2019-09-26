@@ -327,5 +327,38 @@ public class Main {
 	}
 	*/
 	
+	/*
+	//Q491
+	
+	A. 
+	public class Boat{
+		public static void main (String[] args) {
+			System.out.println("I float.");
+		}
+	}
+	
+	B. 
+	public class Boat{
+		public static void main (String[] args) {
+			System.out.println("Chocolate.");
+		}
+	}
+	
+	C. 
+	public class Boat{
+		public static void main (String[] args) {
+			System.out.println("Squirrel.");
+		}
+	}
+	
+	D. 
+	public class Boat{
+		public static void main (String[] args) {
+			System.out.println("Earn Interest.");
+		}
+	}
+	*/
+	
+	
 	
 }
