@@ -4,8 +4,6 @@
   Coursework from GRETB Java Programmer course. 
   <br />
   In preperation for Oracle Certified Associate, Java SE 8 Programmer Certification.
-  <br />
-   <embed src="https://github.com/jasonthorne/OCA_JavaProgrammer/blob/master/img/eCertificate.pdf" type="application/pdf" />
 </h2>
 
 
