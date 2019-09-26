@@ -1,29 +1,30 @@
+import java.time.LocalDate;
 
 public class Main {
 
 	
 		
-		/*
-		 Q 440
-	
-		public class Test{
-			public static final int MIN = 1;
-			
-			public static void main(String [] args){
-				int x = args.length;
-				if(checkLimit (x)){ //line n1
-					System.out.println("Java SE");
-				}else {
-					System.out.println("Java EE");
-				}
-			}
-			
-			public static boolean checkLimit (int x) {
-				return (x >= MIN) ? true : false;
+	/*
+	 Q 440
+
+	public class Test{
+		public static final int MIN = 1;
+		
+		public static void main(String [] args){
+			int x = args.length;
+			if(checkLimit (x)){ //line n1
+				System.out.println("Java SE");
+			}else {
+				System.out.println("Java EE");
 			}
 		}
-		 
-		 */
+		
+		public static boolean checkLimit (int x) {
+			return (x >= MIN) ? true : false;
+		}
+	}
+	 
+	 */
 	
 	
 	/*
@@ -359,6 +360,71 @@ public class Main {
 	}
 	*/
 	
+	/*
+	//Q493
+	
+	package clothing;
+	public class Shirt{
+		public static String getColor() {
+			return "Green";
+		}
+	}
+	
+	package clothing.pants;
+	//line n1
+	public class Jeans{
+		public void matchShirt() {
+			//line n2
+			if(color.equals("Green")) {
+				System.out.println("Fit");
+			}
+		}
+		public static void main (String[] args) {
+			Jeans trouser = new Jeans();
+			trouser.matchShirt();
+		}
+	}
+	
+	*/
+	
+	/*
+	//Q494
+	
+	public static void main(String[] args) {
+		LocalDate date = LocalDate.of(2012, 01, 32);
+		date.plusDays(10);
+		System.out.println(date);
+	}*/
 	
 	
+	
+	/*
+	//Q495
+	
+	class Test{
+		int a1;
+		
+		public static void doProduct(int a) {
+			a = a*a;
+		}
+		
+		public static void doString(StringBuilder s) {
+			s.append(" " + s);
+		}
+		
+		public static void main (String[] args) {
+			Test item = new Test();
+			item.a1 = 11;
+			StringBuilder sb = new StringBuilder("Hello");
+			Integer i = 10;
+			doProduct(i);
+			doString(sb);
+			doProduct(item.a1);
+			System.out.println(i + " " + sb + " " + item.a1);
+			
+		}
+		
+		
+	}
+	*/
 }
