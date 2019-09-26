@@ -283,13 +283,49 @@ public class Main {
 	}
 	*/
 	
+	/*
+	//Q488
+	
+	public class MyFile
+	{
+		public static void main(String[] args)
+		{
+			String arg1 = args[1];
+			String arg2 = args[2];
+			String arg3 = args[3];
+			System.out.println("Arg is " + arg3);
+			
+		}
+	}
+	
+	*/
+	
+	/*
+	//Q489
+	
+	public static void main (String[] args) {
+		int[] arr = {1, 2, 3, 4};
+		int i = 0;
+		do {
+			System.out.println(arr[i] + " ");
+			i++;
+		}while (i < arr.length -1);
+	}
+	*/
+	
+	/*
+	//Q490
+	
+	public class Test{
+		public static void main(String[] args) {
+			if (args[0].equals("Hello") ? false : true) {
+				System.out.println("Success");
+			}else {
+				System.out.println("Failure");
+			}
+		}
+	}
+	*/
 	
 	
-	
-	
-	
-	
-	
-	
-
 }
