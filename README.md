@@ -3,7 +3,7 @@
   <br />
   Coursework from GRETB, Java Programmer course. 
   <br />
-  In preparation for Oracle Certified Associate, Java SE 8 Programmer Certification.
+  In preparation for Oracle Certified Associate, Java SE 8 Programmer certification.
 </h3>
 
 
