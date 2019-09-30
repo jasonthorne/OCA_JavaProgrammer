@@ -6,7 +6,8 @@
   In preparation for Oracle Certified Associate, Java SE 8 Programmer certification.
   <br />
   <br />
-  Awarded Septermber 18, 2019.
+  <br />
+  Awarded: Septermber 18, 2019.
   <br />
   <img src="https://github.com/jasonthorne/OCA_JavaProgrammer/blob/master/img/eCertificate.png">
 </h2>
