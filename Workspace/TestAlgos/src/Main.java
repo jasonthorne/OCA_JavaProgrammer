@@ -161,7 +161,7 @@ public class Main {
 	    startTime = 0L;
 	    endTime = 0L;
 	
-	    //===========================================================================
+	    //=========================================================================== ++++++++++++++++++++++NOT HAPPY WITH THIS!!! (think there's someting wrong with it!!)
 	    //	ALTERNATIVE ENHANCED BUBBLE SORT:
 	    
 	    int[] altEnhancedBubbleList = {3, 1, 32, 43, 74, 99};
@@ -169,7 +169,7 @@ public class Main {
 	    int altEnhancedSearchNum = altEnhancedBubbleList.length-1;
 	    boolean swapped = false;
 	    int altEnhancedTemp = 0;
-	    System.out.println("========================\nALTERNATIVE ENHANCED BUBBLE SORT");
+	    System.out.println("========================\nALTERNATIVE ENHANCED BUBBLE SORT - check this (It may be wrong! :P)");
 	    System.out.println("Stack before sort: " + Arrays.toString(altEnhancedBubbleList));
 	    
 	    //starting time:
@@ -203,6 +203,56 @@ public class Main {
 	    System.out.println("Time taken: " + (endTime - startTime) + "(ns)"); 
 	    startTime = 0L;
 	    endTime = 0L;
+	    
+	    //===========================================================================
+	    //	BINARY SEARCH:
+	    
+	    System.out.println("========================\nBINARY SEARCH - add code for if target not here");
+	    
+	    int [] binaryList = {1, 6, 20, 32, 44, 67, 83, 90, 103, 126, 149, 205, 210};
+		int binaryTarget = 126;
+		boolean foundbinaryTarget = false;
+		int lowPos = 0; /////////////////////////binaryList[0]; //list's lowest starting val (it's first element)
+		int highPos = binaryList.length-1; //////////////////////binaryList[binaryList.length-1]; //list's highest val (it's last element)
+		int middlePos = 0;
+		System.out.println("Target to find: " + binaryTarget);
+		
+		//starting time: 
+		startTime = System.nanoTime();
+	    
+		do {
+	    	
+	    	middlePos = (lowPos + highPos)/2; //calculate the middle pos of the array
+	    	
+	    	if (binaryTarget == binaryList[middlePos]) { //check if middle pointer contains the target value
+	    		foundbinaryTarget = true;
+	    		System.out.println("Found target: " + binaryList[middlePos]);
+	    		break; //leave do-while
+	    	}
+	    	else if (binaryTarget < binaryList[middlePos]) { //check if target value is less than middle pointer's value
+	    	
+	    		highPos = (middlePos -1); //reassign high pointer to discard the top half of the list. (moving its pos -1)
+	    	}
+	    	else if (binaryTarget > binaryList[middlePos]){ //check if target value is greater than middle pointer's value
+	    		
+	    		lowPos = (middlePos +1); //reassign low pointer to discard the bottom half of the list. (moving its pos +1)
+	    	}
+	    	
+		}while(lowPos <= highPos);
+	    
+	    //ending time: 
+	  	endTime = System.nanoTime();
+	    System.out.println("Time taken: " + (endTime - startTime) + "(ns)"); 
+	    startTime = 0L;
+	    endTime = 0L;
+	    
+	    
+	    //===========================================================================
+	    //	MERGE SEARCH:
+	    
+	    System.out.println("========================\nMERGE SORT");
+
+	    
 	    
 	}//main
 	
