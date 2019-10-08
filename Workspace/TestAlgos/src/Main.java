@@ -16,7 +16,7 @@ public class Main {
 		boolean foundLinearTarget = false;
 		System.out.println("Target to find: " + linearTarget);
 		
-		 // starting time 
+		//starting time: 
 		startTime = System.nanoTime();
 		
 		for (int i=0; i< linearList.length; i++) {
@@ -28,7 +28,7 @@ public class Main {
 			}
 		}
 		
-		// ending time 
+		//ending time: 
 		endTime = System.nanoTime();
 	    System.out.println("Time taken: " + (endTime - startTime) + "(ns)"); 
 	    startTime = 0L;
@@ -45,7 +45,7 @@ public class Main {
 	    System.out.println("========================\nSTACK PUSH");
 	    System.out.println("Stack before push: " + Arrays.toString(stackList));
 	    
-	    // starting time 
+	    //starting time: 
 	 	startTime = System.nanoTime();
 	    
 	    if (stackTop == 6) { //check if memory available
@@ -57,7 +57,7 @@ public class Main {
 	    
 	    System.out.println("Stack after push: " + Arrays.toString(stackList));
 	    
-	    // ending time 
+	    //ending time: 
 	 	endTime = System.nanoTime();
 	    System.out.println("Time taken: " + (endTime - startTime) + "(ns)"); 
 	    startTime = 0L;
@@ -69,7 +69,7 @@ public class Main {
 	    System.out.println("========================\nSTACK POP");
 	    System.out.println("Top of stack before pop: " + stackList[stackTop]);
 	    
-	    // starting time 
+	    //starting time: 
 	 	startTime = System.nanoTime();
 	    
 	    if (stackList[stackTop] == 0) { //check if stack has elements for removal
@@ -81,7 +81,7 @@ public class Main {
 	    
 	    System.out.println("Top of stack after pop: " + stackList[stackTop]);
 	    
-	    // ending time 
+	    //ending time: 
 	 	endTime = System.nanoTime();
 	    System.out.println("Time taken: " + (endTime - startTime) + "(ns)"); 
 	    startTime = 0L;
@@ -97,7 +97,7 @@ public class Main {
 	    System.out.println("========================\nBUBBLE SORT");
 	    System.out.println("Stack before sort: " + Arrays.toString(bubbleList));
 	    
-	    // starting time 
+	    //starting time:
 	  	startTime = System.nanoTime();
 	  	
 	  	for (int i=1; i<= searchNum;i++) { //from 1 to n-1 so that the final current is checking the final element
@@ -115,7 +115,7 @@ public class Main {
 	  	
 	  	System.out.println("Stack after sort: " + Arrays.toString(bubbleList));
 	    
-	  	// ending time 
+	  	//ending time: 
 	  	endTime = System.nanoTime();
 	    System.out.println("Time taken: " + (endTime - startTime) + "(ns)"); 
 	    startTime = 0L;
@@ -123,11 +123,47 @@ public class Main {
 	    
 	    //===========================================================================
 	    int[] enhancedBubbleList = {99, 74, 43, 32, 3, 1};
+	    int enhancedSecondLastPos = enhancedBubbleList.length-2; //second last pos of list
+	    int enhancedSearchNum = enhancedBubbleList.length-1;
+	    int enhancedTemp = 0;
 	    System.out.println("========================\nENHANCED BUBBLE SORT");
 	    System.out.println("Stack before sort: " + Arrays.toString(enhancedBubbleList));
 	    
+	    //starting time: 
+	  	startTime = System.nanoTime();
 	    
+	    for (int i=1; i<= enhancedSearchNum; i++) { //from 1 to n-1 so that the final current is checking the final element
+	    	
+	    	//loop up to 2nd last pos, as current element checks next element:
+	    	for(int j=0; j<=(enhancedSearchNum-1); j++) {  //sort up to one less position for each pass (the enhanced bit) as after each pass it sorts the largest item.
+	    		
+	    		if (enhancedBubbleList[j] > enhancedBubbleList[j+1]) { //check if next element is bigger than current
+	    			
+	    			enhancedTemp = enhancedBubbleList[j]; //assign current to temp
+	    			enhancedBubbleList[j] = enhancedBubbleList[j+1]; //make current the value of next
+	    			enhancedBubbleList[j+1] = enhancedTemp; //make next the value of temp (current)
+	    		}
+	    	}
+	    }
+	    
+	    System.out.println("Stack after sort: " + Arrays.toString(enhancedBubbleList));
+	    
+	    //ending time: 
+	  	endTime = System.nanoTime();
+	    System.out.println("Time taken: " + (endTime - startTime) + "(ns)"); 
+	    startTime = 0L;
+	    endTime = 0L;
 	
+	    //===========================================================================
+	    int[] altEnhancedBubbleList = {99, 74, 43, 32, 3, 1};
+	    
+	    System.out.println("========================\nALTERNATIVE ENHANCED BUBBLE SORT");
+	    
+	    
+	    
+	    
+	    
+	    
 	}//main
 	
 
