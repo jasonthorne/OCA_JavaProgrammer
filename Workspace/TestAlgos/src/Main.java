@@ -8,7 +8,8 @@ public class Main {
 		long endTime = 0L;
 		
 		//===========================================================================
-			
+		//	LINEAR SEARCH:	
+		
 		System.out.println("========================\nLINEAR SEARCH");
 		
 		int [] linearList = {2, 56, 43, 32, 78, 1};
@@ -35,6 +36,7 @@ public class Main {
 	    endTime = 0L;
 		
 		//===========================================================================
+	    //	STACK PUSH:
 	    
 	    int[] stackList = {2, 56, 43, 32, 0, 0};
 	    
@@ -64,6 +66,8 @@ public class Main {
 	    endTime = 0L;
 	    
 	    //---------------------------------
+	    //	STACK POP:
+	    
 	    int itemCopy;
 	    
 	    System.out.println("========================\nSTACK POP");
@@ -87,8 +91,9 @@ public class Main {
 	    startTime = 0L;
 	    endTime = 0L;
 	    
-	    
 	    //===========================================================================
+	    //	BUBBLE SORT:
+	    
 	    int[] bubbleList = {99, 74, 43, 32, 3, 1};
 	    int secondLastpos = bubbleList.length-2; //second last pos of list.
 	    int searchNum = bubbleList.length-1;
@@ -122,8 +127,10 @@ public class Main {
 	    endTime = 0L;
 	    
 	    //===========================================================================
+	    //	ENHANCED BUBBLE SORT:
+	    
 	    int[] enhancedBubbleList = {99, 74, 43, 32, 3, 1};
-	    int enhancedSecondLastPos = enhancedBubbleList.length-2; //second last pos of list
+	    //int enhancedSecondLastPos = enhancedBubbleList.length-2; //second last pos of list - NOT NEEDED here as we're looping up to one less pos for each pass
 	    int enhancedSearchNum = enhancedBubbleList.length-1;
 	    int enhancedTemp = 0;
 	    System.out.println("========================\nENHANCED BUBBLE SORT");
@@ -155,14 +162,47 @@ public class Main {
 	    endTime = 0L;
 	
 	    //===========================================================================
-	    int[] altEnhancedBubbleList = {99, 74, 43, 32, 3, 1};
+	    //	ALTERNATIVE ENHANCED BUBBLE SORT:
 	    
+	    int[] altEnhancedBubbleList = {3, 1, 32, 43, 74, 99};
+	    int altEnhancedSecondLastPos = altEnhancedBubbleList.length-2; //second last pos of list 
+	    int altEnhancedSearchNum = altEnhancedBubbleList.length-1;
+	    boolean swapped = false;
+	    int altEnhancedTemp = 0;
 	    System.out.println("========================\nALTERNATIVE ENHANCED BUBBLE SORT");
+	    System.out.println("Stack before sort: " + Arrays.toString(altEnhancedBubbleList));
 	    
+	    //starting time:
+	  	startTime = System.nanoTime();
 	    
+	    do {
+	    	
+	    	swapped = false; //set or reset swapped to false
+	    	
+	    	for(int i=1; i<= altEnhancedSearchNum; i++) {
+	    		
+		    	for (int j=0; j<=altEnhancedSecondLastPos; j++) { //loop up to second last pos
+		    	
+		    		if (altEnhancedBubbleList[j] > altEnhancedBubbleList[j+1]) { //if current is greater than next:
+		    			altEnhancedTemp = altEnhancedBubbleList[j]; //assign current to temp
+		    			altEnhancedBubbleList[j] = altEnhancedBubbleList[j+1]; //make current the value of next
+		    			altEnhancedBubbleList[j+1] = altEnhancedTemp; //make next the value of temp (current)
+		    			swapped = true; //turned true if a swap occurred
+		    		}
+		    		
+		    	}
+	    		
+	    	}
+		    	
+	    }while(swapped == false);
 	    
+	    System.out.println("Stack after sort: " + Arrays.toString(altEnhancedBubbleList));
 	    
-	    
+	    //ending time: 
+	  	endTime = System.nanoTime();
+	    System.out.println("Time taken: " + (endTime - startTime) + "(ns)"); 
+	    startTime = 0L;
+	    endTime = 0L;
 	    
 	}//main
 	
