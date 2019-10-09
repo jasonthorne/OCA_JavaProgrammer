@@ -211,9 +211,9 @@ public class Main {
 	    int [] binaryList = {1, 6, 20, 32, 44, 67, 83, 90, 103, 126, 149, 205, 210};
 		int binaryTarget = 126;
 		boolean foundbinaryTarget = false;
-		int lowPos = 0; 
-		int highPos = binaryList.length-1;
-		int middlePos = 0;
+		int binaryLowPos = 0; 
+		int binaryHighPos = binaryList.length-1;
+		int binaryMiddlePos = 0;
 		System.out.println("Target to find: " + binaryTarget);
 		
 		//starting time: 
@@ -221,23 +221,23 @@ public class Main {
 	    
 		do {
 	    	
-	    	middlePos = (lowPos + highPos)/2; //calculate the middle pos of the array
+			binaryMiddlePos = (binaryLowPos + binaryHighPos)/2; //calculate the middle pos of the array
 	    	
-	    	if (binaryTarget == binaryList[middlePos]) { //check if middle pointer contains the target value
+	    	if (binaryTarget == binaryList[binaryMiddlePos]) { //check if middle pointer contains the target value
 	    		foundbinaryTarget = true;
-	    		System.out.println("Found target: " + binaryList[middlePos]);
+	    		System.out.println("Found target: " + binaryList[binaryMiddlePos]);
 	    		break; //leave do-while
 	    	}
-	    	else if (binaryTarget < binaryList[middlePos]) { //check if target value is less than middle pointer's value
+	    	else if (binaryTarget < binaryList[binaryMiddlePos]) { //check if target value is less than middle pointer's value
 	    	
-	    		highPos = (middlePos -1); //reassign high pointer to discard the top half of the list. (moving its pos -1)
+	    		binaryHighPos = (binaryMiddlePos -1); //reassign high pointer to discard the top half of the list. (moving its pos -1)
 	    	}
-	    	else if (binaryTarget > binaryList[middlePos]) { //check if target value is greater than middle pointer's value
+	    	else if (binaryTarget > binaryList[binaryMiddlePos]) { //check if target value is greater than middle pointer's value
 	    		
-	    		lowPos = (middlePos +1); //reassign low pointer to discard the bottom half of the list. (moving its pos +1)
+	    		binaryLowPos = (binaryMiddlePos +1); //reassign low pointer to discard the bottom half of the list. (moving its pos +1)
 	    	}
 	    	
-		}while(lowPos <= highPos);
+		}while(binaryLowPos <= binaryHighPos);
 	    
 	    //ending time: 
 	  	endTime = System.nanoTime();
@@ -247,6 +247,61 @@ public class Main {
 	    
 	    
 	    //===========================================================================
+	    //	MERGE SORT:
+	    
+	    System.out.println("========================\nMERGE SORT");
+	    
+	    int [] mergeList = {1, 6, 20, 32, 44, 67, 83, 90, 103, 126, 149, 205, 210};
+	    
+	    
+	    //split a list:
+	    int mergeMiddlePos = (mergeList.length)/2; //pointer to the middle pos of list
+	    int ptr1 = 0;
+	    int mergeLastPos = mergeList.length -1; //final index pos of mergeList
+	    
+	    int[] leftMergeList = new int [mergeMiddlePos]; //new left list 
+	    int[] rightMergeList = new int [mergeMiddlePos]; //new right list
+	    
+	    do {
+	    	
+	    	leftMergeList[ptr1] = mergeList[ptr1]; //use ptr1 to copy elements from first half of source array into left array
+	    	ptr1++; //increment ptr1
+	    	
+	    }while(ptr1 != mergeMiddlePos); //stop when ptr hits middle pos of list.
+	  
+
+	    System.out.println(Arrays.toString(leftMergeList)); //++++++++++++++++++++++++++++
+	    
+	    int ptr2 = 0; //another pointer with 0 index to fill right array with second half of source array
+	    
+	    do {
+	    	
+	    	rightMergeList[ptr2] = mergeList[ptr1]; //use ptr1 to copy elements from 2nd half of source array into left array (at pos of ptr2)
+	    	ptr1++; //increment ptr1
+	    	ptr2++; //incrtement ptr2
+	    	
+	    }while(ptr1 != mergeLastPos); //stop when ptr hits last  pos of list.
+	  
+	    
+	    System.out.println(Arrays.toString(rightMergeList)); //++++++++++++++++++++++++++++
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	    
 	    
 	}//main
