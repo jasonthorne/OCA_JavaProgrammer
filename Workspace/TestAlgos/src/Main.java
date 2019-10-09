@@ -161,7 +161,7 @@ public class Main {
 	    startTime = 0L;
 	    endTime = 0L;
 	
-	    //=========================================================================== ++++++++++++++++++++++NOT HAPPY WITH THIS!!! (think there's someting wrong with it!!)
+	    //=========================================================================== ++++++++++++++++++++++NOT HAPPY WITH THIS!!! (think there's something wrong with it!!)
 	    //	ALTERNATIVE ENHANCED BUBBLE SORT:
 	    
 	    int[] altEnhancedBubbleList = {3, 1, 32, 43, 74, 99};
@@ -188,8 +188,7 @@ public class Main {
 		    			altEnhancedBubbleList[j] = altEnhancedBubbleList[j+1]; //make current the value of next
 		    			altEnhancedBubbleList[j+1] = altEnhancedTemp; //make next the value of temp (current)
 		    			swapped = true; //turned true if a swap occurred
-		    		}
-		    		
+		    		}	
 		    	}
 	    		
 	    	}
@@ -207,13 +206,13 @@ public class Main {
 	    //===========================================================================
 	    //	BINARY SEARCH:
 	    
-	    System.out.println("========================\nBINARY SEARCH - add code for if target not here");
+	    System.out.println("========================\nBINARY SEARCH");
 	    
 	    int [] binaryList = {1, 6, 20, 32, 44, 67, 83, 90, 103, 126, 149, 205, 210};
 		int binaryTarget = 126;
 		boolean foundbinaryTarget = false;
-		int lowPos = 0; /////////////////////////binaryList[0]; //list's lowest starting val (it's first element)
-		int highPos = binaryList.length-1; //////////////////////binaryList[binaryList.length-1]; //list's highest val (it's last element)
+		int lowPos = 0; 
+		int highPos = binaryList.length-1;
 		int middlePos = 0;
 		System.out.println("Target to find: " + binaryTarget);
 		
@@ -233,7 +232,7 @@ public class Main {
 	    	
 	    		highPos = (middlePos -1); //reassign high pointer to discard the top half of the list. (moving its pos -1)
 	    	}
-	    	else if (binaryTarget > binaryList[middlePos]){ //check if target value is greater than middle pointer's value
+	    	else if (binaryTarget > binaryList[middlePos]) { //check if target value is greater than middle pointer's value
 	    		
 	    		lowPos = (middlePos +1); //reassign low pointer to discard the bottom half of the list. (moving its pos +1)
 	    	}
@@ -248,10 +247,6 @@ public class Main {
 	    
 	    
 	    //===========================================================================
-	    //	MERGE SEARCH:
-	    
-	    System.out.println("========================\nMERGE SORT");
-
 	    
 	    
 	}//main
