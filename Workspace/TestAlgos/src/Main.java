@@ -10,7 +10,7 @@ public class Main {
 		//===========================================================================
 		//	LINEAR SEARCH:	
 		
-		System.out.println("========================\nLINEAR SEARCH");
+		System.out.println("========================\nLINEAR SEARCH:");
 		
 		int [] linearList = {2, 56, 43, 32, 78, 1};
 		int linearTarget = 1;
@@ -44,7 +44,7 @@ public class Main {
 	    int maxSize = 6; //max amount of items allowed
 	    int newItem = 78;
 	    
-	    System.out.println("========================\nSTACK PUSH");
+	    System.out.println("========================\nSTACK PUSH:");
 	    System.out.println("Stack before push: " + Arrays.toString(stackList));
 	    
 	    //starting time: 
@@ -70,7 +70,7 @@ public class Main {
 	    
 	    int itemCopy;
 	    
-	    System.out.println("========================\nSTACK POP");
+	    System.out.println("========================\nSTACK POP:");
 	    System.out.println("Top of stack before pop: " + stackList[stackTop]);
 	    
 	    //starting time: 
@@ -99,7 +99,7 @@ public class Main {
 	    int searchNum = bubbleList.length-1;
 	    int temp = 0;
 	    
-	    System.out.println("========================\nBUBBLE SORT");
+	    System.out.println("========================\nBUBBLE SORT:");
 	    System.out.println("Stack before sort: " + Arrays.toString(bubbleList));
 	    
 	    //starting time:
@@ -133,7 +133,7 @@ public class Main {
 	    //int enhancedSecondLastPos = enhancedBubbleList.length-2; //second last pos of list - NOT NEEDED here as we're looping up to one less pos for each pass
 	    int enhancedSearchNum = enhancedBubbleList.length-1;
 	    int enhancedTemp = 0;
-	    System.out.println("========================\nENHANCED BUBBLE SORT");
+	    System.out.println("========================\nENHANCED BUBBLE SORT:");
 	    System.out.println("Stack before sort: " + Arrays.toString(enhancedBubbleList));
 	    
 	    //starting time: 
@@ -169,7 +169,7 @@ public class Main {
 	    int altEnhancedSearchNum = altEnhancedBubbleList.length-1;
 	    boolean swapped = false;
 	    int altEnhancedTemp = 0;
-	    System.out.println("========================\nALTERNATIVE ENHANCED BUBBLE SORT - check this (It may be wrong! :P)");
+	    System.out.println("========================\nALTERNATIVE ENHANCED BUBBLE SORT: - check this (It may be wrong! :P)");
 	    System.out.println("Stack before sort: " + Arrays.toString(altEnhancedBubbleList));
 	    
 	    //starting time:
@@ -206,7 +206,7 @@ public class Main {
 	    //===========================================================================
 	    //	BINARY SEARCH:
 	    
-	    System.out.println("========================\nBINARY SEARCH");
+	    System.out.println("========================\nBINARY SEARCH:");
 	    
 	    int [] binaryList = {1, 6, 20, 32, 44, 67, 83, 90, 103, 126, 149, 205, 210};
 		int binaryTarget = 126;
@@ -249,59 +249,92 @@ public class Main {
 	    //===========================================================================
 	    //	MERGE SORT:
 	    
-	    System.out.println("========================\nMERGE SORT");
+	    System.out.println("========================\nMERGE SORT:");
 	    
-	    int [] mergeList = {1, 6, 20, 32, 44, 67, 83, 90, 103, 126, 149, 205, 210};
-	    
+	    int [] mergeList = {2, 56, 5, 43, 20, 1};    //, 32, 78, 1, 99, 21, 63, 33};
 	    
 	    //split a list:
 	    int mergeMiddlePos = (mergeList.length)/2; //pointer to the middle pos of list
 	    int ptr1 = 0;
-	    int mergeLastPos = mergeList.length -1; //final index pos of mergeList
+	    int mergeLastPos = mergeList.length; //final index pos of mergeList
 	    
 	    int[] leftMergeList = new int [mergeMiddlePos]; //new left list 
 	    int[] rightMergeList = new int [mergeMiddlePos]; //new right list
 	    
-	    do {
+	    
+	    //==================
+	    /*
+	    System.out.println("before merge: " + Arrays.toString(leftMergeList)); //++++++++++++++++++++++++++++
+	    System.out.println("before merge: " + Arrays.toString(rightMergeList)); //+++++++++++++++++++++++++++
+	    System.out.println(mergeMiddlePos);
+	    */
+	    //=====================
+	    
+	   
+	    while(ptr1 != mergeMiddlePos) { //stop when ptr hits middle pos of list.
 	    	
 	    	leftMergeList[ptr1] = mergeList[ptr1]; //use ptr1 to copy elements from first half of source array into left array
 	    	ptr1++; //increment ptr1
-	    	
-	    }while(ptr1 != mergeMiddlePos); //stop when ptr hits middle pos of list.
-	  
-
-	    System.out.println(Arrays.toString(leftMergeList)); //++++++++++++++++++++++++++++
+	    	//System.out.println(Arrays.toString(leftMergeList)); 
+	    }
 	    
 	    int ptr2 = 0; //another pointer with 0 index to fill right array with second half of source array
 	    
-	    do {
+	    
+	    while(ptr1 != mergeLastPos) { //stop when ptr hits last pos of list.
 	    	
 	    	rightMergeList[ptr2] = mergeList[ptr1]; //use ptr1 to copy elements from 2nd half of source array into left array (at pos of ptr2)
 	    	ptr1++; //increment ptr1
 	    	ptr2++; //incrtement ptr2
-	    	
-	    }while(ptr1 != mergeLastPos); //stop when ptr hits last  pos of list.
-	  
+	    	//System.out.println(Arrays.toString(rightMergeList));     
+	    }
 	    
-	    System.out.println(Arrays.toString(rightMergeList)); //++++++++++++++++++++++++++++
+	    System.out.println(Arrays.toString(leftMergeList)); //++++++++++++++++++++++++++++
+	    System.out.println(Arrays.toString(rightMergeList)); //+++++++++++++++++++++++++++
+	    
+	   
+	   
+	    //====================Merge 2 lists:
+	    ptr1 = 0;
+		ptr2 = 0;
+	    int ptr3 = 0;
+	    int[] mergedList = new int[leftMergeList.length + rightMergeList.length];
+	    int finalLeftIndex = leftMergeList.length -1;
+	    int finalRightIndex = rightMergeList.length -1;
+	    
+	    //====================================================
+	    System.out.println(finalLeftIndex);
+	    System.out.println(finalRightIndex);
+	    System.out.println(Arrays.toString(rightMergeList)); //+++++++++++++++++++++++++++
+	    System.out.println(mergedList.length);
+	    System.out.println((finalLeftIndex + finalRightIndex) + 1);
+	    //====================================================
+	    
+	   while(ptr3 != (finalLeftIndex + finalRightIndex)) { //stop when reach end of both lists combined
+		   
+		  
+		   if (leftMergeList[ptr1] < rightMergeList[ptr2]){ //if list1's value is less than list 2's
+			   
+			   mergedList[ptr3] = leftMergeList[ptr1]; //assign value to new list
+			   ptr1++; //increment ptr1
+		   }else { //list 2's value is bigger ///+++++++++++++++++++++++++++++++++OR VALUES ARE THE SAME! - edit code to take that into account
+			   
+			   mergedList[ptr3] = rightMergeList[ptr2]; //assign value to new list
+			   ptr2++;
+		   }
+		   
+		   ptr3++; //increment ptr3
+		   
+	   }
+	    
+	   
+	   System.out.println(Arrays.toString(mergedList));
 	    
 	    
 	    
 	    
 	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
+	 
 	    
 	    
 	}//main
