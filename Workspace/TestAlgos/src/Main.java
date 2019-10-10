@@ -251,7 +251,7 @@ public class Main {
 	    
 	    System.out.println("========================\nMERGE SORT:");
 	    
-	    int [] mergeList = {2, 56, 5, 43, 20, 1};    //, 32, 78, 1, 99, 21, 63, 33};
+	    int [] mergeList = {2, 56, 5, 43, 20, 1};  
 	    
 	    //split a list:
 	    int mergeMiddlePos = (mergeList.length)/2; //pointer to the middle pos of list
@@ -285,16 +285,24 @@ public class Main {
 	    	
 	    	rightMergeList[ptr2] = mergeList[ptr1]; //use ptr1 to copy elements from 2nd half of source array into left array (at pos of ptr2)
 	    	ptr1++; //increment ptr1
-	    	ptr2++; //incrtement ptr2
+	    	ptr2++; //increment ptr2
 	    	//System.out.println(Arrays.toString(rightMergeList));     
 	    }
 	    
-	    System.out.println(Arrays.toString(leftMergeList)); //++++++++++++++++++++++++++++
-	    System.out.println(Arrays.toString(rightMergeList)); //+++++++++++++++++++++++++++
+	    //System.out.println(Arrays.toString(leftMergeList)); //++++++++++++++++++++++++++++
+	    //System.out.println(Arrays.toString(rightMergeList)); //+++++++++++++++++++++++++++
 	    
 	   
 	   
 	    //====================Merge 2 lists:
+	    
+	    //THIS SORTING SHOULD BE DONE THROUGH SOMETHING LIKE A BUBBLE SORT INSTEAD!! 
+	    Arrays.sort(leftMergeList);
+	    Arrays.sort(rightMergeList);
+	    System.out.println("leftMergeList: " + Arrays.toString(leftMergeList) + "\nrightMergeList:" + Arrays.toString(rightMergeList));
+	    
+	    
+	    
 	    ptr1 = 0;
 		ptr2 = 0;
 	    int ptr3 = 0;
@@ -303,16 +311,20 @@ public class Main {
 	    int finalRightIndex = rightMergeList.length -1;
 	    
 	    //====================================================
+	    /*
 	    System.out.println(finalLeftIndex);
 	    System.out.println(finalRightIndex);
 	    System.out.println(Arrays.toString(rightMergeList)); //+++++++++++++++++++++++++++
 	    System.out.println(mergedList.length);
 	    System.out.println((finalLeftIndex + finalRightIndex) + 1);
+	    */
 	    //====================================================
 	    
-	   while(ptr3 != (finalLeftIndex + finalRightIndex)) { //stop when reach end of both lists combined
+	    System.out.println("Yo: " + mergedList.length);
+	    
+	  // while(ptr3 != ((finalLeftIndex) + (finalRightIndex) + 1)) { //stop when reach end of both lists combined
+	    while(ptr3 != 5) { //stop when reach end of both lists combined
 		   
-		  
 		   if (leftMergeList[ptr1] < rightMergeList[ptr2]){ //if list1's value is less than list 2's
 			   
 			   mergedList[ptr3] = leftMergeList[ptr1]; //assign value to new list
@@ -323,18 +335,18 @@ public class Main {
 			   ptr2++;
 		   }
 		   
-		   ptr3++; //increment ptr3
 		   
+		   System.out.println(mergedList[ptr3]);
+		   
+		   ptr3++; //increment ptr3
+		   //System.out.println(Arrays.toString(mergedList));
+		  
 	   }
 	    
 	   
 	   System.out.println(Arrays.toString(mergedList));
 	    
 	    
-	    
-	    
-	    
-	 
 	    
 	    
 	}//main
